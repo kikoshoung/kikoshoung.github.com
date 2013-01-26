@@ -6,6 +6,7 @@ var Analyzer = function(options){
 Analyzer.prototype = {
 	firstTime: true,
 	config: {
+		maxValue: 100,
 		padding: 0.2,
 		bg: {
 			colors: ["#404040", "#5f5f5f"],
@@ -32,7 +33,7 @@ Analyzer.prototype = {
 		return JSON.parse(JSON.stringify(obj));
 	},
 	init: function(){
-		var bgCan = this.bgCan = $('<canvas style="background: #e8e8e8;">抱歉，您使用的浏览器不支持Canvas。</canvas>');
+		var bgCan = this.bgCan = $('<canvas>抱歉，您使用的浏览器不支持Canvas。</canvas>');
 		var bdrCan = this.bdrCan = $('<canvas>抱歉，您使用的浏览器不支持Canvas。</canvas>');
 		this.extConfig = {};
 		$.extend(this.extConfig, this.config, this.options.config);
@@ -256,7 +257,7 @@ Analyzer.prototype = {
 			vertices = [];
 				
 		for(var i = 0; i < maxVertices.length; i++){
-			var percentage = items[i].value / this.options.maxValue,
+			var percentage = items[i].value / this.extConfig.maxValue,
 				centerPoint = this.centerPoint,
 				ctx = this.ctx,
 				radius = this.radius,

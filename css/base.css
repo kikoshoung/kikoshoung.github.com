@@ -24,6 +24,15 @@ ul, ol{
 	border-top: 1px solid white;
 }
 
+/* font */
+.font-12{
+	font-size: 12px;
+}
+
+/* float */
+.fl{ float: left;}
+.fr{ float: right;}
+
 /* space */
 .p-s{ padding: 10px;}
 .p-m{ padding: 20px;}

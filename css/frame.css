@@ -6,18 +6,28 @@ body{
 }
 a{
 	text-decoration: none;
-	color: #424d42;
+	color: #08c;
 }
-p, span{
-	line-height: 150%;
+a:hover{
+	text-decoration: underline;
+}
+p, span, li{
+	line-height: 180%;
 }
 h1, h2, h3, h4, h5, h6{
 	color: #70c5a9;
 	font-weight: bold;
 }
-h1 span, h2 span, h3 span, h4 span, h5 span, h6 span{
+h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small{
 	margin-left: 20px;
 	font-size: 50%;
+}
+ul li{
+	margin-bottom: 10px;
+}
+ul.decorated{
+	list-style: disc;
+	margin-left: 20px;
 }
 
 .bar-bg{
@@ -66,6 +76,7 @@ ul.nav li {
 .time-line-wrapper{
 	position: relative;
 	padding-left: 80px;
+	margin-top: 40px;
 }
 .time-line-period{
 	position: relative;
@@ -87,9 +98,9 @@ ul.nav li {
 	text-align: center;
 }
 .time-line-period .cont{
-	padding: 25px 0 50px 25px;
+	padding: 28px 0 50px 25px;
 }
-.time-line-period .cont h1{
+.time-line-period .cont h2{
 	margin-bottom: 20px;
 }
 .i-v-worked-for{
@@ -114,6 +125,36 @@ ul.nav li {
 	background-image: none;
 }
 
-
+.profile{
+	position: relative;
+	margin-top: 40px;
+}
+.profile .block{
+	margin-top: 40px;
+}
+.profile .block h2{
+	margin-bottom: 20px;
+}
+.profile .block h4{
+	margin-bottom: 10px;
+}
+.profile .avatar{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 140px;
+	height: 170px;
+	background-color: #eff5f2;
+}
+.profile .info-list li{
+	margin: 0;
+}
+.profile .info-list .title{
+	display: inline-block;
+	width: 4em;
+}
+.text-seperator{
+	margin: 0 5px;
+}
 
 

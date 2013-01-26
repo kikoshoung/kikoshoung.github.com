@@ -1,4 +1,107 @@
 <h1>我的简历</h1>
-<div>
+<div class="profile">
+	<div class="block">
+		<img class="avatar" src="/img/me.jpg" />
+		<ul class="info-list">
+			<li><span class="title">姓名：</span>向洋君</li>
+			<li><span class="title">性别：</span>男</li>
+			<li><span class="title">现居：</span>北京</li>
+			<li><span class="title">公司：</span>我在信息技术（北京）有限责任公司（果合移动广告）</li>
+			<li><span class="title">主页：</span><a href="http://kikoshoung.github.com">kikoshoung.github.com</a></li>
+			<li><span class="title">电话：</span>+86 134-8886-3471</li>
+			<li><span class="title">邮箱：</span><a href="mailto:kikoshoung@gmail.com">kikoshoung@gmail.com</a></li>
+		</ul>
+	</div>
+	<div class="block">
+		<h2>自我评价</h2>
+		<p>对充满变革与活力的移动互联网领域抱有极大兴趣，两年半参与移动互联网的从业经历，让我对移动互联网行业有了较深的理解。通过工作和业余兴趣项目的研发积累，对于适应移动设备和富交互单页面前端开发技术有丰富的经验。具备严谨的工程师思维和快速应变解决问题的能力。</p>
+		<div id="analyzer-container"></div>
+		<div class=""></div>
+	</div>
+	<div class="block">
+		<h2>工作经历</h2>
+		<h3 class="text-dark">
+			我在信息技术（北京）有限责任公司（果合移动广告）<span class="small">2011年5月<span class="text-seperator">至</span>今</span>
+		</h3>
+		<div class="ml-l mt-m mb-m">
+			<h4 class="text-dark">
+				高级前端工程师<span class="small">2012年1月<span class="text-seperator">至</span>今</span></span>
+			</h4>
+			<ul class="decorated">
+				<li>果合网站前端开发：针对Web产品强交互的特点，主导完成了前后端代码分离，并逐步从单纯jQuery代码向Backbone + SeaJs的技术迁移；与API后端工程师配合，建立了RESTful的Web API框架</li>
+				<li>MIX智游汇网站前端开发：配合产品快速迭代开发，基于Backbone等框架提升网站产品的交互性和性能，指导初级前端工程师完成模块开发工作</li>
+				<li>移动端HTML5广告开发：为星巴克、Chanel等品牌客户开发为移动端优化的HTML5广告页面，实现了页面展示效果、设备兼容性和页面性能的平衡</li>
+			</ul>	
+		</div>
+		<div class="ml-l mt-m mb-m">
+			<h4 class="text-dark">前端工程师<span class="small">2011年5月<span class="text-seperator">至</span>2011年12月</span></h4>
+			<ul class="decorated">
+				<li>负责网站产品的前端开发，通过jQuery AJAX调用Web API实现页面交互</li>
+				<li>根据产品设计开发jQuery前端组件以提升开发效率和UI一致性</li>
+			</ul>	
+		</div>
+	</div>	
+	<div class="block">
+		<h2>项目经验</h2>
+		<ul class="decorated">
+			<li>
+				Smart找茬：HTML5 + CSS3开发，利用PhoneGap封装为Android / iOS / Windows Phone的移动应用，用户3万+
+				<p class="font-12">iOS下载：<a target="_blank" href="https://itunes.apple.com/us/app/smart-zhao-cha/id554494485?mt=8">https://itunes.apple.com/us/app/smart-zhao-cha/id554494485?mt=8</a></p>
+				<p class="font-12">Android下载：<a target="_blank" href="http://www.anzhi.com/soft_655129.html">http://www.anzhi.com/soft_655129.html</a></p>
+				<p class="font-12">下载：<a target="_blank" href="http://wp.msn.com.cn/app/326e7335-f715-4f8f-9bbd-197cd5a8dce2.shtml">http://wp.msn.com.cn/app/326e7335-f715-4f8f-9bbd-197cd5a8dce2.shtml</a></p>
+			</li>
+			<li>
+				起个洋名儿：HTML5 + CSS3开发，运用Google Text-to-Speech API并通过 PhoneGap封装为Android应用，刚刚上线就被多盟广告平台看好，得到了多盟的免费推广机会
+				<p class="font-12">Android下载：<a target="_blank" href="http://www.anzhi.com/soft_662415.html">http://www.anzhi.com/soft_662415.html</a></p></li>
+		</ul>	
+	</div>
+	<div class="block">
+		<h2>教育及技术背景</h2>
+		<ul class="decorated">
+			<li>中国传媒大学信息工程学院2007级本科毕业生</li>
+			<li>熟悉HTML、JavaScript、CSS，对前端规范和页面性能优化有一定了解，在实际项目工作中使用并扩展jQuery框架</li>
+			<li>关注HTML5、CSS3以及JavaScript的前沿技术（Responsive Design、前端MVC开发模式等），并积极推动Backbone、Sea.js、HTML5 Canvas等相关技术在项目实践中的应用</li>
+			<li>了解MySQL及数据库、API设计，具备基于RESTful API开发复杂逻辑的前端页面的项目经验</li>
+		</ul>	
+	</div>
+
+
+
+	<div id="analyzer-container"></div>
+	<div class=""></div>
 
 </div>
+
+<script type="text/javascript" src="/js/component/analyzer.js"></script>
+<script type="text/javascript">
+		var dataNow = [
+			{name: "创新", value: 90},
+			{name: "思考", value: 75},
+			{name: "代码设计", value: 88},
+			{name: "Debug", value: 66},
+			{name: "属性5", value: 85},
+			{name: "团队合作", value: 100}
+		],
+		dataPast = [
+			{name: "属性1", value: 100},
+			{name: "属性2", value: 57},
+			{name: "属性3", value: 68},
+			{name: "属性4", value: 90},
+			{name: "属性5", value: 58},
+			{name: "属性6", value: 55}
+		];
+		dataFuture = [
+			{name: "属性1", value: 100},
+			{name: "属性3", value: 68},
+			{name: "属性4", value: 90},
+			{name: "属性5", value: 58},
+			{name: "属性6", value: 55}
+		];
+		
+
+	// var analyzer = new Analyzer({
+	// 	renderTo: $("#analyzer-container"),
+	// 	size: "s",
+	// 	items: dataNow
+	// });
+</script>

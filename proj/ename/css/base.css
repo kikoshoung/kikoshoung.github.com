@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+html,body { height:100%; background-color: #f8f8f8 !important;}
+body{ margin: 0; padding: 0; font: 100%/1.5 Verdana, Helvetica, Arial, 'Microsoft Yahei', sans-serif;}
+p{ margin: 0; padding: 0;}
+li, p{ word-wrap: break-word;}
+/* font */
+h1, .f-150{ font-size: 150% !important;}
+h2, .f-120{ font-size: 120% !important;}
+.font-20{ font-size: 20px;}
+.font-14{ font-size: 14px;}
+.bold{ font-weight: bold;}
+
+/* height */
+.lh-30{ line-height: 30px;}
+
+/* color */
+.text-blue{ color: #08c;}
+.text-gray{ color: #9da0a4;}
+.text-red{ color: red;}
+.text-orange{ color: #f39800;}
+
+
+/* reset */
+ol, ul { list-style: none; margin: 0; padding: 0; text-align: left;}
+.box{ display:box; display:-webkit-box; display:-moz-box;}
+
+/* float */
+.fl{ float: left;}
+.fr{ float: right;}
+
+/* align */
+.align-c{ text-align: center;}
+.align-l{ text-align: left;}
+.align-r{ text-align: right;}
+
+/* display */
+.hide{ display: none;}
+
+/* box */
+.border-box{ -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+.flex-1{ display: block !important; box-flex: 1; -moz-box-flex: 1; -webkit-box-flex: 1;}
+.flex-2{ display: block !important; box-flex: 2; -moz-box-flex: 2; -webkit-box-flex: 2;}
+.flex-3{ display: block !important; box-flex: 3; -moz-box-flex: 3; -webkit-box-flex: 3;}
+
+/* margin */
+.m-s{ margin: 5px;}
+.m-m{ margin: 10px;}
+.m-l{ margin: 20px;}
+
+.mt-s{ margin-top:5px !important;}
+.mt-m{ margin-top:10px !important;}
+.mt-l{ margin-top:20px !important;}
+
+.mb-s{ margin-bottom:5px !important;}
+.mb-m{ margin-bottom:10px !important;}
+.mb-l{ margin-bottom:20px !important;}
+
+.ml-s{ margin-left:5px !important;}
+.ml-m{ margin-left:10px !important;}
+.ml-l{ margin-left:25px !important;}
+
+.mr-s{ margin-right:5px !important;}
+.mr-m{ margin-right:10px !important;}
+.mr-l{ margin-right:25px !important;}
+
+.m-0{ margin: 0 !important;}
+
+.p-s{ padding: 5px;}
+.p-m{ padding: 10px;}
+.p-l{ padding: 20px;}
+.pt-m{ padding-top: 10px !important;}
+.pt-l{ padding-top: 20px !important;}
+.pb-l{ padding-bottom: 20px !important;}
+
+/* word */
+.nowrap{ position: relative; white-space: nowrap; overflow: hidden;}
+.hide-ov-text{ position: absolute; top: 0; right: 0; display: inline-block; width: 30px; height: 100%; background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255, 255, 255, 0)), color-stop(100%,rgba(255, 255, 255, 1)));
+
+
+/* For modern browsers */
+.clearfix:before,
+.clearfix:after{ content:""; display:table;}
+.clearfix:after { clear:both;}
+
+/* For IE 6/7 (trigger hasLayout) */
+.clearfix { *zoom:1;}
+
+//

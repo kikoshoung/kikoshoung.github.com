@@ -1,0 +1,173 @@
+@charset "utf-8";
+
+/* frame */
+.content{ position: relative; width: 100%; min-height: 100%; text-align: center;}
+.ads{ position: fixed; z-index: 2; left: 0; bottom: 0; width: 100%; height: 50px; line-height: 50px; text-align: center; background-color: #e5e5e5; font-size: 12px;}
+.head-block-wrapper{ position: fixed; z-index: 2; left: 0; top: 0; width: 100%; background-color: black; box-shadow: 0 0 20px rgba(0, 0, 0, 1);}
+.head-block{ display: inline-block; width: auto; margin: 10px auto; text-align: center;}
+.head-block2{ margin: 10px; text-align: left;}
+
+/* icon */
+.icon{ display: inline-block; cursor: pointer;}
+.icon-30{ width: 30px !important; height: 30px !important;}
+.icon-speaker{ background-image: url(../img/icon.png) !important;
+	background-position: -120px 0 !important;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+	background-color: #f0f0f0;
+	border: 1px solid #c6c6c6;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-user-select: none;
+}
+.icon-speaker.active{ background-color: #e0e0e0; box-shadow:inset 0 1px 2px rgba(0, 0, 0, .1);}
+.weibo-share{ display: inline-block; width: 30px; height: 30px; background: url(../img/share.png) 0 0 no-repeat; cursor: pointer;}
+
+/* list */ 
+.suggest-list{ padding: 90px 0 50px 0;}
+.suggest-list ul li, .letters-list li{ border-top: 1px dashed #e5e5e5;}
+.suggest-list ul li.first, .letters-list li.first{ border-top: none;}
+.suggest-list ul li strong{ color: #555;}
+.suggest-list ol { padding-left: 40px;}
+.suggest-list ol li{ line-height: 150%; list-style: decimal; padding-bottom: 20px;}
+.letters-list{ color: #08c; font-size: 20px; padding: 50px 0;}
+.letters-list li{ min-height: 50px; padding: 0 10px; cursor: pointer;}
+.letters-list li p{ line-height: 20px; margin: 0 0 0 20px; padding: 13px 20px 10px 20px;}
+.letters-list li p:first-child{ line-height: 50px; float: left; padding: 0; margin: 0;}
+.letters-list li span{ font-size: 70%; color: #555;}
+.letters-list li span:first-child{ color: #08c;}
+.letter{ color: white;}
+
+
+/* link */
+.underlined-link{ text-decoration: underline;}
+
+/* loading */
+.spinner{ 
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	width: 30px;
+	height: 30px;
+}
+.spinner.fade{ 
+	-webkit-animation: none;
+	opacity: 1;
+}
+.spinner div{
+	position: absolute;
+	left: 45%;
+	top: 37%;
+	width: 10%;
+	height: 26%;
+	background-color: gray;
+	border-radius: 100px;
+}
+/* fade spinner */
+.spinner.fade div{
+	opacity: 0;
+	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+	-webkit-animation: fade-spinner 1s linear infinite;
+}
+.spinner.fade .e1{
+	-webkit-transform: rotate(0deg) translate(0, -140%);
+	-webkit-animation-delay: 0s;
+	opacity: 1;
+}
+.spinner.fade .e2{
+	-webkit-transform: rotate(30deg) translate(0, -140%);
+	-webkit-animation-delay: 0.083s;
+	opacity: 0.916;
+}
+.spinner.fade .e3{
+	-webkit-transform: rotate(60deg) translate(0, -140%);
+	-webkit-animation-delay: 0.166s;
+	opacity: 0.833;
+}
+.spinner.fade .e4{
+	-webkit-transform: rotate(90deg) translate(0, -140%);
+	-webkit-animation-delay: 0.25s;
+	opacity: 0.75;
+
+}
+.spinner.fade .e5{
+	-webkit-transform: rotate(120deg) translate(0, -140%);
+	-webkit-animation-delay: 0.333s;
+	opacity: 0.666;
+
+}
+.spinner.fade .e6{
+	-webkit-transform: rotate(150deg) translate(0, -140%);
+	-webkit-animation-delay: 0.416s;
+	opacity: 0.583;
+
+}
+.spinner.fade .e7{
+	-webkit-transform: rotate(180deg) translate(0, -140%);
+	-webkit-animation-delay: 0.5s;
+	opacity: 0.5;
+
+}
+.spinner.fade .e8{
+	-webkit-transform: rotate(210deg) translate(0, -140%);
+	-webkit-animation-delay: 0.583s;
+	opacity: 0.416;
+
+}
+.spinner.fade .e9{
+	-webkit-transform: rotate(240deg) translate(0, -140%);
+	-webkit-animation-delay: 0.666s;
+	opacity: 0.333;
+}
+.spinner.fade .e10{
+	-webkit-transform: rotate(270deg) translate(0, -140%);
+	-webkit-animation-delay: 0.75s;
+	opacity: 0.25;
+
+}
+.spinner.fade .e11{
+	-webkit-transform: rotate(300deg) translate(0, -140%);
+	-webkit-animation-delay: 0.833s;
+	opacity: 0.166;
+
+}
+.spinner.fade .e12{
+	-webkit-transform: rotate(330deg) translate(0, -140%);
+	-webkit-animation-delay: 0.916s;
+	opacity: 0.083;
+}
+@-webkit-keyframes fade-spinner {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0.25;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

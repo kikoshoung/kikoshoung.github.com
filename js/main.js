@@ -53,4 +53,4 @@ var site = {
 	}
 }
 
-site.init("index");
+site.init("timeline");

@@ -10,7 +10,7 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, code, img, ul, ol, iframe{
 ul, ol{
 	list-style: none;
 }
-li, p{ 
+li, p, dt, dd{ 
 	word-wrap: break-word;
 }
 
@@ -79,6 +79,6 @@ li, p{
 .mr-l{ margin-right: 40px;}
 
 /* cleafix */
-.clearfix:after{ content: " "; display: block; height: 0; clear: both; visibility: hidden;}
+.clearfix:after{ content: ""; display: block; height: 0; clear: both; visibility: hidden;}
 .clearfix{ display: block;}
 

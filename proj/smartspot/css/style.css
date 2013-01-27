@@ -1,0 +1,272 @@
+
+
+html, body{ margin: 0 auto; 
+	font: 40px/1.5 'huakang-poster', Verdana, Helvetica, Arial, Microsoft Yahei, sans-serif; 
+	background: url(../images/bg1.jpg) repeat;
+	text-shadow: 0 1px 1px #000;
+}
+
+#topBar, #bottomBar{ position: absolute; 
+	z-index: 999; 
+	width: 100%; 
+	font-size: 100%;
+	line-height: 150%;
+	-webkit-box-shadow: 0 2px 10px #222;
+	display: none;
+}
+
+#topBar{ 
+	left: 0; 
+	top: 0;
+	height: 10%;
+	font-size: 100%;
+}
+
+#topBar .icon{ height: 100%;}
+
+#topBar .progress-bar{ width: 40%; line-height: 100%;}
+
+/* kiko added */
+.progress-bar .title{ position: absolute; z-index: 9999; top: 0; left: 3%; font-size: 50%;} 
+.progress-bar .level{ position: absolute; z-index: 9999; top: 0; right: 3%; font-size: 50%;} 
+
+#bottomBar{ 
+	left: 0; 
+	bottom: 0;
+	height: 10%;
+}
+
+#topBar .transparentLayer, #bottomBar .transparentLayer{
+	width: 100%;
+	height: 100%;
+	background: black;
+	opacity: 0.6;
+}
+#topBar .top-float-bar{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	font-size: 100%;
+}
+
+#indexBar{
+	position: absolute;
+	left: 0;
+	bottom: 0; 
+	height: 5%;
+	line-height: 5%;
+	width: 100%;
+	text-align: center;
+	overflow: hidden;
+	display: none;
+}
+
+#indexBar ul#themeIndex{
+	display: inline-block;
+	height: 100%;
+	margin: 2% auto;
+}
+
+#indexBar ul#themeIndex li{
+	width: 10px;
+	height: 10px;
+	float: left;
+	margin: 0 10px;
+	background: white;
+	-webkit-box-shadow: 0 0 2px #222;
+}
+
+#indexBar ul#themeIndex li.indexed{ background: #fecf23;}
+
+.content{ 
+	position: absolute; 
+	top: 10%;
+	display: none; 
+	width: 100%;
+	height: 80%;
+	z-index: 999;
+}
+
+#landingPage{ 
+	position: relative;
+	display: block;
+	text-align: center;
+	display: none;
+}
+#landingPage .landing-name-line{ 
+	position: absolute;
+	left: 0;
+	top: 10%;
+	display: block;
+	width: 100%;
+}
+#landingPage .landing-name-line .game-name{
+	/*margin-bottom: 5%;*/
+}
+#landingPage .landing-author-line{ 
+	position: absolute;
+	left: 0;
+	bottom: 15%;
+	display: block;
+	width: 100%;
+	text-shadow: 0 1px 1px #000;
+	font-size: 40%;
+}
+
+
+.theme{
+	position: relative;
+	top: 5%;
+	left: 10%;
+	width: 80%;
+	height: 90%;
+	border-radius: 10px;
+	background: url(../images/bg2.jpg) repeat;
+	-webkit-box-shadow: 0 2px 10px #222;
+	font-size: 100%;
+}
+
+.themeTitle, .pauseTitle{ float: left; padding: 0 2%; margin: -2px 0 0 10px; font-size: 80%; height: 20%; line-height: 150%;
+	text-align: center;
+	background-color: #fecf23; color: white;
+	border: 1px solid #a1be19;
+	-webkit-border-bootom-left-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-box-shadow: 0 1px 5px #222;
+}
+.themeTitle{ height: 14%; margin-bottom: 2%; font-size: 60%;}
+
+.stageBlock{ float: left; height: 80%; overflow: hidden;}
+.stagesWrap{ position: relative; height: auto;  }
+
+.stage{ float: left; width: 70px; height: 70px; line-height: 87px; margin: 10px; text-align: center; border-radius: 3px; -webkit-box-shadow: 0 1px 5px #222;}
+.stage.green{ border: 1px solid #6da51c;}
+
+#stage .partBox{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+#stage #leftPicDiv, #stage #rightPicDiv{ 
+	position: relative; 
+	float: left; 
+	width: 90%; 
+	height: 90%; 
+	margin: 5% 5%;
+	background-size: 100% 100%;
+	-webkit-box-shadow: 0 2px 10px #222;
+}
+
+#stage #rightPicDiv .diffImg{
+	display: none;
+}
+
+#stage .diffEl, #stage .diffImg{
+	position: absolute;
+}
+#stage .diffEl{
+	z-index: 999;
+}
+#stage .diffImg{
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-size: 100% 100%;
+}
+
+
+/*  */
+#themePage {
+	position: absolute; 
+	z-index:1;
+	top: 10%; bottom: 10%;
+	width: 100%;
+	height: 80%;
+	font-size: 100%;
+/*	overflow:auto;*/
+}
+
+#themeScroller {
+	position:relative;
+/*	-webkit-touch-callout:none;*/
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+
+	float:left;
+	/*width:1000%;*/
+	height: 100%;
+	padding:0;
+	font-size: 100%;
+}
+
+#themeScroller ul {
+	position:relative;
+	list-style:none;
+	padding:0;
+	margin:0;
+	width: 100%;
+	height: 100%;
+	text-align:left;
+	font-size: 100%;
+	/*display: none;*/
+	visibility: hidden;
+}
+
+#themeScroller li {
+	/*width: 10%;*/
+	float: left;
+	height: 100%;
+	font-size:14px;
+	font-size: 100%;
+}
+
+#themeScroller li .stageWrapper {
+	width:100%;
+	height: 80%;
+	font-size: 100%;
+}
+ 
+#themeScroller li .stageScroller {
+	position:relative;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	float:left;
+	width:100%;
+	padding:0;
+	font-size: 100%;
+}
+
+.stageResizeBox{ font-size: 40%;}; 
+.stageResizeBox .stage{ float: left; width: 70px; height: 70px; margin: 10px; color: black;}
+
+/*pop*/
+.popShelter{ display:none; position: absolute; left:0; top: 0; width:100%; background: black; opacity: 0.8; filter:alpha(opacity=80); z-index: 9998;}
+.popBox{ display:none; position: absolute; left: 0; top: 15%; width: 100%; min-height: 60%; max-height: 85%; z-index: 9999; font-size: 80%;}
+
+.popContent{ width: 60%; height: 100%; margin: 0 auto; color: black;
+	border-radius: 10px;
+	background: url(../images/bg2.jpg) repeat;
+	-webkit-box-shadow: 0 2px 10px #222;}
+
+.marked{ border: 2px solid #d0fa0b;}
+
+#pauseList, .popList{ width: 100%; height: 40%; padding-bottom: 5%;}
+#pauseList li, .popList li{ margin-top: 5%; float: left; width: 33.33%; height: 60%; text-align: center;}
+#newUserPop .popList{ font-size: 60%; color: black; padding: 0 5%; list-style-type: decimal;}
+#newUserPop .popList li{ float: none; width: 90%; height: 20%; text-align: left;}
+
+.colon{ font-size: 60%;}
+
+.passedTip{ padding: 0 5%;}
+.popContent .passedTip.orange{ color: #fecf23;}
+.popContent .passedTip.red{ color: red;}
+
+.knewit{
+	display: inline-block;
+	color: #a5df41;
+	font-size: 60%;
+	line-height: 150%;
+	float: right;
+	padding-right: 5%;
+}

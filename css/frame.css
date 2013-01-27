@@ -11,7 +11,7 @@ a{
 a:hover{
 	text-decoration: underline;
 }
-p, span, li{
+p, span, li, dl{
 	line-height: 180%;
 }
 h1, h2, h3, h4, h5, h6{
@@ -28,6 +28,14 @@ ul li{
 ul.decorated{
 	list-style: disc;
 	margin-left: 20px;
+}
+dl dt{
+	float: left;
+	width: 5em;
+	text-align: right;
+}
+dl dd{
+	margin-left: 5em;
 }
 
 .bar-bg{
@@ -129,13 +137,13 @@ ul.nav li {
 	position: relative;
 	margin-top: 40px;
 }
-.profile .block{
+.block{
 	margin-top: 40px;
 }
-.profile .block h2{
+.block h2{
 	margin-bottom: 20px;
 }
-.profile .block h4{
+.block h4{
 	margin-bottom: 10px;
 }
 .profile .avatar{
@@ -157,4 +165,14 @@ ul.nav li {
 	margin: 0 5px;
 }
 
+.app-info {
+	min-height: 72px;
+}
+.app-info > img{
+	float: left;
+	width: 72px;
+}
+.app-info > dl{
+	margin-left: 100px;
+}
 

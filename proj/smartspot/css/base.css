@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+/*Reset*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fieldset, lengend, button, input, textarea, th, td{margin:0; padding:0;}
+body, button, input, select, textarea{ font:14px/1.5 Verdana, Helvetica, Arial, Microsoft Yahei, sans-serif;}
+a{ text-decoration:none; cursor:pointer;}
+address, cite, dfn, em, var{ font-style:normal;} 
+code, kbd, pre, samp, tt{ font-family:"Courier New", Courier, monospace;} 
+small{ font-size:12px;}
+ul, li{ padding:0; margin:0; list-style:none;}
+abbr[title], acronym[title]{ border-bottom:1px dotted; cursor:help;}
+q:before, q:after{ content:'';}
+fieldset, img{ border:none;} 
+button, input, select, textarea{ font-size:100%;}
+table{ border-collapse:collapse; border-spacing:0;}
+caption, legend{ display:none;}
+html{ overflow-y:scroll;}
+body{ background: #fff; color: white; overflow-x:hidden; cursor:default;}
+textarea{ resize:vertical; overflow:auto;}
+.clearfix:after{ content:" "; display:block; height:0; clear:both; visibility:hidden;}
+.clearfix{ display:block;}
+
+.fl{ float: left;}
+.fr{ float: right;}
+
+/* margin */
+.mt-s{ margin-top:5px !important;}
+.mt-m{ margin-top:10px !important;}
+.mt-l{ margin-top:20px !important;}
+
+.mb-s{ margin-bottom:5px !important;}
+.mb-m{ margin-bottom:10px !important;}
+.mb-l{ margin-bottom:20px !important;}
+
+.ml-s{ margin-left:5px !important;}
+.ml-m{ margin-left:10px !important;}
+.ml-l{ margin-left:20px !important;}
+
+.mr-s{ margin-right:5px !important;}
+.mr-m{ margin-right:10px !important;}
+.mr-l{ margin-right:20px !important;}
+
+.m-xl{ margin-left: 40px; margin-right: 40px;}
+
+/* padding */
+.pt-s{ padding-top:5px !important;}
+.pt-m{ padding-top:10px !important;}
+.pt-l{ padding-top:20px !important;}
+
+.pb-s{ padding-bottom:5px !important;}
+.pb-m{ padding-bottom:10px !important;}
+.pb-l{ padding-bottom:20px !important;}
+
+.pl-s{ padding-left:5px !important;}
+.pl-m{ padding-left:10px !important;}
+.pl-l{ padding-left:20px !important;}
+
+.pr-s{ padding-right:5px !important;}
+.pr-m{ padding-right:10px !important;}
+.pr-l{ padding-right:20px !important;}

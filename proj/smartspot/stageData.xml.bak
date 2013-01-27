@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<stageInfo id="stageInfo">
+	<theme id="theme1" title="美女">
+		<stage id="stage1">
+			<bg url="./images/stage1.jpg"></bg>
+			<el url="./images/stage1_1.png" width="10.75%" height="13.25%" left="9.25%" top="65.75%"></el>
+			<el url="./images/stage1_2.png" width="8.75%" height="12.25%" left="43.25%" top="25.5%"></el>
+			<el url="./images/stage1_3.png" width="8.75%" height="7%" left="6%" top="87.5%"></el>
+			<el url="./images/stage1_4.png" width="12.5%" height="12.5%" left="21.25%" top="59.25%"></el>
+			<el url="./images/stage1_5.png" width="9.75%" height="9%" left="11.25%" top="23.5%"></el>
+			<el url="./images/stage1_6.png" width="6.5%" height="9%" left="25%" top="26.25%"></el>
+		</stage>
+		<stage id="stage2">
+			<bg url="./images/stage2.jpg"></bg>
+			<el url="./images/stage2_1.png" width="10%" height="10%" left="9%" top="70.5%"></el>
+			<el url="./images/stage2_2.png" width="10%" height="10%" left="88%" top="49.5%"></el>
+			<el url="./images/stage2_3.png" width="10%" height="10%" left="1.5%" top="45.25%"></el>
+			<el url="./images/stage2_4.png" width="10%" height="10%" left="28.75%" top="76.5%"></el>
+			<el url="./images/stage2_5.png" width="10%" height="10%" left="55%" top="56%"></el>
+			<el url="./images/stage2_6.png" width="10%" height="10%" left="90%" top="60%"></el>
+		</stage>
+		<stage id="stage3">
+			<bg url="./images/stage1.jpg"></bg>
+			<el url="./images/stage1_1.png" width="10.75%" height="13.25%" left="9.25%" top="65.75%"></el>
+			<el url="./images/stage1_2.png" width="8.75%" height="12.25%" left="43.25%" top="25.5%"></el>
+			<el url="./images/stage1_3.png" width="8.75%" height="7%" left="6%" top="87.5%"></el>
+			<el url="./images/stage1_4.png" width="12.5%" height="12.5%" left="21.25%" top="59.25%"></el>
+			<el url="./images/stage1_5.png" width="9.75%" height="9%" left="11.25%" top="23.5%"></el>
+			<el url="./images/stage1_6.png" width="6.5%" height="9%" left="25%" top="26.25%"></el>
+		</stage>
+		<stage id="stage4">
+			<bg url="./images/stage2.jpg"></bg>
+			<el url="./images/stage2_1.png" width="10%" height="10%" left="9%" top="70.5%"></el>
+			<el url="./images/stage2_2.png" width="10%" height="10%" left="88%" top="49.5%"></el>
+			<el url="./images/stage2_3.png" width="10%" height="10%" left="1.5%" top="45.25%"></el>
+			<el url="./images/stage2_4.png" width="10%" height="10%" left="28.75%" top="76.5%"></el>
+			<el url="./images/stage2_5.png" width="10%" height="10%" left="55%" top="56%"></el>
+			<el url="./images/stage2_6.png" width="10%" height="10%" left="90%" top="60%"></el>
+		</stage>
+		<stage id="stage5">
+			<bg url="./images/stage1.jpg"></bg>
+			<el url="./images/stage1_1.png" width="10.75%" height="13.25%" left="9.25%" top="65.75%"></el>
+			<el url="./images/stage1_2.png" width="8.75%" height="12.25%" left="43.25%" top="25.5%"></el>
+			<el url="./images/stage1_3.png" width="8.75%" height="7%" left="6%" top="87.5%"></el>
+			<el url="./images/stage1_4.png" width="12.5%" height="12.5%" left="21.25%" top="59.25%"></el>
+			<el url="./images/stage1_5.png" width="9.75%" height="9%" left="11.25%" top="23.5%"></el>
+			<el url="./images/stage1_6.png" width="6.5%" height="9%" left="25%" top="26.25%"></el>
+		</stage>
+		<stage id="stage6">
+			<bg url="./images/stage2.jpg"></bg>
+			<el url="./images/stage2_1.png" width="10%" height="10%" left="9%" top="70.5%"></el>
+			<el url="./images/stage2_2.png" width="10%" height="10%" left="88%" top="49.5%"></el>
+			<el url="./images/stage2_3.png" width="10%" height="10%" left="1.5%" top="45.25%"></el>
+			<el url="./images/stage2_4.png" width="10%" height="10%" left="28.75%" top="76.5%"></el>
+			<el url="./images/stage2_5.png" width="10%" height="10%" left="55%" top="56%"></el>
+			<el url="./images/stage2_6.png" width="10%" height="10%" left="90%" top="60%"></el>
+		</stage>
+		<stage id="stage7">
+			<bg url="./images/stage1.jpg"></bg>
+			<el url="./images/stage1_1.png" width="10.75%" height="13.25%" left="9.25%" top="65.75%"></el>
+			<el url="./images/stage1_2.png" width="8.75%" height="12.25%" left="43.25%" top="25.5%"></el>
+			<el url="./images/stage1_3.png" width="8.75%" height="7%" left="6%" top="87.5%"></el>
+			<el url="./images/stage1_4.png" width="12.5%" height="12.5%" left="21.25%" top="59.25%"></el>
+			<el url="./images/stage1_5.png" width="9.75%" height="9%" left="11.25%" top="23.5%"></el>
+			<el url="./images/stage1_6.png" width="6.5%" height="9%" left="25%" top="26.25%"></el>
+		</stage>
+		<stage id="stage8">
+			<bg url="./images/stage2.jpg"></bg>
+			<el url="./images/stage2_1.png" width="10%" height="10%" left="9%" top="70.5%"></el>
+			<el url="./images/stage2_2.png" width="10%" height="10%" left="88%" top="49.5%"></el>
+			<el url="./images/stage2_3.png" width="10%" height="10%" left="1.5%" top="45.25%"></el>
+			<el url="./images/stage2_4.png" width="10%" height="10%" left="28.75%" top="76.5%"></el>
+			<el url="./images/stage2_5.png" width="10%" height="10%" left="55%" top="56%"></el>
+			<el url="./images/stage2_6.png" width="10%" height="10%" left="90%" top="60%"></el>
+		</stage>
+		<stage id="stage9">
+			<bg url="./images/stage2.jpg"></bg>
+			<el url="./images/stage2_1.png" width="10%" height="10%" left="9%" top="70.5%"></el>
+			<el url="./images/stage2_2.png" width="10%" height="10%" left="88%" top="49.5%"></el>
+			<el url="./images/stage2_3.png" width="10%" height="10%" left="1.5%" top="45.25%"></el>
+			<el url="./images/stage2_4.png" width="10%" height="10%" left="28.75%" top="76.5%"></el>
+			<el url="./images/stage2_5.png" width="10%" height="10%" left="55%" top="56%"></el>
+			<el url="./images/stage2_6.png" width="10%" height="10%" left="90%" top="60%"></el>
+		</stage>
+		<stage id="stage10">
+			<bg url="./images/stage1.jpg"></bg>
+			<el url="./images/stage1_1.png" width="10.75%" height="13.25%" left="9.25%" top="65.75%"></el>
+			<el url="./images/stage1_2.png" width="8.75%" height="12.25%" left="43.25%" top="25.5%"></el>
+			<el url="./images/stage1_3.png" width="8.75%" height="7%" left="6%" top="87.5%"></el>
+			<el url="./images/stage1_4.png" width="12.5%" height="12.5%" left="21.25%" top="59.25%"></el>
+			<el url="./images/stage1_5.png" width="9.75%" height="9%" left="11.25%" top="23.5%"></el>
+			<el url="./images/stage1_6.png" width="6.5%" height="9%" left="25%" top="26.25%"></el>
+		</stage>
+		<stage id="stage11">
+			<bg url="./images/stage2.jpg"></bg>
+			<el url="./images/stage2_1.png" width="10%" height="10%" left="9%" top="70.5%"></el>
+			<el url="./images/stage2_2.png" width="10%" height="10%" left="88%" top="49.5%"></el>
+			<el url="./images/stage2_3.png" width="10%" height="10%" left="1.5%" top="45.25%"></el>
+			<el url="./images/stage2_4.png" width="10%" height="10%" left="28.75%" top="76.5%"></el>
+			<el url="./images/stage2_5.png" width="10%" height="10%" left="55%" top="56%"></el>
+			<el url="./images/stage2_6.png" width="10%" height="10%" left="90%" top="60%"></el>
+		</stage>
+		<stage id="stage12">
+			<bg url="./images/stage1.jpg"></bg>
+			<el url="./images/stage1_1.png" width="10.75%" height="13.25%" left="9.25%" top="65.75%"></el>
+			<el url="./images/stage1_2.png" width="8.75%" height="12.25%" left="43.25%" top="25.5%"></el>
+			<el url="./images/stage1_3.png" width="8.75%" height="7%" left="6%" top="87.5%"></el>
+			<el url="./images/stage1_4.png" width="12.5%" height="12.5%" left="21.25%" top="59.25%"></el>
+			<el url="./images/stage1_5.png" width="9.75%" height="9%" left="11.25%" top="23.5%"></el>
+			<el url="./images/stage1_6.png" width="6.5%" height="9%" left="25%" top="26.25%"></el>
+		</stage>
+		<stage id="stage130">
+			<bg url="./images/stage2.jpg"></bg>
+			<el url="./images/stage2_1.png" width="10%" height="10%" left="9%" top="70.5%"></el>
+			<el url="./images/stage2_2.png" width="10%" height="10%" left="88%" top="49.5%"></el>
+			<el url="./images/stage2_3.png" width="10%" height="10%" left="1.5%" top="45.25%"></el>
+			<el url="./images/stage2_4.png" width="10%" height="10%" left="28.75%" top="76.5%"></el>
+			<el url="./images/stage2_5.png" width="10%" height="10%" left="55%" top="56%"></el>
+			<el url="./images/stage2_6.png" width="10%" height="10%" left="90%" top="60%"></el>
+		</stage>
+	</theme>
+	<theme id="theme2" title="风景">
+		<stage id="stage1">
+			<bg url="./images/stage1.jpg"></bg>
+			<el url="./images/stage1_1.png" width="10.75%" height="13.25%" left="9.25%" top="65.75%"></el>
+			<el url="./images/stage1_2.png" width="8.75%" height="12.25%" left="43.25%" top="25.5%"></el>
+			<el url="./images/stage1_3.png" width="8.75%" height="7%" left="6%" top="87.5%"></el>
+			<el url="./images/stage1_4.png" width="12.5%" height="12.5%" left="21.25%" top="59.25%"></el>
+			<el url="./images/stage1_5.png" width="9.75%" height="9%" left="11.25%" top="23.5%"></el>
+			<el url="./images/stage1_6.png" width="6.5%" height="9%" left="25%" top="26.25%"></el>
+		</stage>
+		<stage id="stage2">
+			<bg url="./images/stage2.jpg"></bg>
+			<el url="./images/stage2_1.png" width="10%" height="10%" left="9%" top="70.5%"></el>
+			<el url="./images/stage2_2.png" width="10%" height="10%" left="88%" top="49.5%"></el>
+			<el url="./images/stage2_3.png" width="10%" height="10%" left="1.5%" top="45.25%"></el>
+			<el url="./images/stage2_4.png" width="10%" height="10%" left="28.75%" top="76.5%"></el>
+			<el url="./images/stage2_5.png" width="10%" height="10%" left="55%" top="56%"></el>
+			<el url="./images/stage2_6.png" width="10%" height="10%" left="90%" top="60%"></el>
+		</stage>
+		<stage id="stage3">
+			<bg url="./images/stage1.jpg"></bg>
+			<el url="./images/stage2_1.png" width="10%" height="10%" left="9%" top="70.5%"></el>
+			<el url="./images/stage2_2.png" width="10%" height="10%" left="88%" top="49.5%"></el>
+			<el url="./images/stage2_3.png" width="10%" height="10%" left="1.5%" top="45.25%"></el>
+			<el url="./images/stage2_4.png" width="10%" height="10%" left="28.75%" top="76.5%"></el>
+			<el url="./images/stage2_5.png" width="10%" height="10%" left="55%" top="56%"></el>
+			<el url="./images/stage2_6.png" width="10%" height="10%" left="90%" top="60%"></el>
+		</stage>
+	</theme>
+	<theme id="theme3" title="普通">
+		<stage id="stage1">
+			<bg url="./images/stage1.jpg"></bg>
+			<el url="./images/stage1_1.png" width="10.75%" height="13.25%" left="9.25%" top="65.75%"></el>
+			<el url="./images/stage1_2.png" width="8.75%" height="12.25%" left="43.25%" top="25.5%"></el>
+			<el url="./images/stage1_3.png" width="8.75%" height="7%" left="6%" top="87.5%"></el>
+			<el url="./images/stage1_4.png" width="12.5%" height="12.5%" left="21.25%" top="59.25%"></el>
+			<el url="./images/stage1_5.png" width="9.75%" height="9%" left="11.25%" top="23.5%"></el>
+			<el url="./images/stage1_6.png" width="6.5%" height="9%" left="25%" top="26.25%"></el>
+		</stage>
+		<stage id="stage2">
+			<bg url="./images/stage2.jpg"></bg>
+			<el url="./images/stage2_1.png" width="10%" height="10%" left="9%" top="70.5%"></el>
+			<el url="./images/stage2_2.png" width="10%" height="10%" left="88%" top="49.5%"></el>
+			<el url="./images/stage2_3.png" width="10%" height="10%" left="1.5%" top="45.25%"></el>
+			<el url="./images/stage2_4.png" width="10%" height="10%" left="28.75%" top="76.5%"></el>
+			<el url="./images/stage2_5.png" width="10%" height="10%" left="55%" top="56%"></el>
+			<el url="./images/stage2_6.png" width="10%" height="10%" left="90%" top="60%"></el>
+		</stage>
+		<stage id="stage3">
+			<bg url="./images/stage1.jpg"></bg>
+			<el url="./images/stage2_1.png" width="10%" height="10%" left="9%" top="70.5%"></el>
+			<el url="./images/stage2_2.png" width="10%" height="10%" left="88%" top="49.5%"></el>
+			<el url="./images/stage2_3.png" width="10%" height="10%" left="1.5%" top="45.25%"></el>
+			<el url="./images/stage2_4.png" width="10%" height="10%" left="28.75%" top="76.5%"></el>
+			<el url="./images/stage2_5.png" width="10%" height="10%" left="55%" top="56%"></el>
+			<el url="./images/stage2_6.png" width="10%" height="10%" left="90%" top="60%"></el>
+		</stage>
+	</theme>
+</stageInfo>

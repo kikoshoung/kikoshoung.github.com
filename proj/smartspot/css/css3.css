@@ -1,0 +1,199 @@
+.progress-bar {
+	position: relative;
+    background-color: #1a1a1a;
+    height: 25px;
+    padding: 5px;
+    width: 350px;
+    margin: 0 auto;			
+    -moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+    -moz-box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+	-webkit-box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+	box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;       
+	font-size: 100%;    
+}
+
+.progress-bar span {
+    display: inline-block;
+    float: left;
+    width: 100%;
+    height: 100%;
+	background-color: #777;
+    -moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+	-webkit-transition: width .4s ease-in-out;
+	-moz-transition: width .4s ease-in-out;
+	-ms-transition: width .4s ease-in-out;
+	-o-transition: width .4s ease-in-out;
+	transition: width .4s ease-in-out;	
+	font-size: 100%;	
+}
+
+/*---------------------------*/			
+		
+.blue span {
+    background-color: #34c2e3;   
+}
+ 
+.orange span, .stage.orange, .themeTitle.orange, .pauseTitle.orange {
+	  background-color: #fecf23;
+	  background-image: -webkit-gradient(linear, left top, left bottom, from(#fecf23), to(#fd9215));
+	  background-image: -webkit-linear-gradient(top, #fecf23, #fd9215);
+	  background-image: -moz-linear-gradient(top, #fecf23, #fd9215);
+	  background-image: -ms-linear-gradient(top, #fecf23, #fd9215);
+	  background-image: -o-linear-gradient(top, #fecf23, #fd9215);
+	  background-image: linear-gradient(top, #fecf23, #fd9215);  
+}	
+ 
+.green span, .stage.green, .themeTitle.green, .pauseTitle.green {
+	  background-color: #a5df41;
+	  background-image: -webkit-gradient(linear, left top, left bottom, from(#a5df41), to(#4ca916));
+	  background-image: -webkit-linear-gradient(top, #a5df41, #4ca916);
+	  background-image: -moz-linear-gradient(top, #a5df41, #4ca916);
+	  background-image: -ms-linear-gradient(top, #a5df41, #4ca916);
+	  background-image: -o-linear-gradient(top, #a5df41, #4ca916);
+	  background-image: linear-gradient(top, #a5df41, #4ca916);  
+}		
+		
+		/*---------------------------*/		
+
+.stripes span {
+    -webkit-background-size: 30px 30px;
+    -moz-background-size: 30px 30px;
+    background-size: 30px 30px;			
+	background-image: -webkit-gradient(linear, left top, right bottom,
+						color-stop(.25, rgba(255, 255, 255, .15)), color-stop(.25, transparent),
+						color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .15)),
+						color-stop(.75, rgba(255, 255, 255, .15)), color-stop(.75, transparent),
+						to(transparent));
+    background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                        transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                        transparent 75%, transparent);
+    background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                        transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                        transparent 75%, transparent);
+    background-image: -ms-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                        transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                        transparent 75%, transparent);
+    background-image: -o-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                        transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                        transparent 75%, transparent);
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+                        transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+                        transparent 75%, transparent);            
+    
+    -webkit-animation: animate-stripes 3s linear infinite;
+    -moz-animation: animate-stripes 3s linear infinite;       		
+}
+
+@-webkit-keyframes animate-stripes { 
+	0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+}
+
+
+@-moz-keyframes animate-stripes {
+	0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+}
+
+/*---------------------------*/	 
+ 
+.shine span {
+	position: relative;
+}
+
+.shine span::after {
+	content: '';
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #fff;
+    -moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;			
+	
+    -webkit-animation: animate-shine 2s ease-out infinite;
+    -moz-animation: animate-shine 2s ease-out infinite; 			
+}
+ 
+@-webkit-keyframes animate-shine { 
+	0% {opacity: 0; width: 0;}
+	50% {opacity: .5;}
+	100% {opacity: 0; width: 95%;}
+}
+        
+        
+@-moz-keyframes animate-shine {
+	0% {opacity: 0; width: 0;}
+	50% {opacity: .5;}
+	100% {opacity: 0; width: 95%;}
+}
+ 
+		/*---------------------------*/	 
+		
+.glow span {
+    -moz-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;
+	-webkit-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;
+	box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;
+	
+    -webkit-animation: animate-glow 1s ease-out infinite;
+    -moz-animation: animate-glow 1s ease-out infinite; 			
+}
+ 
+@-webkit-keyframes animate-glow {
+	0% { -webkit-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;} 
+	50% { -webkit-box-shadow: 0 5px 5px rgba(255, 255, 255, .3) inset, 0 -5px 5px rgba(255, 255, 255, .3) inset;} 
+	100% { -webkit-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;}
+}
+ 
+@-moz-keyframes animate-glow {
+	0% { -moz-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;} 
+	50% { -moz-box-shadow: 0 5px 5px rgba(255, 255, 255, .3) inset, 0 -5px 5px rgba(255, 255, 255, .3) inset;} 
+	100% { -moz-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;}
+}
+
+.primary{ 
+	color:#fff; 
+	background-color:#4d9c0d;
+	background-repeat:repeat-x;
+	background-image:-khtml-gradient(linear,left top,left bottom,from(#80bf0c),to(#4d9c0d));
+	background-image:-moz-linear-gradient(top,#80bf0c,#4d9c0d);
+	background-image:-ms-linear-gradient(top,#80bf0c,#4d9c0d);
+	background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#80bf0c),color-stop(100%,#4d9c0d));
+	background-image:-webkit-linear-gradient(top,#80bf0c,#4d9c0d);
+	background-image:-o-linear-gradient(top,#80bf0c,#4d9c0d);
+	background-image:linear-gradient(top,#80bf0c,#4d9c0d);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80bf0c',endColorstr='#4d9c0d',GradientType=0);
+	text-shadow: 0 1px 1px #000;
+	border:1px solid #6da617;
+	border-radius: 3px;
+	-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.06);
+	box-shadow:inset 0 1px 0 rgba(255,255,255,0.3),0 1px 2px rgba(0,0,0,0.05),0 1px 0 #e1e1e1;
+}
+
+@font-face {
+  font-family: 'huakang-poster';
+  src: url('../font/huakang-poster.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon{ display: inline-block;}
+.icon-pause{ background: url(../images/icons.png) 0 31.5% no-repeat; background-size: 100%;} /* 30 + 3 * 0.5; */
+.icon-list{ background: url(../images/icons.png) 0 52.5% no-repeat; background-size: 100%;} 
+.icon-refresh{ background: url(../images/icons.png) 0 42% no-repeat; background-size: 100%;} 
+.icon-play{ background: url(../images/icons.png) 0 21% no-repeat; background-size: 100%;} 
+.icon-next{ background: url(../images/icons.png) 0 94.5% no-repeat; background-size: 100%;}
+.icon-time{ background: url(../images/icons.png) 0 0 no-repeat; background-size: 100%;}
+.icon-search{ background: url(../images/icons.png) 0 10.5% no-repeat; background-size: 100%;}
+.icon-target{ background: url(../images/icons.png) 0 100% no-repeat; background-size: 100%;}
+.icon-vol.on{ background: url(../images/icons.png) 0 63% no-repeat; background-size: 100%;}
+.icon-vol.off{ background: url(../images/icons.png) 0 73.5% no-repeat; background-size: 100%;}
+.orange .icon-locked, .green .icon-locked{ background: url(../images/icons.png) 0 84.4% no-repeat; background-size: 100%;}

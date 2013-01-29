@@ -16,8 +16,17 @@ var site = {
 		"#e-name": {
 			fileName: "ename",
 			titleFragment: " | 起个洋名儿"
+		},
+		"#radar-charts": {
+			fileName: "radarCharts",
+			titleFragment: " | Radar-Charts"
 		}
 	},
+	suportedBrowsers: [
+		{name: "Chrome", downloadLink: ""}, 
+		{name: "Firefox", downloadLink: ""},
+		{name: "Safari", downloadLink: ""}
+	],
 	init: function(hash){
 		var me = this;
 		this.cache();
@@ -26,6 +35,9 @@ var site = {
 		};
 		if(location.hash == "") location.hash = hash;
 		else window.onhashchange();
+
+	},
+	checkBrowser: function(){
 
 	},
 	cache: function(){

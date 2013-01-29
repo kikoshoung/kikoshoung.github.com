@@ -1,15 +1,82 @@
-<!doctype html>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Radar Charts</title>
-		<script type="text/javascript" src="/js/jquery-1.7.min.js"></script>
-		<script type="text/javascript" src="/js/component/analyzer.js"></script>
-	</head>
-	<body>
-		<div id="container1"></div>
-		<div id="container2"></div>
-		<div id="container3"></div>
+<script type="text/javascript" src="/js/component/radarCharts.js"></script>
+
+<h1>Radarcharts （雷达表）</h1>
+<div class="block">
+	<h2>示例1：</h2>
+	<div id="container1"></div>
+	<pre>
+		<code>
+var analyzer1 = new Radarcharts({
+	renderTo: $("#container1"),
+	size: "m",
+	items: data1,
+	maxValue: 100,
+	config: { // optional
+		title: {
+			font: "bold 12px arial",
+			color: "red"
+		},
+		bg: {
+			colors: ["red", "green", "blue"],
+			num: 3,
+			type: 0
+		}
+	}
+});
+		</code>
+	</pre>
+</div>
+<div class="block">
+	<h2>示例2：</h2>
+	<div id="container2"></div>
+	<pre>
+		<code>
+var analyzer2 = new Radarcharts({
+	renderTo: $("#container2"),
+	size: "m",
+	items: data1,
+	maxValue: 100,
+	config: { // optional
+		title: {
+			font: "bold 12px arial",
+			color: "red"
+		},
+		bg: {
+			colors: ["red", "green", "blue"],
+			num: 3,
+			type: 0
+		}
+	}
+});
+		</code>
+	</pre>
+</div>
+<div class="block">
+	<h2>示例3：</h2>
+	<div id="container3"></div>
+	<pre>
+		<code>
+var analyzer3 = new Radarcharts({
+	renderTo: $("#container3"),
+	size: "m",
+	items: data1,
+	maxValue: 100,
+	config: { // optional
+		title: {
+			font: "bold 12px arial",
+			color: "red"
+		},
+		bg: {
+			colors: ["red", "green", "blue"],
+			num: 3,
+			type: 0
+		}
+	}
+});
+		</code>
+	</pre>
+</div>
+
 
 		<script type="text/javascript">
 			var data1 = [
@@ -44,7 +111,7 @@
 				];
 
 
-			var analyzer1 = new Analyzer({
+			var analyzer1 = new Radarcharts({
 				renderTo: $("#container1"),
 				size: "s",
 				items: data3,
@@ -62,7 +129,7 @@
 				}
 			});
 
-			var analyzer2 = new Analyzer({
+			var analyzer2 = new Radarcharts({
 				renderTo: $("#container2"),
 				size: "m",
 				items: data1,
@@ -80,7 +147,7 @@
 				}
 			});
 
-			var analyzer3 = new Analyzer({
+			var analyzer3 = new Radarcharts({
 				renderTo: $("#container3"),
 				size: "l",
 				items: data1,
@@ -133,5 +200,4 @@
 
 
 		</script>
-	</body>
-</html>
+

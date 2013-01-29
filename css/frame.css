@@ -37,6 +37,14 @@ dl dt{
 dl dd{
 	margin-left: 5em;
 }
+pre{
+	padding: 0 20px;
+	background-color: #eff5f2;
+	border: 1px solid #ccd1cf;
+	word-wrap: break-word;
+	color: #068c86;
+	border-radius: 5px;
+}
 
 .bar-bg{
 	position: fixed;

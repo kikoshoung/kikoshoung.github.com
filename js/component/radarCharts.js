@@ -1,9 +1,9 @@
-var Analyzer = function(options){
+var Radarcharts = function(options){
 	this.options = options;
 	this.init();
 }
 
-Analyzer.prototype = {
+Radarcharts.prototype = {
 	firstTime: true,
 	config: {
 		maxValue: 100,
@@ -284,7 +284,6 @@ Analyzer.prototype = {
 		return steps;
 	}
 }
-
 
 
 

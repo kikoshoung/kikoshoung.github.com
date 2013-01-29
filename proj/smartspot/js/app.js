@@ -72,16 +72,17 @@ var app = {
 	},
 
 	saveStorageData : function(data, callback){
-		if(callback) {
-			this.writeCallback = callback;
-		} else {
-			this.writeCallback = function(){};
-		}
+		// if(callback) {
+		// 	this.writeCallback = callback;
+		// } else {
+		// 	this.writeCallback = function(){};
+		// }
 		
 		this.storageData.user = $.extend(this.storageData.user, data.user);
 		this.storageData.process = $.extend(this.storageData.process, data.process);
 		
 		localStorage.setItem("smartspot", JSON.stringify(this.storageData))
+		if(callback) callback();
 	},
 
 
@@ -500,17 +501,13 @@ var app = {
 				
 				if(!app.storageData.user.mute) {
 					diffCount--;
+					app.playAudio(app.gapPath + "sound/correct.wav"); 
+					app.leftTarget.html(diffCount);			
 					if(diffCount == 0) {
 						app.stage.unbind();
+						app.stagePassed();
 						clearInterval(app.timer);
 					}
-					app.playAudio(app.gapPath + "sound/correct.wav", function(){ // 处理函数应需要播放完action音乐回调使用，所以写进了playAudio方法内					
-						// diffCount--;
-						app.leftTarget.html(diffCount);			
-						if(diffCount == 0) {
-							app.stagePassed();
-						}
-					}); 
 				} else {
 					diffCount--;
 					app.leftTarget.html(diffCount);			
@@ -812,17 +809,17 @@ var app = {
 	},
 
 	restartStage : function(){
-		if(!this.storageData.user.mute) {
-			this.backgroundMusic.play();
-		}
+		// if(!this.storageData.user.mute) {
+		// 	this.backgroundMusic.play();
+		// }
 		this.getStageData(this.stageData.themeID, this.stageData.stageID); 
 		this.toStage();
 	},
 
 	toNextStage : function(){
-		if(!this.storageData.user.mute) {
-			this.backgroundMusic.play();
-		}
+		// if(!this.storageData.user.mute) {
+		// 	this.backgroundMusic.play();
+		// }
 		this.playingStageID++;
 		this.getStageData(this.stageData.themeID, this.stageData.stageID + 1); 
 		this.toStage();
@@ -847,9 +844,9 @@ var app = {
 			this.startCounter(time);
 		}
 		
-		if(!this.storageData.user.mute) {
-			this.backgroundMusic.play();
-		}
+		// if(!this.storageData.user.mute) {
+		// 	this.backgroundMusic.play();
+		// }
 		
 	},
 
@@ -894,9 +891,9 @@ var app = {
 	},
 
 	resume : function(){
-		if(!this.storageData.user.mute) {
-			this.backgroundMusic.play();
-		}
+		// if(!this.storageData.user.mute) {
+		// 	this.backgroundMusic.play();
+		// }
 		this.hidePop();
 
 		var time = this.counter.find(".title").attr("time-left");
@@ -910,7 +907,6 @@ var app = {
 			$("stage", $(app.xmlData).find("#theme" + (curThemeID + 1))).each(function(){
 				curThemeStages++;
 			});
-
 			if(app.playingStageID == curThemeStages) {
 				app.saveStorageData(app.storageData, function(){
 					$("#themePassedPop").find(".passedTip").text(app.stageData.themeName +" 已全部通过，赶快去其他版块瞧瞧吧~");

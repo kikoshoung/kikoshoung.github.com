@@ -33,6 +33,11 @@ li, p, dt, dd{
 	font-size: 12px;
 }
 
+/* display */
+.hide{
+	display: none;
+}
+
 /* float */
 .fl{ float: left;}
 .fr{ float: right;}

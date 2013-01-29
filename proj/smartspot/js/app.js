@@ -1,5 +1,4 @@
 
-
 var app = {
 
 /*
@@ -82,7 +81,7 @@ var app = {
 		this.storageData.user = $.extend(this.storageData.user, data.user);
 		this.storageData.process = $.extend(this.storageData.process, data.process);
 		
-		window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, app.gotFS_w, null);	
+		localStorage.setItem("smartspot", JSON.stringify(this.storageData))
 	},
 
 
@@ -133,28 +132,16 @@ var app = {
 		// // 文件的当前内容是“some different text”
 	}, 
 
-	gotFileReader : function(file) { 
+	gotFileReader : function(file) {
 		app.readAsText(file);
 	}, 
 
-	readAsText : function(file) { 
+	readAsText : function(file) {
 		var reader = new FileReader(); 
 		reader.onloadend = function(evt) {
 			if(evt.target.result.length == 0) { 
 				var data = app.setDefaultStorageData();
 				app.storageData = data;
-				// app.storageData = app.getJSON(app.storageData);
-				// app.writeCallback = function(){
-				// 	app.renderThemePage(app.xmlData);
-				// 	setTimeout(app.toTheme, 2000);
-				// };
-				// app.readCallback = function(){
-				// 	app.renderThemePage(app.xmlData);
-				// 	app.toTheme();
-				// 	if(app.storageData.user.isNewUser){
-				// 		app.pop(app.newUserPop);
-				// 	}
-				// }
 				
 				window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, app.gotFS_w, null);
 			} else {
@@ -165,6 +152,7 @@ var app = {
 		reader.readAsText(file); 
 	},
 	getJSON : function(STR){
+		STR = JSON.stringify(STR);
 		var str = STR.replace(/\\/g, "");
 		str = str.replace(/^\"/, "");
 		str = str.replace(/\"$/, "");
@@ -280,33 +268,26 @@ var app = {
 		var data = this.stageData.elData
 		
 		this.picDivs.empty();
+
+		this.leftPicDiv.append('<img class="bgimg" src="'+ this.stageData.background +'" />');
+		this.rightPicDiv.append('<img class="bgimg" src="'+ this.stageData.background +'" />');
 		
 		for(var i in data) {
 			
-			this.leftPicDiv.append('<div id="leftEl'+ i +'" class="leftPart diffEl fresh this mark'+ i +'" val="'+ i +'"></div><div id="leftImg'+ i +'" class="leftPart diffImg this"></div>');
-			this.rightPicDiv.append('<div id="rightEl'+ i +'" class="rightPart diffEl fresh this mark'+ i +'" val="'+ i +'"></div><div id="rightImg'+ i +'" class="rightPart diffImg this"></div>');
-			
-			$(".diffEl.this", this.leftPicDiv).css({
+			this.leftPicDiv.append('<div id="leftEl'+ i +'" class="leftPart diffEl fresh this mark'+ i +'" val="'+ i +'"></div><img id="rightImg'+ i +'" class="rightPart diffImg this"/>');
+			this.rightPicDiv.append('<div id="rightEl'+ i +'" class="rightPart diffEl fresh this mark'+ i +'" val="'+ i +'"></div>');
+
+			$(".diffEl.this").css({
 				width		: data[i].width,
 				height		: data[i].height,
 				left		: data[i].left,
-				top			: data[i].top
+				top			: data[i].top,
+				background 	: "white",
+				opacity		: 0
 			}).removeClass("this");	
 			
-			$(".diffEl.this", this.rightPicDiv).css({
-				width		: data[i].width,
-				height		: data[i].height,
-				left		: data[i].left,
-				top			: data[i].top
-			}).removeClass("this");		
-			
-			
-			$(".diffImg.this", this.leftPicDiv).css({
-				background  : "url("+ data[i].bgUrl +") no-repeat"
-			}).removeClass("this");	
-			
-			$(".diffImg.this", this.rightPicDiv).css({
-				background  : "url("+ data[i].bgUrl +") no-repeat"
+			$(".diffImg.this").attr({
+				src  : data[i].bgUrl
 			}).removeClass("this");	
 		}	
 
@@ -316,7 +297,7 @@ var app = {
 /*
 |--------------------------------------------------------------------------
 | window's functions
-|--------------------------------------------------------------------------
+|---------------------------------------------------------------------------
 */
 	getWindowInfo : function(){
 		var info = {
@@ -328,11 +309,7 @@ var app = {
 	},
 	setWindow : function(){
 		this.content.css({
-			height: app.windowInfo.height * 0.9,
-			top: app.windowInfo.height * 0.1
-		});
-		$("#stage").css({
-			height: "90%"
+			height: app.windowInfo.height * 0.9
 		});
 		this.toolBars.css({
 			height: this.windowInfo.height * 0.1,
@@ -376,42 +353,43 @@ var app = {
     	var path = window.location.pathname;
     	path = path.substr( path, path.length - 10 );
     	app.gapPath = path;
-    	console.log(app.gapPath)
 	},
 
 	playAudio : function(src, callback) { // auto release
-		if(!app.storageData.user.mute) {
-			var music = new Media(src, null, null, function(status){
-				if(status == 4) { // 播放完毕		
-					music.release();			
-					if(callback) {
-						callback();
-					}		
-				}
-			});
-			music.play();
-		}
+		// if(!app.storageData.user.mute) {
+		// 	var music = new Media(src, null, null, function(status){
+		// 		if(status == 4) { // 播放完毕		
+		// 			music.release();			
+		// 			if(callback) {
+		// 				callback();
+		// 			}		
+		// 		}
+		// 	});
+		// 	music.play();
+		// }
+
+		this.eventMusicPlayer.attr("src", src)
+
 	},
 
 	playBacgroundMusic : function(src){
-		if(this.backgroundMusic) {
-			this.backgroundMusic.release();
-		}
+		// if(this.backgroundMusic) {
+		// 	this.backgroundMusic.release();
+		// }
 
-		this.backgroundMusic = new Media(src, null, null, function(status){
-			if(status == 4) { // play complete				
-				app.backgroundMusic.play();
-			}
-		});
+		// this.backgroundMusic = new Media(src, null, null, function(status){
+		// 	if(status == 4) { // play complete				
+		// 		app.backgroundMusic.play();
+		// 	}
+		// });
 
-		if(!app.storageData.user.mute){
-			app.vol.addClass("on");
-			this.backgroundMusic.play();
-		} else {
-			app.vol.addClass("off");
-		}
-
-		
+		// if(!app.storageData.user.mute){
+		// 	app.vol.addClass("on");
+		// 	this.backgroundMusic.play();
+		// } else {
+		// 	app.vol.addClass("off");
+		// }
+		this.bgMusicPlayer.attr("src", src)
 		
 	},
 	playButton : function(){
@@ -426,7 +404,7 @@ var app = {
 	},
 
 	vibrate : function(t){
-		navigator.notification.vibrate(t);
+		if("createtouch" in window) navigator.notification.vibrate(t);
 	},
 	
 /*
@@ -445,7 +423,7 @@ var app = {
 
 	bindStage : function(){
 		this.stage.unbind();
-		this.stage.bind("click", function() {
+		this.stage.bind("click", function(e) {
 			app.playAudio(app.gapPath + "sound/error.wav");
 			app.vibrate(100);
 			app.cutTime();
@@ -490,6 +468,7 @@ var app = {
 		this.diffs.unbind();
 		this.diffs.bind("click", function(e) {
 			e.stopPropagation();
+			
 			var $this = $(this);
 			var thisId = $this.attr("val");
 			var $bindedImg; 
@@ -510,7 +489,10 @@ var app = {
 
 				// $bindedEls = $("#leftEl" + thisId + ", #rightEl" + thisId);
 				$bindedEls = $(".mark" + thisId);
-				$bindedEls.removeClass("fresh").addClass("marked");
+				$bindedEls.removeClass("fresh").addClass("marked").css({
+					background : "transparent",
+					opacity : 1
+				});
 				
 				// $this.removeClass("fresh");		
 				// $bindedEl.removeClass("fresh");	// original
@@ -561,8 +543,7 @@ var app = {
 
 		/* 		 stage data from xml*/
 		$.get("./stageData.xml", function(xmlData){
-			console.log(xmlData)
-		
+
 			app.getWindowInfo();
 
 			app.setWindow();
@@ -585,6 +566,9 @@ var app = {
 	},
 
 	cacheElements : function(){
+		this.bgMusicPlayer = $("#bgMusic");
+		this.eventMusicPlayer = $("#eventMusic"); // html5 method on pc
+
 		this.topBar = $("#topBar");
 		this.bottomBar = $("#bottomBar");
 		this.vol = $("#vol");
@@ -622,9 +606,9 @@ var app = {
 			this.playBacgroundMusic(app.gapPath + "sound/bg.mp3");
 		}
 
-		if(!this.storageData.user.mute) {
-			this.backgroundMusic.play();
-		}
+		// if(!this.storageData.user.mute) {
+		// 	this.backgroundMusic.play();
+		// }
 		
 		this.landingPage.hide();
 		this.hidePop();
@@ -753,9 +737,9 @@ var app = {
 	},
 
 	gotTips : function(){
-		if(!this.storageData.user.mute) {
-			this.backgroundMusic.play();
-		}
+		// if(!this.storageData.user.mute) {
+		// 	this.backgroundMusic.play();
+		// }
 		this.hidePop();
 		this.storageData.user.isNewUser = false;
 		this.saveStorageData(this.storageData);
@@ -771,15 +755,6 @@ var app = {
 		this.hidePop();
 		this.stage.hide();
 		this.themePage.hide();
-
-		var stageNum = this.stageData.stage;
-		var background = this.stageData.background;
-	
-		var bgUrl = "url("+ background +") no-repeat";
-
-		this.picDivs.css({
-			background : bgUrl
-		});
 
 		this.setDiffEl();
 		this.leftTarget.text(this.diffPerPage);
@@ -995,4 +970,3 @@ function deviceready(){
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 deviceready();
-

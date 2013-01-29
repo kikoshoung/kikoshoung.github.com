@@ -19,7 +19,7 @@ var site = {
 		},
 		"#radar-charts": {
 			fileName: "radarCharts",
-			titleFragment: " | Radar-Charts"
+			titleFragment: " | Radarcharts"
 		}
 	},
 	suportedBrowsers: [

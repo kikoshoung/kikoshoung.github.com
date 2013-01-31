@@ -22,23 +22,21 @@ var site = {
 			titleFragment: " | Radarcharts"
 		}
 	},
-	suportedBrowsers: [
-		{name: "Chrome", downloadLink: ""}, 
-		{name: "Firefox", downloadLink: ""},
-		{name: "Safari", downloadLink: ""}
-	],
 	init: function(hash){
 		var me = this;
-		this.cache();
-		window.onhashchange = function(){
-			me.refreshPage();
-		};
-		if(location.hash == "") location.hash = hash;
-		else window.onhashchange();
-
-	},
-	checkBrowser: function(){
-
+			browserSuported = this.checkBrowser("page");
+		$(document).ready(function(){
+			if(browserSuported){
+				me.cache();
+				window.onhashchange = function(){
+					me.refreshPage();
+				};
+				if(location.hash == "") location.hash = hash;
+				else window.onhashchange();
+			} else {
+				$("body").html("not suprted!");
+			}
+		})
 	},
 	cache: function(){
 		this.container = $(".content .inner");
@@ -63,12 +61,37 @@ var site = {
 		document.title = pageTitle;
 		this.container.html("加载中...").load("/page/"+ fragment +".html");
 	},
+	checkBrowser: function(type, callback){ // "page" or "project" 
+		var userAgent = navigator.userAgent.toLowerCase().match(/(chrome|firefox|safari|opera|msie)/gi)[0],
+			notSuportedBrowsers = {
+				page: {name: "IE", version: 7},
+				project: {name: "IE", version: "all"}
+			},
+			suportedBrowsers = [
+				{name: "Chrome", downloadLink: ""}, 
+				{name: "Firefox", downloadLink: ""},
+				{name: "Safari", downloadLink: ""},
+				{name: "Opera", downloadLink: ""}
+			];
+			
+		if(!userAgent){
+			userAgent = "other";
+		}	
+		if(!type || type == "page"){ 
+			if(userAgent == "msie"){
+				var version = navigator.userAgent.toLowerCase().match(/msie\s*\d/gi)[0].match(/\d/);
+				if(version < notSuportedBrowsers["page"].version) return false;
+			}
+		} else { 
+			if(userAgent == "msie") return false;
+		}
+		console.log(userAgent);
+		return true;
+	},
 	codeareaHandler: function(area){
 		area.each(function(){
 			var thisArea = $(this),
-				// codeStr = $.trim(thisArea.text()),
 				codeStr = $.trim(thisArea.text()),
-				// codeStr = codeStr.replace(/\n.*$/, ""),
 				codeRows = codeStr.match(/((.*)\n|\n?(.*)\n?)/g),
 				codeRows = codeRows.slice(0, codeRows.length - 1), // ugly method!
 				len = codeRows.length,
@@ -81,11 +104,7 @@ var site = {
 			rowList += '</ul>';
 			handledCodeStr = '<code>'+ handledCodeStr +'</code>';
 			thisArea.html(handledCodeStr);
-			console.log(codeRows)
-			console.log(thisArea.text().match(/var/))
-			console.log($.trim(thisArea.text()))
 		})
-		
 	}
 }
 

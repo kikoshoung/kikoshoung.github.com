@@ -1,7 +1,8 @@
 
 
 html, body{ margin: 0 auto; 
-	font: 40px/1.5 'huakang-poster', Verdana, Helvetica, Arial, Microsoft Yahei, sans-serif; 
+	/*font: 40px/1.5 huakang-poster, Verdana, Helvetica, Arial, Microsoft Yahei, sans-serif; */
+	font: 40px/1.5 Verdana, Helvetica, Arial, Microsoft Yahei, sans-serif; 
 	background: url(../images/bg1.jpg) repeat;
 	text-shadow: 0 1px 1px #000;
 }

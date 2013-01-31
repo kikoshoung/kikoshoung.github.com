@@ -7,6 +7,7 @@ body{
 a{
 	text-decoration: none;
 	color: #08c;
+	cursor: pointer;
 }
 a:hover{
 	text-decoration: underline;
@@ -22,11 +23,18 @@ h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small{
 	margin-left: 20px;
 	font-size: 50%;
 }
-ul li{
+ul > li, ol > li{
 	margin-bottom: 10px;
+}
+ul.declaration li{
+	margin-bottom: 0;
 }
 ul.decorated{
 	list-style: disc;
+	margin-left: 20px;
+}
+ol.decorated{
+	list-style: decimal;
 	margin-left: 20px;
 }
 dl dt{
@@ -38,12 +46,38 @@ dl dd{
 	margin-left: 5em;
 }
 pre{
-	padding: 0 20px;
+	position: relative;
+	padding: 20px 10px 20px 50px;
 	background-color: #eff5f2;
 	border: 1px solid #ccd1cf;
 	word-wrap: break-word;
 	color: #068c86;
 	border-radius: 5px;
+	line-height: 140%;
+}
+pre ul.code-row-list{
+	position: absolute;
+	top: 20px;
+	left: 0;
+	color: #ccc;
+}
+pre ul.code-row-list li{
+	line-height: 140%;
+	margin-bottom: 0;
+	text-align: right;
+	padding: 0 5px;
+}
+pre p{
+	position: relative;
+	line-height: inherit;
+}
+pre p span.num{
+	display: inline-block;
+	line-height: inherit;
+	position: absolute;
+	top: 0;
+	left: -40px;
+	color: #ccc;
 }
 
 .bar-bg{
@@ -153,6 +187,9 @@ ul.nav li {
 }
 .block h4{
 	margin-bottom: 10px;
+}
+.block > p{
+	margin-bottom: 20px;
 }
 .profile .avatar{
 	position: absolute;

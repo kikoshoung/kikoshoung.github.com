@@ -18,7 +18,7 @@ var site = {
 			titleFragment: " | 起个洋名儿"
 		},
 		"#radar-charts": {
-			fileName: "radarCharts",
+			fileName: "radarcharts",
 			titleFragment: " | Radarcharts"
 		}
 	},
@@ -62,6 +62,30 @@ var site = {
 
 		document.title = pageTitle;
 		this.container.html("加载中...").load("/page/"+ fragment +".html");
+	},
+	codeareaHandler: function(area){
+		area.each(function(){
+			var thisArea = $(this),
+				// codeStr = $.trim(thisArea.text()),
+				codeStr = $.trim(thisArea.text()),
+				// codeStr = codeStr.replace(/\n.*$/, ""),
+				codeRows = codeStr.match(/((.*)\n|\n?(.*)\n?)/g),
+				codeRows = codeRows.slice(0, codeRows.length - 1), // ugly method!
+				len = codeRows.length,
+				rowList = '<ul class="code-row-list">',
+				handledCodeStr = '';
+
+			for(var i = 1; i <= len; i++){
+				handledCodeStr += '<p><span class="num">'+ i +'</span>'+ codeRows[i - 1] +'</p>';
+			}
+			rowList += '</ul>';
+			handledCodeStr = '<code>'+ handledCodeStr +'</code>';
+			thisArea.html(handledCodeStr);
+			console.log(codeRows)
+			console.log(thisArea.text().match(/var/))
+			console.log($.trim(thisArea.text()))
+		})
+		
 	}
 }
 

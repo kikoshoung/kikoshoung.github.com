@@ -5,29 +5,29 @@ var Radarcharts = function(options){
 
 Radarcharts.prototype = {
 	firstTime: true,
+	freq: 40,
 	config: {
-		maxValue: 100,
-		padding: 0.2,
+		maxValue: 100, // max value of radarcharts
+		padding: 0.2, // padding value of radarcharts
 		bg: {
-			colors: ["#404040", "#5f5f5f"],
-			num: 5,
-			type: 0 // 0: fill, 1: stroke
+			colors: ["#404040", "#5f5f5f"], // background stripe colors, also can be [value, value, ...]
+			num: 5, // number of stripes
+			type: 0 // stripe type, fill or stroke, 0: fill, 1: stroke
 		},
 		border: {
-			width: 2,
-			color: "#adfc58"
+			width: 2, // charts line width
+			color: "#adfc58" // charts line color
 		},
 		title: {
-			font: "bold 12px arial",
-			color: "black"
+			font: "bold 12px arial", // charts attributes' name font style
+			color: "black" // charts attributes' name font color
 		},
-		size: {
+		size: { // charts size, small | medium | large
 			s: [200, 200],
 			m: [300, 300],
 			l: [400, 400]
 		},
-		duration: 1000,
-		freq: 40
+		duration: 200 // animation duration /ms
 	},
 	clone: function(obj){
 		return JSON.parse(JSON.stringify(obj));
@@ -84,12 +84,12 @@ Radarcharts.prototype = {
 			bgConfig = config.bg,
 			radius = this.radius = this.width * (1 - config.padding) / 2,
 			radiusStep = radius / bgConfig.num;
-
+			
 		for(var i = 0; i < bgConfig.num; i++){
 			var radius = this.radius,
 				bgVertices = this.getVertices(radius - i * radiusStep),
 				items = this.options.items;
-			
+
 			if(i == 0) this.maxVertices = bgVertices;
 
 			ctx.beginPath();
@@ -104,8 +104,8 @@ Radarcharts.prototype = {
 				ctx.strokeStyle = "transparent";
 
 				if(i == bgConfig.num - 1){
-					var maxX = this.maxVertices[next][0],
-						maxY = this.maxVertices[next][1],
+					var maxX = this.maxVertices[j][0],
+						maxY = this.maxVertices[j][1],
 						centerPoint = this.centerPoint,
 						baseline = "middle",
 						align;
@@ -273,7 +273,7 @@ Radarcharts.prototype = {
 		var steps = [];
 			len = now.length,
 			duration = this.extConfig.duration,
-			freq = this.extConfig.freq,
+			freq = this.freq,
 			frames = this.frames = Math.ceil(duration / freq);
 
 		for(var i = 0; i < len; i++){

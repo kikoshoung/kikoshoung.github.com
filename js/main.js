@@ -41,6 +41,7 @@ var site = {
 				};
 				if(location.hash == "") location.hash = hash;
 				else window.onhashchange();
+				me.preventLinkDefault();
 			} else {
 				me.showNotSuportedPage();
 			}
@@ -51,6 +52,11 @@ var site = {
 		this.body = $("body");
 		this.container = $(".content .inner");
 		this.loading = $(".loading");
+	},
+	preventLinkDefault: function(){
+		this.body.delegate("a", "click", function(e){
+			// return false;
+		})
 	},
 	hashchangeHandler: function(){
 		var fragment = this.router[location.hash];

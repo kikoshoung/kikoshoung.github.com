@@ -41,7 +41,7 @@ var site = {
 				};
 				if(location.hash == "") location.hash = hash;
 				else window.onhashchange();
-				me.preventLinkDefault();
+				// me.preventLinkDefault();
 			} else {
 				me.showNotSuportedPage();
 			}

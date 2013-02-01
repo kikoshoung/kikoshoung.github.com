@@ -55,7 +55,9 @@ var site = {
 	},
 	preventLinkDefault: function(){
 		this.body.delegate("a", "click", function(e){
-			// return false;
+			var href = $(this).attr("href");
+			e.preventDefault();
+			location.hash = href;
 		})
 	},
 	hashchangeHandler: function(){

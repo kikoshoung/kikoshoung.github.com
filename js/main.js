@@ -1,5 +1,6 @@
 var site = {
 	siteName: "K-Site",
+	IESuportedVersion: 8,
 	routerMap: {
 		"#timeline": {
 			fileName: "timeline",
@@ -22,24 +23,34 @@ var site = {
 			titleFragment: " | Radarcharts"
 		}
 	},
+	suguestedBrowsers: [
+		{name: "Chrome", downloadLink: "http://www.google.com/intl/zh-CN/chrome/browser"}, 
+		{name: "Firefox", downloadLink: "http://firefox.com.cn"},
+		{name: "Safari", downloadLink: "http://www.apple.com.cn/safari"},
+		{name: "Opera", downloadLink: "http://www.opera.com"},
+		{name: "IE9", downloadLink: "http://windows.microsoft.com/zh-cn/internet-explorer/downloads/ie-9/worldwide-languages"}
+	],
 	init: function(hash){
 		var me = this;
-			browserSuported = this.checkBrowser("page");
+			browserSuported = this.checkBrowser(this.IESuportedVersion);
 		$(document).ready(function(){
+			me.cache();
 			if(browserSuported){
-				me.cache();
 				window.onhashchange = function(){
 					me.refreshPage();
 				};
 				if(location.hash == "") location.hash = hash;
 				else window.onhashchange();
 			} else {
-				$("body").html("not suprted!");
+				me.showNotSuportedPage();
 			}
 		})
 	},
 	cache: function(){
+		this.win = $(window);
+		this.body = $("body");
 		this.container = $(".content .inner");
+		this.loading = $(".loading");
 	},
 	hashchangeHandler: function(){
 		var fragment = this.router[location.hash];
@@ -48,7 +59,10 @@ var site = {
 	refreshPage: function(fragment){
 		var hash = location.hash,
 			routerMap = this.routerMap,
-			fragment, pageTitle;
+			IESuportedVersion = this.IESuportedVersion,
+			container = this.container,
+			me = this,
+			fragment, pageTitle, isSuported;
 
 		if(!routerMap[hash]) {
 			fragment = "404";
@@ -59,34 +73,95 @@ var site = {
 		}
 
 		document.title = pageTitle;
-		this.container.html("加载中...").load("/page/"+ fragment +".html");
+		switch(fragment){
+			case "smartspot":
+				IESuportedVersion = 9;
+				break;
+			case "ename":
+				IESuportedVersion = 9;
+				break;
+			case "radarcharts":
+				IESuportedVersion = 100;	
+				break;
+		}
+
+		isSuported = this.checkBrowser(IESuportedVersion);
+		if(isSuported){
+			container.html("加载中...").load("/page/"+ fragment +".html", function(){
+				me.hideLoading();
+			});
+			this.showLoading();
+		} else {
+			var container = this.container,
+				isIEInclude = (IESuportedVersion == 100) ? false : true,
+				suguestedList = this.getSugguestedList(isIEInclude);
+			container.html('<h1>该项目需要使用对HTML5特性支持较好的浏览器才能查看</h1>\
+								<p class="mt-m mb-s">建议使用以下浏览器查看该项目：</p>');
+			container.append(suguestedList);
+		}
+
 	},
-	checkBrowser: function(type, callback){ // "page" or "project" 
+	showLoading: function(){
+
+		// this.loading.css({
+		// 	right: - loadingWidth
+		// }).animate({
+		// 	right: "+="+ loadingWidth,
+		// 	opacity: 1
+		// })
+		this.loading.css({
+			right: 0,
+			opacity: 1
+		});
+	},
+	hideLoading: function(){
+		var loadingWidth = this.loading.outerWidth();
+
+		this.loading.animate({
+			right: "-=100",
+			opacity: 0
+		})
+	},
+	checkBrowser: function(IEVersion){ // type: "page" or "project" 
 		var userAgent = navigator.userAgent.toLowerCase().match(/(chrome|firefox|safari|opera|msie)/gi)[0],
-			notSuportedBrowsers = {
-				page: {name: "IE", version: 7},
-				project: {name: "IE", version: "all"}
-			},
-			suportedBrowsers = [
-				{name: "Chrome", downloadLink: ""}, 
-				{name: "Firefox", downloadLink: ""},
-				{name: "Safari", downloadLink: ""},
-				{name: "Opera", downloadLink: ""}
-			];
-			
+			version = (userAgent == "msie") ? navigator.userAgent.toLowerCase().match(/msie\s*\d+/gi)[0].match(/\d+/) : 1000;
+			IESuportedVersion = IEVersion ? IEVersion : this.IESuportedVersion;
+
 		if(!userAgent){
 			userAgent = "other";
 		}	
-		if(!type || type == "page"){ 
-			if(userAgent == "msie"){
-				var version = navigator.userAgent.toLowerCase().match(/msie\s*\d/gi)[0].match(/\d/);
-				if(version < notSuportedBrowsers["page"].version) return false;
-			}
-		} else { 
-			if(userAgent == "msie") return false;
+
+		if(userAgent == "msie"){
+			if(version < IESuportedVersion) return false;
 		}
-		console.log(userAgent);
+
 		return true;
+	},
+	showNotSuportedPage: function(){
+		var body = this.body;
+			suguestedList = this.getSugguestedList(true);
+		
+		body.html('<div style="width: 40%; margin: 100px auto 0 auto; background-color: #eff5f2;">\
+							<div class="inner p-l">\
+								<h1>抱歉，您使用的浏览器版本过低</h1>\
+								<p class="mt-m mb-s">建议使用以下浏览器浏览本网站：</p>\
+							</div>\
+						</div>');
+		body.find(".inner").append(suguestedList);
+	},
+	getSugguestedList: function(isIEInclude){
+		var list = '<ul>',
+			suguestedBrowsers = this.suguestedBrowsers;
+
+		if(!isIEInclude){
+			suguestedBrowsers = suguestedBrowsers.slice(0, suguestedBrowsers.length - 1)
+		}
+
+		for(var i = 0; i < suguestedBrowsers.length; i++){
+			var browser = suguestedBrowsers[i];
+			list += '<li><a target="_blank" href="'+ browser.downloadLink +'">'+ browser.name +'</a></li>';
+		}
+		return list + '</ul>';
 	},
 	codeareaHandler: function(area){
 		area.each(function(){

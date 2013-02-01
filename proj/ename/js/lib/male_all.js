@@ -5997,7 +5997,7 @@ app.lib.m_letter = {
         "py_val": "kunte",
         "inchinese": "昆特",
         "from": "法国",
-        "means": "第五第五天",
+        "means": "第五天",
         "py_means": "diwudiwutian"
     }, {
         "val": "Quennel",
@@ -6025,7 +6025,7 @@ app.lib.m_letter = {
         "py_val": "kundun",
         "inchinese": "昆顿",
         "from": "拉丁",
-        "means": "第五个第五个子孙",
+        "means": "第五个子孙",
         "py_means": "diwugediwugezisun"
     }],
     "r": [{

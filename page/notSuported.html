@@ -1,0 +1,23 @@
+<div style="width: 40%; margin: 100px auto 0 auto; background-color: #eff5f2;">
+	<div class="p-l">
+		<h1>抱歉，您使用的浏览器版本过低</h1>
+		<p class="mt-m mb-s">建议使用以下浏览器浏览本网站：</p>
+		<ul class="suguest-browser-list"></ul>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var suguestedBrowsers = [
+			{name: "Chrome", downloadLink: "http://www.google.com/intl/zh-CN/chrome/browser"}, 
+			{name: "Firefox", downloadLink: "http://firefox.com.cn"},
+			{name: "Safari", downloadLink: "http://www.apple.com.cn/safari"},
+			{name: "Opera", downloadLink: "http://www.opera.com"},
+			{name: "IE9", downloadLink: "http://windows.microsoft.com/zh-cn/internet-explorer/downloads/ie-9/worldwide-languages"}
+		],
+		list = '';
+	for(var i = 0; i < suguestedBrowsers.length; i++){
+		var browser = suguestedBrowsers[i];
+		list += '<li><a target="_blank" href="'+ browser.downloadLink +'">'+ browser.name +'</a></li>';
+	}
+	$(".suguest-browser-list").html(list);
+</script>

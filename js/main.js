@@ -102,13 +102,6 @@ var site = {
 
 	},
 	showLoading: function(){
-
-		// this.loading.css({
-		// 	right: - loadingWidth
-		// }).animate({
-		// 	right: "+="+ loadingWidth,
-		// 	opacity: 1
-		// })
 		this.loading.css({
 			right: 0,
 			opacity: 1

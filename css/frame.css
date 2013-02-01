@@ -149,6 +149,12 @@ ul.nav li {
 	line-height: 80px;
 	text-align: center;
 }
+.time-line-period .point.hover{
+	-webkit-animation: paopao-in .2s linear;
+}
+.time-line-period .point.out{
+	-webkit-animation: paopao-out .1s linear;
+}
 .time-line-period .cont{
 	padding: 28px 0 50px 25px;
 }

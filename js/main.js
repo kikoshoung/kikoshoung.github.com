@@ -1,5 +1,5 @@
 var site = {
-	siteName: "K-Site",
+	siteName: "Kiko's blog",
 	IESuportedVersion: 8,
 	routerMap: {
 		"#timeline": {

@@ -2,6 +2,24 @@
 
 @-webkit-keyframes paopao-in {
 	0% {
+		-webkit-transform: scaleX(1);
+	}
+	40% {
+		-webkit-transform: scaleX(0);
+	}
+	50% {
+		-webkit-transform: scaleX(-1);
+	}
+	90% {
+		-webkit-transform: scaleX(0);
+	}
+	100% {
+		-webkit-transform: scaleX(1);
+	}
+}
+
+/*@-webkit-keyframes paopao-in {
+	0% {
 		-webkit-transform: scale(1);
 	}
 	5% {
@@ -130,3 +148,4 @@
 		-webkit-transform: scale(1);
 	}
 }
+*/

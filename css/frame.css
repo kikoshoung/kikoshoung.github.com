@@ -2,7 +2,7 @@
 
 body{ 
 	font-size: 14px;
-	color: #8d8d8d;
+	color: #70c5a9;
 	font-family: Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Helvetica Neue, Helvetica, Arial, sans-serif
 }
 a{
@@ -17,7 +17,7 @@ p, span, li, dl{
 	line-height: 180%;
 }
 h1, h2, h3, h4, h5, h6{
-	color: #70c5a9;
+	color: #8d8d8d;
 	font-weight: bold;
 }
 h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small{

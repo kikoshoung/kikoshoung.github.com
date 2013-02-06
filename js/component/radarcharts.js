@@ -190,10 +190,7 @@ Radarcharts.prototype = {
 			ctx = me.bdrCtx,
 			config = this.extConfig;
 
-		console.log()
-
 		me.timer = setInterval(function(){
-			console.log(me.options.renderTo.attr("id"))
 			--me.frames;
 			if(me.frames >= 0){
 				ctx.clearRect(0, 0, me.width, me.height);
@@ -211,7 +208,6 @@ Radarcharts.prototype = {
 					if(next == itemPoints.length){
 						next = 0;
 					} 
-					console.log(config.border.color)
 					ctx.lineTo(itemPoints[next][0], itemPoints[next][1]);
 					ctx.strokeStyle = config.border.color;
 					ctx.stroke();

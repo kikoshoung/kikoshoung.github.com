@@ -21,6 +21,10 @@ var site = {
 		"#radar-charts": {
 			fileName: "radarcharts",
 			titleFragment: " | Radarcharts"
+		},
+		"#ad-killer": {
+			fileName: "adKiller",
+			titleFragment: " | 广告杀手-插件"
 		}
 	},
 	suguestedBrowsers: [

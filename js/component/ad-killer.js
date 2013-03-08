@@ -1,8 +1,10 @@
 (function(){
+	if(this.adKillerCounter) clearInterval(this.adKillerCounter);
 	var regexVendor = /(baidu|google|alimama|000dn|ggmm777|17leyi|37cs|49ko|91mangrandi|14yaa|144gg|arpg2|twcczhu|qiyou)/,
 		iframes = document.getElementsByTagName('iframe'), // include ad iframe & useful iframe
 		firstLevelDoms = document.body.children,
 		scanCounter = 10,
+		me = this,
 		adIframes;
 
 
@@ -57,11 +59,11 @@
 	}
 
 	excu();
-	var counter = setInterval(function(){
+	this.adKillerCounter = setInterval(function(){
 		console.log('Page was scaned by ad-killer...');
 		if(--scanCounter) excu();
-		else clearInterval(counter);
+		else clearInterval(me.adKillerCounter);
 	}, 1000);
 
 	
-})()
+}).call(this);

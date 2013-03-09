@@ -1,69 +1,56 @@
 (function(){
 	if(this.adKillerCounter) clearInterval(this.adKillerCounter);
-	var regexVendor = /(baidu|google|alimama|000dn|ggmm777|17leyi|37cs|49ko|91mangrandi|14yaa|144gg|arpg2|twcczhu|qiyou)/,
-		iframes = document.getElementsByTagName('iframe'), // include ad iframe & useful iframe
-		firstLevelDoms = document.body.children,
-		scanCounter = 10,
-		me = this,
-		adIframes;
+	var regexCompany = /(baidu|google|alimama|mediav|sogou)/,
+		regexVendor = /(000dn|ggmm777|17leyi|37cs|49ko|91hui|91mangrandi|91tiger|14yaa|144gg|a135|arpg2|game3737|mediav|qiyou|sogou|twcczhu)/,
+		suspectableDoms = [];
 
+	var domScanner = function(root){
+		var childLength = root.children.length;
 
-	var getAdDoms = function(doms, type){ // filter out ad iframe, type: 0-iframe, 1-float ad
-		var ret = [];
-		for(var i = 0; i < doms.length; i++){
-			var dom = doms[i],
-				sensitiveStr = type ? dom.outerHTML : dom.id + dom.className + dom.src;
-			if(sensitiveStr.match(regexVendor)) {
-				if(type){
-					if(isFloadtAd(dom)) ret.push(dom);
-				} else {
-					ret.push(dom);
+		if(childLength){
+			for(var i = 0, children = root.children; i < childLength; i++){
+				var child = children[i],
+					tagName = child.tagName;
+
+				// ignore javascript tag
+				if(child.tagName === 'SCRIPT') continue; 
+
+				var suspectableAttr = '' + child.id + child.className + child.name + child.src + child.href + child.style.background;
+
+				// filter out suspectable dom
+				if(child.tagName === 'IFRAME' && child.onload) {
+					suspectableAttr += child.onload.toString();
 				}
+				if((child.tagName === 'IFRAME' && suspectableAttr.match(regexCompany)) || suspectableAttr.match(regexVendor)) {
+					suspectableDoms.push(child);
+					continue;
+				}
+				arguments.callee(child);
 			}
 		}
-		return ret;
 	}
 
-	var killAd = function(target){
-		var parent = target.parentNode,
-			sensitiveStr = parent.id + parent.className;
-		parent.removeChild(target);
-		if(sensitiveStr.match(regexVendor)) parent.parentNode.removeChild(parent);
+	var killSuspectableDoms = function(child){
+		var parent = child.parentNode,
+			suspectableAttr = '' + parent.id + parent.className + parent.name + parent.src + parent.href + parent.style.background;
+		parent.removeChild(child);
+		if(suspectableAttr.match(regexCompany)) parent.parentNode.removeChild(parent);
 	}
 
-	var isFloadtAd = function(dom){
-		var reg = /(fixed|absolute)/
-		if(dom.style.position.match(reg) || (dom.children.length && dom.children[0].style.position.match(reg))){
-			return true;
-		} else {
-			return false;
-		}
+	domScanner(document.querySelector('body'));
+	for(var i = 0; i < suspectableDoms.length; i++){
+		killSuspectableDoms(suspectableDoms[i]);
 	}
-
-	var excu = function(){
-		/* kill iframe ad */
-		adIframes = getAdDoms(iframes, 0);
-		for(var i = 0; i < adIframes.length; i++){
-			killAd(adIframes[i]);
-		}
-
-		/* kill float ad */
-		adFloatDoms = getAdDoms(firstLevelDoms, 1);
-		for(var i = 0; i < adFloatDoms.length; i++){
-			killAd(adFloatDoms[i]);
-		}
-
-		// for(var i = 0; i < firstLevelDoms.length; i++){
-		// 	if(firstLevelDoms[i].outerHTML.match(regexVendor)) console.log(firstLevelDoms[i])
-		// }
-	}
-
-	excu();
-	this.adKillerCounter = setInterval(function(){
-		console.log('Page was scaned by ad-killer...');
-		if(--scanCounter) excu();
-		else clearInterval(me.adKillerCounter);
-	}, 1000);
-
 	
 }).call(this);
+
+
+
+
+
+
+
+
+
+
+

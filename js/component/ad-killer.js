@@ -2,14 +2,16 @@
 	if(this.adKillerCounter) clearInterval(this.adKillerCounter);
 	var regexCompany = /(baidu|google|alimama|mediav|sogou)/,
 		regexVendor = /(000dn|ggmm777|17leyi|37cs|49ko|91hui|91mangrandi|91tiger|14yaa|144gg|a135|arpg2|game3737|mediav|qiyou|sogou|twcczhu)/,
-		suspectableDoms = [];
-
+		suspectableDoms = [],
+		fullscreen = [document.body.clientWidth, document.body.clientHeight];
 	var domScanner = function(root){
 		var childLength = root.children.length;
 
 		if(childLength){
 			for(var i = 0, children = root.children; i < childLength; i++){
 				var child = children[i],
+					positionType = child.style.position,
+					position = child.position,
 					tagName = child.tagName;
 
 				// ignore javascript tag
@@ -22,6 +24,10 @@
 					suspectableAttr += child.onload.toString();
 				}
 				if((child.tagName === 'IFRAME' && suspectableAttr.match(regexCompany)) || suspectableAttr.match(regexVendor)) {
+					suspectableDoms.push(child);
+					continue;
+				}
+				if((positionType === 'absolute' || positionType === 'fixed') && (fullscreen[0] === parseInt(child.style.width) || fullscreen[1] === parseInt(child.style.height))){
 					suspectableDoms.push(child);
 					continue;
 				}

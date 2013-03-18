@@ -1,2 +1,2 @@
-/*! site 2013-03-18 12:31:12 */
-(function(){var o,n="localhost"==document.domain?"http://localhost":"http://kikoshoung.me";window.adKiller_by_kikoshoung?window.adKiller_by_kikoshoung.domScanner():(o=document.createElement("script"),o.src=n+"/dist/component/ad-killer.js",document.body.appendChild(o))})();
+/*! kiko's blog 2013-03-18 03:03:55 */
+(function(){var o,e="localhost"===document.domain?"http://localhost":"http://kikoshoung.me";window.adKiller_by_kikoshoung?window.adKiller_by_kikoshoung.domScanner(document.getElementsByTagName("body")[0]):(o=document.createElement("script"),o.src=e+"/dist/component/ad-killer.js",document.body.appendChild(o))})();

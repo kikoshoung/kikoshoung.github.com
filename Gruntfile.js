@@ -15,13 +15,9 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     'dist/component/ad-killer-install.js': 'js/component/ad-killer-install.js',
-                    'dist/component/ad-killer.js': 'js/component/ad-killer.js',
+                    'dist/component/ad-killer.js': 'js/component/ad-killer.js'
                 }
             }
-            // build : {
-            //     src : ['js/component/ad-killer-install.js', 'js/component/ad-killer.js'],
-            //     dest : ['dest/component/ad-killer-install.min.js', 'dest/component/ad-killer.min.js']
-            // }
         }
     });
     // 载入concat和uglify插件，分别对于合并和压缩

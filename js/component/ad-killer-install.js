@@ -5,7 +5,7 @@
 			domain = !mode ? 'http://localhost' : 'http://kikoshoung.me';
 
 		script = document.createElement('script');
-		script.src = domain + '/dist/component/ad-killer.js';
+		script.src = domain + '/js/component/ad-killer.js';
 
 		panel = document.createElement('div');
 		panel.id = 'ad-killer-panel',

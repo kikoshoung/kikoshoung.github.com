@@ -1,10 +1,11 @@
 (function(){
-	if(this.adKillerCounter) clearInterval(this.adKillerCounter);
-	var regexCompany = /(baidu|google|alimama|mediav|sogou)/,
-		regexVendor = /(000dn|ggmm777|17leyi|37cs|49ko|91hui|91mangrandi|91tiger|14yaa|144gg|a135|arpg2|game3737|mediav|qiyou|sogou|twcczhu)/,
+	var killer = this.adKiller_by_kikoshoung = {};
+		regexCompany = /(baidu|google|alimama|mediav|sogou)/,
+		regexVendor = /(000dn|ggmm777|17leyi|37cs|49ko|91hui|91mangrandi|91tiger|14yaa|144gg|a135|arpg2|game3737|mediav|qiyou|sogou|twcczhu|)/,
 		suspectableDoms = [],
-		fullscreen = [document.body.clientWidth, document.body.clientHeight];
-	var domScanner = function(root){
+		fullscreen = [document.documentElement.clientWidth, document.documentElement.clientHeight];
+
+	killer.domScanner = function(root){
 		var childLength = root.children.length;
 
 		if(childLength){
@@ -19,15 +20,16 @@
 
 				var suspectableAttr = '' + child.id + child.className + child.name + child.src + child.href + child.style.background;
 
-				// filter out suspectable dom
-				if(child.tagName === 'IFRAME' && child.onload) {
+				if(child.onload) {
 					suspectableAttr += child.onload.toString();
 				}
+
+				// filter out suspectable dom
 				if((child.tagName === 'IFRAME' && suspectableAttr.match(regexCompany)) || suspectableAttr.match(regexVendor)) {
 					suspectableDoms.push(child);
 					continue;
 				}
-				if((positionType === 'absolute' || positionType === 'fixed') && (fullscreen[0] === parseInt(child.style.width) || fullscreen[1] === parseInt(child.style.height))){
+				if((positionType === 'absolute' || positionType === 'fixed') && fullscreen[0] === parseInt(child.style.clientWidth) && fullscreen[1] <= parseInt(child.style.clientHeight)){
 					suspectableDoms.push(child);
 					continue;
 				}
@@ -36,16 +38,16 @@
 		}
 	}
 
-	var killSuspectableDoms = function(child){
+	killer.killSuspectableDoms = function(child){
 		var parent = child.parentNode,
 			suspectableAttr = '' + parent.id + parent.className + parent.name + parent.src + parent.href + parent.style.background;
 		parent.removeChild(child);
 		if(suspectableAttr.match(regexCompany)) parent.parentNode.removeChild(parent);
 	}
 
-	domScanner(document.querySelector('body'));
+	killer.domScanner(document.querySelector('body'));
 	for(var i = 0; i < suspectableDoms.length; i++){
-		killSuspectableDoms(suspectableDoms[i]);
+		killer.killSuspectableDoms(suspectableDoms[i]);
 	}
 	
 }).call(this);

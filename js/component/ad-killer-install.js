@@ -3,7 +3,7 @@
 		domain = document.domain == 'localhost' ? 'http://localhost' : 'http://kikoshoung.me';
 	if(!window.adKiller_by_kikoshoung) {
 		script = document.createElement('script');
-		script.src = 'http://kikoshoung.me/dist/component/ad-killer.js';
+		script.src = '/dist/component/ad-killer.js';
 		document.body.appendChild(script);
 	} else {
 		window.adKiller_by_kikoshoung.domScanner();

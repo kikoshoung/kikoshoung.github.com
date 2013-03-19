@@ -14,7 +14,6 @@
 		document.body.appendChild(panel);
 		document.body.appendChild(script);
 	} else {
-		window.adKiller_by_kikoshoung.domScanner(document.getElementsByTagName('body')[0]);
 		window.adKiller_by_kikoshoung.excu();
 	}
 })()

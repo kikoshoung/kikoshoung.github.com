@@ -23,7 +23,7 @@ var site = {
 			titleFragment: " | Radarcharts"
 		},
 		"#ad-killer": {
-			fileName: "https://raw.github.com/kikoshoung/ad-killer/master/index",
+			fileName: "adKiller",
 			titleFragment: " | 广告杀手-插件"
 		}
 	},

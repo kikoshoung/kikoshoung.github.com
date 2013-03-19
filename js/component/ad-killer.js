@@ -1,5 +1,5 @@
 (function(){
-	var _killer = this.adKiller_by_kikoshoung = {},
+	var _killer = this.adKillerByKikoshoung = {},
 		_regexCompany = /(baidu|google|alimama|mediav|sogou)/,
 		_regexVendor = /(000dn|ggmm777|17leyi|37cs|49ko|91hui|91mangrandi|91tiger|14yaa|144gg|a135|arpg2|game3737|mediav|qiyou|sogou|twcczhu)/,
 		_suspectableDoms = [],

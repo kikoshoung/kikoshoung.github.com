@@ -1,16 +1,19 @@
 module.exports = function(grunt) {
     // 配置
     grunt.initConfig({
-        pkg : grunt.file.readJSON('package.json'),
+        pkg: grunt.file.readJSON('package.json'),
         // concat : {
         //     domop : {
         //         src: ['js/component/ad-killer-install.js', 'js/component/ad-killer.js'],
         //         dest: 'dest/concated.js'
         //     }
         // },
-        uglify : {
-            options : {
-                banner : '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd hh:MM:ss") %> */\n'
+        uglify: {
+            options: {
+                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd hh:MM:ss") %> */\n',
+                beautify: {
+                    ascii_only: true
+                }    
             },
             dist: {
                 files: {

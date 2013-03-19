@@ -62,7 +62,7 @@
 			_killer.killSuspectableDoms(_suspectableDoms[i]);
 		}
 
-		_panel.dom.innerHTML = '\u5DF2\u4E3A\u4F60\u6E05\u9664\u4E86' + _suspectableDoms.length + '\u4E2A\u5E7F\u544A';
+		_panel.dom.innerHTML = '\u5DF2\u4E3A\u4F60\u6E05\u9664\u4E86' + _suspectableDoms.length + '\u4E2A\u6076\u610F\u5E7F\u544A';
 		_panel.dom.style.backgroundColor = 'green';
 
 		_suspectableDoms = [];

@@ -74,7 +74,7 @@ pre p{
 }
 pre p span.num{
 	display: inline-block;
-	width: 20px;
+	width: 30px;
 	text-align: right;
 	line-height: inherit;
 	position: absolute;
@@ -89,15 +89,15 @@ pre p span.num{
 	top: 0;
 	bottom: 0;
 	left: 0;
-	width: 39.2%;
+	width: 35%;
 	background-color: #eff5f2;
 }
 .bar{
 	float: left;
-	width: 39.2%;
+	width: 35%;
 }
 .content{
-	margin-left: 39.2%;
+	margin-left: 35%;
 }
 .bar, .content{
 	position: relative;
@@ -107,7 +107,7 @@ pre p span.num{
 	padding: 100px 40px 100px 20%;
 }
 .content .inner{
-	padding: 100px 20% 100px 40px;
+	padding: 100px 10% 100px 40px;
 }
 ul.nav li {
 	float: left;

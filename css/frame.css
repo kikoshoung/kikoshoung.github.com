@@ -182,6 +182,9 @@ ul.nav li {
 .i-v-worked-for.ago{
 	background-image: none;
 }
+.i-v-worked-for.jiepang{
+	background-position: -240px 0;
+}
 
 .profile{
 	position: relative;

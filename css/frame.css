@@ -134,6 +134,11 @@ ul.nav li {
 	position: relative;
 	z-index: 4;
 	min-height: 200px;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;	
+	-moz-backface-visibility: hidden; 
+	-ms-backface-visibility: hidden; 
+	-o-backface-visibility: hidden; 
 }
 .time-line-period.last{
 	min-height: 0;
@@ -148,11 +153,6 @@ ul.nav li {
 	left: -80px;
 	line-height: 80px;
 	text-align: center;
-	backface-visibility: hidden;
-	-webkit-backface-visibility: hidden;	
-	-moz-backface-visibility: hidden; 
-	-ms-backface-visibility: hidden; 
-	-o-backface-visibility: hidden; 
 }
 .time-line-period .point.hover{
 	-webkit-animation: paopao-in .2s linear;

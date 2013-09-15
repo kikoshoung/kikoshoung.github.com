@@ -256,7 +256,7 @@ $('.year').bind('click', function(){
 <div class="block">
 	<h2>Tips</h2>
 	<ul class="decorated">
-		<li>在 chart.redraw(series, [options]) 方法中，第二个参数为可选，其中包含一个 refresh 值（迄今为之，仅提供 refresh 一个选项），默认为 false，这个值可以让使用者在调用 redraw 方法的时候采用“刷新”或“过渡”的方式来重绘图表。“刷新”即重绘图形的时候会从坐标原点开始画第一帧，“过渡”即重绘图形的时候从上一个状态开始画第一帧。</li>
+		<li>在 chart.redraw(series, [options]) 方法中，第二个参数为可选，其中包含一个 refresh 值（迄今为止，仅提供 refresh 一个选项），默认为 false，这个值可以让使用者在调用 redraw 方法的时候采用“刷新”或“过渡”的方式来重绘图表。“刷新”即重绘图形的时候会从坐标原点开始画第一帧，“过渡”即重绘图形的时候从上一个状态开始画第一帧。</li>
 		<li>在配置参数 marker 中，可以添加 onClick(series, seriesIndex, dataIndex) 方法来监听一个 marker 的点击处理函数，其中 series 为用户在初始 Radarcharts 的时候传入的 series 值；seriesIndex 为 当前被点击的 marker 在 series 中的数据组 index；dataIndex 为 当前被点击的 marker 在 series[seriesIdex].data 中的 index。</li>
 		<li>jQuery 用户可以这样使用 Radarcharts 来初始一个图表：$('#container').Radarcharts(options)<br/>这样使用的话，options 中就不用再传入 renderTo 了。</li>
 		<li>如果您不想使用某项默认的配置，那么请给相应值传入一个 falsy 值，如：legend: false;。</li>

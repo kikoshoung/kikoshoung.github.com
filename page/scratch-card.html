@@ -50,6 +50,8 @@
             click: isPC ? 'click' : 'touchstart',
             mousemove: isPC ? 'mousemove' : 'touchmove'
         },
+    	head = document.getElementsByTagName('head'),
+        meta = document.createElement('meta');
         scratchCard;
 
     function addScratchCard(){
@@ -71,6 +73,10 @@
         });
     }
 
+    meta.setAttribute('name', 'viewport');
+    meta.setAttribute('content', 'width=device-width, initial-scale=1.0, user-scalable=no');
+    head.appendChild(meta);
+
     scratchAgain.addEventListener(events['click'], function(e){
         scratchCard.destroy();
         container.innerHTML = '正在生成刮刮卡...'
@@ -82,5 +88,7 @@
     });
 
     addScratchCard();
+
+
 
 </script>

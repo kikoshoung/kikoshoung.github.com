@@ -1,6 +1,6 @@
 var site = {
 	siteName: "Kiko's blog",
-	IESuportedVersion: 8,
+	IESupportedVersion: 8,
 	routerMap: {
 		"#timeline": {
 			fileName: "timeline",
@@ -11,7 +11,7 @@ var site = {
 			titleFragment: " | 简历"
 		},
 		"#smart-spot": {
-			fileName: "smartspot",
+			fileName: "smart-spot",
 			titleFragment: " | Smart找茬"
 		},
 		"#e-name": {
@@ -23,8 +23,12 @@ var site = {
 			titleFragment: " | Radarcharts"
 		},
 		"#ad-killer": {
-			fileName: "adKiller",
+			fileName: "ad-killer",
 			titleFragment: " | 广告杀手-插件"
+		},
+		"#scratch-card": {
+			fileName: "scratch-card",
+			titleFragment: " | 刮刮卡"
 		}
 	},
 	suguestedBrowsers: [
@@ -36,10 +40,10 @@ var site = {
 	],
 	init: function(hash){
 		var me = this;
-			browserSuported = this.checkBrowser(this.IESuportedVersion);
+			browserSupported = this.checkBrowser(this.IESupportedVersion);
 		$(document).ready(function(){
 			me.cache();
-			if(browserSuported){
+			if(browserSupported){
 				window.onhashchange = function(){
 					me.refreshPage();
 				};
@@ -47,7 +51,7 @@ var site = {
 				else window.onhashchange();
 				// me.preventLinkDefault();
 			} else {
-				me.showNotSuportedPage();
+				me.showNotSupportedPage();
 			}
 		})
 	},
@@ -71,10 +75,10 @@ var site = {
 	refreshPage: function(fragment){
 		var hash = location.hash,
 			routerMap = this.routerMap,
-			IESuportedVersion = this.IESuportedVersion,
+			IESupportedVersion = this.IESupportedVersion,
 			container = this.container,
 			me = this,
-			fragment, pageTitle, isSuported;
+			fragment, pageTitle, isSupported;
 
 		if(!routerMap[hash]) {
 			fragment = "404";
@@ -87,25 +91,25 @@ var site = {
 		document.title = pageTitle;
 		switch(fragment){
 			case "smartspot":
-				IESuportedVersion = 9;
+				IESupportedVersion = 9;
 				break;
 			case "ename":
-				IESuportedVersion = 9;
+				IESupportedVersion = 9;
 				break;
 			case "radarcharts":
-				IESuportedVersion = 100;	
+				IESupportedVersion = 100;	
 				break;
 		}
 
-		isSuported = this.checkBrowser(IESuportedVersion);
-		if(isSuported){
+		isSupported = this.checkBrowser(IESupportedVersion);
+		if(isSupported){
 			container.html("加载中...").load("/page/"+ fragment +".html", function(){
 				me.hideLoading();
 			});
 			this.showLoading();
 		} else {
 			var container = this.container,
-				isIEInclude = (IESuportedVersion == 100) ? false : true,
+				isIEInclude = (IESupportedVersion == 100) ? false : true,
 				suguestedList = this.getSugguestedList(isIEInclude);
 			container.html('<h1>该项目需要使用对HTML5特性支持较好的浏览器才能查看</h1>\
 								<p class="mt-m mb-s">建议使用以下浏览器查看该项目：</p>');
@@ -130,19 +134,19 @@ var site = {
 	checkBrowser: function(IEVersion){ // type: "page" or "project" 
 		var userAgent = navigator.userAgent.toLowerCase().match(/(chrome|firefox|safari|opera|msie)/gi)[0],
 			version = (userAgent == "msie") ? navigator.userAgent.toLowerCase().match(/msie\s*\d+/gi)[0].match(/\d+/) : 1000;
-			IESuportedVersion = IEVersion ? IEVersion : this.IESuportedVersion;
+			IESupportedVersion = IEVersion ? IEVersion : this.IESupportedVersion;
 
 		if(!userAgent){
 			userAgent = "other";
 		}	
 
 		if(userAgent == "msie"){
-			if(version < IESuportedVersion) return false;
+			if(version < IESupportedVersion) return false;
 		}
 
 		return true;
 	},
-	showNotSuportedPage: function(){
+	showNotSupportedPage: function(){
 		var body = this.body;
 			suguestedList = this.getSugguestedList(true);
 		

@@ -1,0 +1,448 @@
+/* reset */
+html,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+code,
+img,
+ul,
+ol,
+iframe,
+pre,
+code {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+li,
+p,
+dt,
+dd {
+  word-wrap: break-word;
+}
+/* font */
+/* display */
+.hide {
+  display: none;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: block;
+}
+.clearfix:after {
+  clear: both;
+}
+/* space */
+.p-s {
+  padding: 10px;
+}
+.p-m {
+  padding: 20px;
+}
+.p-l {
+  padding: 40px;
+}
+.pt-s {
+  padding-top: 10px;
+}
+.pt-m {
+  padding-top: 20px;
+}
+.pt-l {
+  padding-top: 40px;
+}
+.pb-s {
+  padding-bottom: 10px;
+}
+.pb-m {
+  padding-bottom: 20px;
+}
+.pb-l {
+  padding-bottom: 40px;
+}
+.pl-s {
+  padding-left: 10px;
+}
+.pl-m {
+  padding-left: 20px;
+}
+.pl-l {
+  padding-left: 40px;
+}
+.pr-s {
+  padding-right: 10px;
+}
+.pr-m {
+  padding-right: 20px;
+}
+.pr-l {
+  padding-right: 40px;
+}
+.m-s {
+  margin: 10px;
+}
+.m-m {
+  margin: 20px;
+}
+.m-l {
+  margin: 40px;
+}
+.mt-s {
+  margin-top: 10px;
+}
+.mt-m {
+  margin-top: 20px;
+}
+.mt-l {
+  margin-top: 40px;
+}
+.mb-s {
+  margin-bottom: 10px;
+}
+.mb-m {
+  margin-bottom: 20px;
+}
+.mb-l {
+  margin-bottom: 40px;
+}
+.ml-s {
+  margin-left: 10px;
+}
+.ml-m {
+  margin-left: 20px;
+}
+.ml-l {
+  margin-left: 40px;
+}
+.mr-s {
+  margin-right: 10px;
+}
+.mr-m {
+  margin-right: 20px;
+}
+.mr-l {
+  margin-right: 40px;
+}
+body {
+  font-size: 14px;
+  color: #8d8d8d;
+  font-family: Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #0088cc;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: underline;
+}
+p,
+span,
+li,
+dl {
+  line-height: 180%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #706a6a;
+  font-weight: bold;
+}
+h1 .small,
+h2 .small,
+h3 .small,
+h4 .small,
+h5 .small,
+h6 .small {
+  margin-left: 20px;
+  font-size: 12px;
+}
+ul > li,
+ol > li {
+  margin-bottom: 10px;
+}
+ul.tight li {
+  margin-bottom: 0;
+}
+ul.decorated {
+  list-style: disc;
+  margin-left: 20px;
+}
+ol.decorated {
+  list-style: decimal;
+  margin-left: 20px;
+}
+dl dt {
+  float: left;
+  width: 5em;
+  text-align: right;
+}
+dl dd {
+  margin-left: 5em;
+}
+pre {
+  position: relative;
+  padding: 20px 10px 20px 50px;
+  background-color: #eff5f2;
+  border: 1px solid #ccd1cf;
+  word-wrap: break-word;
+  color: #068c86;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  line-height: 140%;
+}
+pre ul.code-row-list {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  color: #cccccc;
+}
+pre ul.code-row-list li {
+  line-height: 140%;
+  margin-bottom: 0;
+  text-align: right;
+  padding: 0 5px;
+}
+pre p {
+  position: relative;
+  line-height: inherit;
+}
+pre p span.num {
+  display: inline-block;
+  width: 30px;
+  text-align: right;
+  line-height: inherit;
+  position: absolute;
+  top: 0;
+  left: -40px;
+  color: #cccccc;
+}
+.aside-bg {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 35%;
+  background-color: #eff5f2;
+}
+.aside {
+  position: relative;
+  float: left;
+  width: 35%;
+}
+.content {
+  margin-left: 35%;
+}
+.aside,
+.content {
+  position: relative;
+  z-index: 2;
+}
+.aside .inner {
+  padding: 100px 40px 100px 20%;
+}
+.content .inner {
+  padding: 100px 10% 100px 40px;
+}
+.nav {
+  border-bottom: 1px solid #ccd1cf;
+  padding-bottom: 40px;
+}
+.nav li {
+  float: left;
+  padding-right: 20px;
+}
+.aside-block {
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ccd1cf;
+  padding: 40px 0;
+}
+.aside-block.last {
+  border-bottom: none;
+}
+.aside-block h2 {
+  margin-bottom: 20px;
+}
+.fix-block.active {
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+.time-line {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 37px;
+  width: 6px;
+  height: 100%;
+  background-color: #eff5f2;
+}
+.time-line-wrapper {
+  position: relative;
+  padding-left: 80px;
+  margin-top: 40px;
+}
+.time-line-period {
+  position: relative;
+  z-index: 4;
+  min-height: 200px;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.time-line-period.last {
+  min-height: 0;
+}
+.time-line-period.last .cont {
+  padding-bottom: 0;
+}
+.time-line-period .point {
+  position: absolute;
+  top: 0;
+  left: -80px;
+  line-height: 80px;
+  text-align: center;
+}
+.time-line-period .point.hover {
+  -webkit-animation: paopao-in 0.2s linear;
+}
+.time-line-period .cont {
+  padding: 28px 0 50px 25px;
+}
+.time-line-period .cont h2 {
+  margin-bottom: 20px;
+}
+.company {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-image: url(../img/company.png);
+  background-color: #eff5f2;
+  background-repeat: no-repeat;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  border-radius: 100px;
+}
+.company.guohead {
+  background-position: 0 0;
+}
+.company.mixhui {
+  background-position: -80px 0;
+}
+.company.cuc {
+  background-position: -160px 0;
+}
+.company.ago {
+  background-image: none;
+}
+.company.jiepang {
+  background-position: -240px 0;
+}
+.company.nuandao {
+  background-position: -320px 0;
+}
+.profile {
+  position: relative;
+  margin-top: 40px;
+}
+.block {
+  margin-top: 40px;
+}
+.block h2 {
+  margin-bottom: 20px;
+}
+.block h4 {
+  margin-bottom: 10px;
+}
+.block > p {
+  margin-bottom: 20px;
+}
+.block .small {
+  font-size: 12px;
+}
+.block .indented {
+  margin: 20px 0;
+  margin-left: 40px;
+}
+.profile .avatar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140px;
+  height: 170px;
+  background-color: #eff5f2;
+}
+.profile .info-list li {
+  margin: 0;
+}
+.profile .info-list .title {
+  display: inline-block;
+  width: 4em;
+}
+.text-seperator {
+  margin: 0 5px;
+}
+.app-info {
+  min-height: 72px;
+}
+.app-info > img {
+  float: left;
+  width: 72px;
+}
+.app-info > dl {
+  margin-left: 100px;
+}
+.loading {
+  position: fixed;
+  z-index: 9999;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  padding: 0 40px 0 20px;
+  line-height: 30px;
+  background-color: #eff5f2;
+}
+/* timeline css3 animation */
+@-webkit-keyframes paopao-in {
+  0% {
+    -webkit-transform: scaleX(1);
+  }
+  30% {
+    -webkit-transform: scaleX(0);
+  }
+  50% {
+    -webkit-transform: scaleX(-1);
+  }
+  70% {
+    -webkit-transform: scaleX(0);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+  }
+}

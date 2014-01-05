@@ -39,27 +39,49 @@ var site = {
 		{name: "IE9", downloadLink: "http://windows.microsoft.com/zh-cn/internet-explorer/downloads/ie-9/worldwide-languages"}
 	],
 	init: function(hash){
-		var me = this;
+		var self = this;
 			browserSupported = this.checkBrowser(this.IESupportedVersion);
 		$(document).ready(function(){
-			me.cache();
+			self.cacheElement();
 			if(browserSupported){
+				self.bindSidebar();
 				window.onhashchange = function(){
-					me.refreshPage();
+					self.refreshPage();
 				};
 				if(location.hash == "") location.hash = hash;
 				else window.onhashchange();
-				// me.preventLinkDefault();
+				// self.preventLinkDefault();
 			} else {
-				me.showNotSupportedPage();
+				self.showNotSupportedPage();
 			}
 		})
 	},
-	cache: function(){
+	cacheElement: function(){
 		this.win = $(window);
 		this.body = $("body");
 		this.container = $(".content .inner");
 		this.loading = $(".loading");
+	},
+	bindSidebar: function(){
+		var win = this.win,
+			bar = $('#fix-block'),
+			offset = bar.offset(),
+			width = bar.outerWidth();
+
+		win.on('scroll', function(e){
+			width = bar.outerWidth();
+			console.log(offset.top)
+			if(win.scrollTop() >= offset.top){
+				bar.addClass('active').width(width);
+			} else {
+				bar.removeClass('active').width('auto');
+			}
+		});
+		win.on('resize', function(e){
+			offset = bar.offset();
+			width = bar.outerWidth();
+			bar.removeClass('active').width('auto');
+		});
 	},
 	preventLinkDefault: function(){
 		this.body.delegate("a", "click", function(e){
@@ -77,7 +99,7 @@ var site = {
 			routerMap = this.routerMap,
 			IESupportedVersion = this.IESupportedVersion,
 			container = this.container,
-			me = this,
+			self = this,
 			fragment, pageTitle, isSupported;
 
 		if(!routerMap[hash]) {
@@ -104,7 +126,7 @@ var site = {
 		isSupported = this.checkBrowser(IESupportedVersion);
 		if(isSupported){
 			container.html("加载中...").load("/page/"+ fragment +".html", function(){
-				me.hideLoading();
+				self.hideLoading();
 			});
 			this.showLoading();
 		} else {

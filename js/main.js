@@ -2,31 +2,31 @@ var site = {
 	siteName: "Kiko's blog",
 	IESupportedVersion: 8,
 	routerMap: {
-		"#timeline": {
+		"timeline": {
 			fileName: "timeline",
 			titleFragment: " | 时间线" 
 		},
-		"#profile": {
+		"profile": {
 			fileName: "profile",
 			titleFragment: " | 简历"
 		},
-		"#smart-spot": {
+		"smart-spot": {
 			fileName: "smart-spot",
 			titleFragment: " | Smart找茬"
 		},
-		"#e-name": {
+		"e-name": {
 			fileName: "ename",
 			titleFragment: " | 起个洋名儿"
 		},
-		"#radar-charts": {
+		"radar-charts": {
 			fileName: "radarcharts",
 			titleFragment: " | Radarcharts"
 		},
-		"#ad-killer": {
+		"ad-killer": {
 			fileName: "ad-killer",
 			titleFragment: " | 广告杀手-插件"
 		},
-		"#scratch-card": {
+		"scratch-card": {
 			fileName: "scratch-card",
 			titleFragment: " | 刮刮卡"
 		}
@@ -50,7 +50,7 @@ var site = {
 				};
 				if(location.hash == "") location.hash = hash;
 				else window.onhashchange();
-				// self.preventLinkDefault();
+				self.preventLinkDefault();
 			} else {
 				self.showNotSupportedPage();
 			}
@@ -102,6 +102,8 @@ var site = {
 			self = this,
 			fragment, pageTitle, isSupported;
 
+		hash = hash.substr(1, hash.length);
+
 		if(!routerMap[hash]) {
 			fragment = "404";
 			pageTitle = this.siteName + " | 404"
@@ -113,13 +115,9 @@ var site = {
 		document.title = pageTitle;
 		switch(fragment){
 			case "smartspot":
-				IESupportedVersion = 9;
-				break;
 			case "ename":
-				IESupportedVersion = 9;
-				break;
 			case "radarcharts":
-				IESupportedVersion = 100;	
+				IESupportedVersion = 9;	
 				break;
 		}
 
@@ -137,7 +135,6 @@ var site = {
 								<p class="mt-m mb-s">建议使用以下浏览器查看该项目：</p>');
 			container.append(suguestedList);
 		}
-
 	},
 	showLoading: function(){
 		this.loading.css({

@@ -1,5 +1,5 @@
 body{ 
-	.font(14px);
+	.font(@font-size-m);
 	color: @text-color;
 	font-family: Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Helvetica Neue, Helvetica, Arial, sans-serif
 }
@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6{
 }
 h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small{
 	margin-left: @gap-m;
-	.font(12px);
+	.font(@font-size-s);
 }
 ul > li, ol > li{
 	margin-bottom: @gap-s;
@@ -127,6 +127,9 @@ pre p span.num{
 .aside-block h2{
 	margin-bottom: @gap-m;
 }
+.fix-block{
+	background-color: @bg-color-dark;
+}
 .fix-block.active{
 	width: 100%;
 	position: fixed;
@@ -223,7 +226,7 @@ pre p span.num{
 	margin-bottom: @gap-m;
 }
 .block .small{
-	.font(12px);
+	.font(@font-size-s);
 }
 .block .indented{
 	margin: @gap-m 0;
@@ -268,6 +271,16 @@ pre p span.num{
 	padding: 0 @gap-l 0 @gap-m;
 	line-height: 30px;
 	background-color: @bg-color-dark;
+}
+
+.btn{
+    display: inline-block;
+    padding: 10px;
+    background: green;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: @font-size-m;
 }
 
 /* timeline css3 animation */

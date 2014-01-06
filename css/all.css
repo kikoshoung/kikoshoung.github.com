@@ -285,6 +285,9 @@ pre p span.num {
 .aside-block h2 {
   margin-bottom: 20px;
 }
+.fix-block {
+  background-color: #eff5f2;
+}
 .fix-block.active {
   width: 100%;
   position: fixed;
@@ -427,6 +430,15 @@ pre p span.num {
   padding: 0 40px 0 20px;
   line-height: 30px;
   background-color: #eff5f2;
+}
+.btn {
+  display: inline-block;
+  padding: 10px;
+  background: green;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 14px;
 }
 /* timeline css3 animation */
 @-webkit-keyframes paopao-in {

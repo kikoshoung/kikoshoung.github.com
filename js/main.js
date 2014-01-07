@@ -50,7 +50,7 @@ var site = {
 				};
 				if(location.hash == "") location.hash = hash;
 				else window.onhashchange();
-				self.preventLinkDefault();
+				// self.preventLinkDefault();
 			} else {
 				self.showNotSupportedPage();
 			}

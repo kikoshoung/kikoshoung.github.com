@@ -55,11 +55,41 @@
 	ScratchCard.prototype = {
 
 		defaults: {
-			percentage: 0.6,
-			text: '刮开此涂层',
-			background: '#e0e0e0',
-			color: '#888',
-			notSupportText: 'Sorry, your browser dose not support [Canvas], please use a higher version browser and try again.'
+			// A wrapper element for scratch card, must be an original dom object
+            container: null,
+
+            // Image src for win or not
+            imgSrc: '',
+
+		    // Card size, [{width}, {height}]
+		    size: [240, 180],
+
+		    // Valid scratch area, [{left}, {top}, {width}, {hight}]
+		    // Defaults to [0, 0, {cardWidth}, {cardHeight}]
+		    // validArea: [0, 0, {cardWidth}, {cardWidth}],
+
+		    // Percentage of valid scratched pixels, based on valid area
+		    percentage: 0.6,
+
+		    // Scratch layer's property
+		    scratchLayer: {
+		        background: '#e0e0e0',
+		        text: '刮开此涂层',
+		        color: '#888',
+		        font: '30px Verdana',
+
+		        // Scratch width
+		        lineWidth: 30,
+		    },
+
+		    // Text to show when users' browser does not support canvas
+		    notSupportText: 'Sorry, your browser dose not support [Canvas], please use a higher version browser and try again.',
+
+		    // A callback function, invoked after a scratch action
+            onScratch: null,
+
+            // A callback function, invoked when scratch completed
+            onComplete: null,
 		},
 
 		events: {
@@ -179,10 +209,10 @@
 			// HTML5 tag shim, use this hack to set canvas's style
 			// in browsers which do not support Canvas.
 			// document.createElement('canvas');
-			var defaults = this.defaults;
+			var scratchLayer = this.defaults.scratchLayer;
 
-			this.canvas.style.background = defaults.background;
-			this.canvas.style.color = defaults.color;
+			this.canvas.style.background = scratchLayer.background;
+			this.canvas.style.color = scratchLayer.color;
 		},
 
 		// get the dom(container, image, canvas) size[{width}, {height}]
@@ -217,6 +247,7 @@
 		initCanvas: function(){
 			var canvas = this.canvas,
 				options = this.options,
+				scratchLayer = options.scratchLayer,
 				ctx;
 
 			try{
@@ -231,21 +262,21 @@
 			ctx.globalCompositeOperation = "source-over";
 
 			// Paint canvas to gray 
-			ctx.fillStyle = options.background;
+			ctx.fillStyle = scratchLayer.background;
 			ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 			// Paint extra text on canvas
-			ctx.font = '30px Verdana';
+			ctx.font = scratchLayer.font;
 			ctx.textBaseline = 'middle';
 			ctx.textAlign = 'center';
-			ctx.fillStyle = options.color;
-			ctx.fillText(options.text, canvas.width / 2, canvas.height / 2);
+			ctx.fillStyle = scratchLayer.color;
+			ctx.fillText(scratchLayer.text, canvas.width / 2, canvas.height / 2);
 
 			// Set stroke style
 			ctx.strokeStyle = 'rgba(255, 255, 255, 1)';
 			ctx.lineJoin = 'round';
 			ctx.lineCap = 'round';
-			ctx.lineWidth = 30; 
+			ctx.lineWidth = scratchLayer.lineWidth; 
 		},
 
 		bindEvents: function(){
@@ -307,10 +338,12 @@
 		},
 
 		mouseupHandler: function(e){
-			var ctx = this.ctx;
+			var ctx = this.ctx,
+				onScratch = this.options.onScratch;
 
 			this.scratchActivated = false;
-			ctx.closePath();			
+			ctx.closePath();
+			onScratch && onScratch(this.getScratchedPercentage());			
 		},
 
 		mouseoutHandler: function(e){
@@ -324,7 +357,6 @@
 			if(curPercentage >= options.percentage){
 				this.showAll();
 				onComplete && onComplete();
-				onComplete = null;
 			}
 		},
 
@@ -334,7 +366,11 @@
 
 		destroy: function(){
 			var container = this.container,
-				canvas = this.canvas;
+				canvas = this.canvas,
+				img = this.img;
+
+			container.removeChild(canvas);
+			container.removeChild(img);
 
 			canvas.removeEventListener(events['mousedown']);
 			canvas.removeEventListener(events['mousemove']);

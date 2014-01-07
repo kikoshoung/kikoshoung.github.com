@@ -70,7 +70,6 @@ var site = {
 
 		win.on('scroll', function(e){
 			width = bar.outerWidth();
-			console.log(offset.top)
 			if(win.scrollTop() >= offset.top){
 				bar.addClass('active').width(width);
 			} else {

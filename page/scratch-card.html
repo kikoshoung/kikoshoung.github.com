@@ -18,41 +18,87 @@
     </ol>
     <pre>
         <code>
+// 一些铺垫设置
 var resImg = ['img/face-smile.png', 'img/face-sad.png'],
     container = $('#container-scratchcard'),
     won = Math.random() > 0.5 ? true : false,
     scratchCard;
 
+// 构造一个 ScratchCard 实例
 scratchCard = new ScratchCard({
-    // A wrapper element for scratch card, PS: must be an original dom object
     container: container[0],
+    imgSrc: won ? resImg[0] : resImg[1],
+    size: [240, 180],
+    validArea: [45, 15, 150, 150],
+    percentage: 0.4,
+    scratchLayer: {
+        text: '骚年，快刮我~',
+    },
+    onScratch: function(progress) {
+        console.log(progress);
+    },
+    onComplete: function() {
+        if (won) alert('我去，中奖了！')
+    }
+});
+        </code>
+    </pre>
+</div>
+<div class="block">
+    <h2>Tips</h2>
+    <ul class="decorated">
+        <li>options 中的 validArea 是我们设定的一个刮奖有效区域，该区域可根据你得图片结构来设定。</li>
+        <li>options 中的 percentage 是在有效区域内计算得到的一个已经刮去像素的百分比。</li>
+        <li>options 中的 onScratch 属性应该是一个函数，该函数接受内部传来的 progress 参数，即刮刮卡的刮去百分比。</li>
+        <li>options 中的 onComplete 属性也应该是一个函数，该函数会在刮到我们设定的一个百分比（percentage）时调用。</li>
+        <li>如需移除一个 ScratchCard 实例，建议使用提供的 destroy 方法（如 scratchCard.destroy() ），该方法不仅会移除 container 中的 DOM 元素，还会移除在这些 DOM 元素上绑定的事件处理程序。</li>
+        <li>jQuery 用户可以这样使用 ScratchCard 来初始一个图表：$('#container').ScratchCard(options)<br/>这样使用的话，options 中就不用再传入 container 了。</li>
+    </ul>
+</div>
+
+<div class="block">
+    <h2>参数表详细</h2>
+    <p>以下是 ScratchCard 的默认参数配置，您可以依据自己的喜好在实例化的时候传入不同参数 override 它。</p>
+    <pre>
+        <code>
+defaults: {
+    // A wrapper element for scratch card, must be an original dom object
+    container: null,
 
     // Image src for win or not
-    imgSrc: won ? resImg[0] : resImg[1],
+    imgSrc: '',
 
     // Card size, [{width}, {height}]
     size: [240, 180],
 
     // Valid scratch area, [{left}, {top}, {width}, {hight}]
     // Defaults to [0, 0, {cardWidth}, {cardHeight}]
-    validArea: [45, 15, 150, 150],
+    // validArea: [0, 0, {cardWidth}, {cardWidth}],
 
-    // Percentage of valid scratched pixels, relies on validArea
-    percentage: 0.4,
+    // Percentage of valid scratched pixels, based on valid area
+    percentage: 0.6,
 
-    // A callback function, invoke when scratch completed
-    onComplete: function(){
-        if(won) alert('我去，中奖了！')
-    }
+    // Scratch layer's property
+    scratchLayer: {
+        background: '#e0e0e0',
+        text: '刮开此涂层',
+        color: '#888',
+        font: '30px Verdana',
 
-    // Scratch layer's background style
-    // background: 'yellow',
+        // Scratch width
+        lineWidth: 30,
+    },
 
-    // Scratch layer's placeholder
-    // placeholder: '骚年来一发吧',
-    // color: 'red'
-});
-        </code>
+    // Text to show when users' browser does not support canvas
+    notSupportText: 'Sorry, your browser dose not support [Canvas], please use a higher version browser and try again.',
+
+    // A callback function, invoked after a scratch action
+    onScratch: null,
+
+    // A callback function, invoked when scratch completed
+    onComplete: null,
+}
+        <code>
     </pre>
 </div>
 
@@ -70,21 +116,25 @@ scratchCard = new ScratchCard({
     function addScratchCard(){
         var won = Math.random() > 0.5 ? true : false;
 
-        container.innerHTML = '';
+        container.empty();
         scratchCard = new ScratchCard({
             container: container[0],
             imgSrc: won ? resImg[0] : resImg[1],
             size: [240, 180],
             validArea: [45, 15, 150, 150],
             percentage: 0.4,
-            onComplete: function(){
-                if(won) alert('我去，中奖了！')
+            scratchLayer: {
+                text: '骚年，快刮我~',
+            },
+            onScratch: function(progress) {
+                console.log(progress);
+            },
+            onComplete: function() {
+                if (won) alert('我去，中奖了！')
             }
-            // background: 'yellow',
-            // text: '骚年来一发吧',
-            // color: 'red'
         });
     }
+
     btnAgain.on(events['click'], function(e){
         scratchCard.destroy();
         container.html('正在生成刮刮卡...');

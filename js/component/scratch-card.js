@@ -73,7 +73,7 @@
 
 		    // Scratch layer's property
 		    scratchLayer: {
-		        background: '#e0e0e0',
+		        background: '#E0E0E0',
 		        text: '刮开此涂层',
 		        color: '#888',
 		        font: '30px Verdana',
@@ -158,6 +158,7 @@
 				curSize = this.curSize,
 				cssText = 'display: inline-block; position: relative;';
 
+			container.innerHTML = '';
 			container.style.cssText = cssText;
 			container.style.width = this.curSize[0] +'px';
 			container.style.height = this.curSize[1] +'px';

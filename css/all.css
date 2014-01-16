@@ -15,7 +15,9 @@ ul,
 ol,
 iframe,
 pre,
-code {
+code,
+figure,
+dl {
   margin: 0;
   padding: 0;
   border: 0;
@@ -175,6 +177,9 @@ h6 .small {
   margin-left: 20px;
   font-size: 12px;
 }
+h1 {
+  font-size: 28px;
+}
 ul > li,
 ol > li {
   margin-bottom: 10px;
@@ -192,11 +197,11 @@ ol.decorated {
 }
 dl dt {
   float: left;
-  width: 5em;
+  width: 3em;
   text-align: right;
 }
 dl dd {
-  margin-left: 5em;
+  margin-left: 3em;
 }
 pre {
   position: relative;
@@ -238,51 +243,50 @@ pre p span.num {
   left: -40px;
   color: #cccccc;
 }
-.aside-bg {
+aside.bg {
   position: fixed;
   z-index: 1;
   top: 0;
   bottom: 0;
   left: 0;
   width: 35%;
+  padding: 0;
   background-color: #eff5f2;
 }
-.aside {
+aside {
   position: relative;
   float: left;
-  width: 35%;
+  width: 28%;
+  padding: 100px 3% 100px 4%;
 }
-.content {
+article {
   margin-left: 35%;
 }
-.aside,
-.content {
+aside,
+article {
   position: relative;
   z-index: 2;
 }
-.aside .inner {
-  padding: 100px 40px 100px 20%;
+article {
+  padding: 100px 4% 100px 3%;
 }
-.content .inner {
-  padding: 100px 10% 100px 40px;
-}
-.nav {
+nav {
   border-bottom: 1px solid #ccd1cf;
   padding-bottom: 40px;
 }
-.nav li {
+nav li {
   float: left;
   padding-right: 20px;
 }
-.aside-block {
+aside section {
   border-top: 1px solid #ffffff;
   border-bottom: 1px solid #ccd1cf;
   padding: 40px 0;
 }
-.aside-block.last {
+aside section.last {
   border-bottom: none;
 }
-.aside-block h2 {
+aside section h2 {
   margin-bottom: 20px;
 }
 .fix-block {
@@ -294,6 +298,10 @@ pre p span.num {
   top: 0;
 }
 .time-line {
+  position: relative;
+  margin-top: 40px;
+}
+.line {
   position: absolute;
   z-index: 3;
   top: 0;
@@ -302,94 +310,59 @@ pre p span.num {
   height: 100%;
   background-color: #eff5f2;
 }
-.time-line-wrapper {
-  position: relative;
-  padding-left: 80px;
-  margin-top: 40px;
-}
-.time-line-period {
+.time-line figure {
   position: relative;
   z-index: 4;
-  min-height: 200px;
+  min-height: 80px;
+  margin-bottom: 50px;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-.time-line-period.last {
-  min-height: 0;
-}
-.time-line-period.last .cont {
-  padding-bottom: 0;
-}
-.time-line-period .point {
-  position: absolute;
-  top: 0;
-  left: -80px;
-  line-height: 80px;
-  text-align: center;
-}
-.time-line-period .point.hover {
-  -webkit-animation: paopao-in 0.2s linear;
-}
-.time-line-period .cont {
-  padding: 28px 0 50px 25px;
-}
-.time-line-period .cont h2 {
-  margin-bottom: 20px;
-}
-.company {
-  display: inline-block;
+.time-line figure > img,
+.time-line .time-node {
+  float: left;
   width: 80px;
   height: 80px;
-  background-image: url(../img/company.png);
-  background-color: #eff5f2;
-  background-repeat: no-repeat;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  -ms-border-radius: 100px;
-  -o-border-radius: 100px;
-  border-radius: 100px;
+  line-height: 80px;
+  text-align: center;
+  background: #eff5f2;
+  -webkit-border-radius: 80px;
+  -moz-border-radius: 80px;
+  -ms-border-radius: 80px;
+  -o-border-radius: 80px;
+  border-radius: 80px;
 }
-.company.guohead {
-  background-position: 0 0;
+.time-line figcaption {
+  margin-left: 100px;
+  padding-top: 28px;
 }
-.company.mixhui {
-  background-position: -80px 0;
-}
-.company.cuc {
-  background-position: -160px 0;
-}
-.company.ago {
-  background-image: none;
-}
-.company.jiepang {
-  background-position: -240px 0;
-}
-.company.nuandao {
-  background-position: -320px 0;
+.time-line figure:hover > img,
+.time-line figure:hover .time-node {
+  -webkit-animation: paopao-in 0.2s linear;
 }
 .profile {
   position: relative;
   margin-top: 40px;
 }
-.block {
+article section {
   margin-top: 40px;
 }
-.block h2 {
+article h2 {
   margin-bottom: 20px;
 }
-.block h4 {
+article h4 {
   margin-bottom: 10px;
 }
-.block > p {
+article section > p {
   margin-bottom: 20px;
 }
-.block .small {
+article .small {
   font-size: 12px;
 }
-.block .indented {
+article .indented {
   margin: 20px 0;
   margin-left: 40px;
 }
@@ -418,8 +391,14 @@ pre p span.num {
   float: left;
   width: 72px;
 }
-.app-info > dl {
+.app-info figcaption {
   margin-left: 100px;
+}
+.app-info dl dt {
+  width: 5em;
+}
+.app-info dl dd {
+  margin-left: 5em;
 }
 .loading {
   position: fixed;

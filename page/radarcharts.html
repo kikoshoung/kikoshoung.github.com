@@ -4,7 +4,7 @@
 <p>使用 Canvas 实现的一种雷达展现形式的图表。</p>
 <p>Canvas charts with radar impression.</p>
 <p class="mt-m"><a target="_blank" href="https://github.com/kikoshoung/radarcharts">Fork me on github</a></p>
-<div class="block">
+<section>
 	<h2>一分钟简介</h2>
 	<p>雷达图表是一种以雷达形式展现数据的图表，对某些数据来说，使用雷达图表展示出来会更加直观，更容易看出数据的特点。Radarcharts 采用 HTML5 的 Canvas 技术，是一个参数丰富、灵活好用的图表类。</p>
 	<p>先看一个简单的 Radarcharts 用例，我们来比较一下两位前端工程师的各项能力值：</p>
@@ -13,8 +13,8 @@
 	</div>
 	<p class="mt-m">通过观察图表，能够清晰地看出，工程师甲的技能几乎满级，但是沟通能力差，很有可能是个怪咖；工程师乙各项技能都要稍稍逊色于工程师甲，但是工程师乙的能力值很均衡，不必担心是个怪咖。</p>
 	<p>下面还给出了另外3个用例，教大家如何使用 Radarcharts JS 做出各式各样的图表。</p>
-</div>
-<div class="block">
+</section>
+<section>
 	<h2>使用方法</h2>
 	<ol class="decorated">
 		<li>在页面内引入 <a target="_blank" href="https://raw.github.com/kikoshoung/radarcharts/master/minified/radarcharts.min.js">radarcharts.min.js</a> 或 <a target="_blank" href="https://raw.github.com/kikoshoung/radarcharts/master/js/radarcharts.js">radarcharts.js</a>。</li>
@@ -60,8 +60,8 @@ var engineerChart = new Radarcharts({
 });
 		</code>
 	</pre>
-</div>
-<div class="block">
+</section>
+<section>
 	<h2>关于自定义</h2>
 	<p>一个灵活的组件必须能满足各种场景需求，Radarcharts为了满足大家的各种需求，设置了丰富的配置参数，我们来看依次来看下面的3个例子。<br/>（参数表详细请见本页末尾）</p>
 
@@ -114,8 +114,8 @@ var indexChart = new Radarcharts({
 });
 		</code>
 	</pre>
-</div>
-<div class="block">
+</section>
+<section>
 	<h4>进阶篇：实况足球</h4>
 	<div id="container-pes" class="mt-m mb-m"></div>
 	<p>通过切换球员（<a class="pes-player" id="messi">梅西</a> 和 <a class="pes-player" id="puyol">普约尔</a>）来观察图表变换，能够清晰的看出他们一个防守好，一个进攻好。<br/>即使这是一组新人的数据，教练也可以轻松合理地安排他们踢什么样的位置。</p>
@@ -173,8 +173,8 @@ $('.pes-player').bind('click', function(){
 });
 		</code>
 	</pre>
-</div>
-<div class="block">
+</section>
+<section>
 	<h4>高级篇：商业数据展示</h4>
 	<div id="container-business" class="mt-m mb-m"></div>
 	<p>通过切换年份（<a class="year" id="this">今年</a> 和 <a class="year" id="last">去年</a>）来观察图表变换，能够清晰的看出该公司今年较去年的销售量有了很大的增涨，业绩发展得非常不错。<br/>另外还可以清晰地看到一个改变，那就是10月份的销售量很反常，裤子的销售量超过了衣服，该公司应该分析一下10月份的各项因素。</p>
@@ -252,8 +252,8 @@ $('.year').bind('click', function(){
 });
 		</code>
 	</pre>
-</div>
-<div class="block">
+</section>
+<section>
 	<h2>Tips</h2>
 	<ul class="decorated">
 		<li>在 chart.redraw(series, [options]) 方法中，第二个参数为可选，其中包含一个 refresh 值（迄今为止，仅提供 refresh 一个选项），默认为 false，这个值可以让使用者在调用 redraw 方法的时候采用“刷新”或“过渡”的方式来重绘图表。“刷新”即重绘图形的时候会从坐标原点开始画第一帧，“过渡”即重绘图形的时候从上一个状态开始画第一帧。</li>
@@ -262,8 +262,8 @@ $('.year').bind('click', function(){
 		<li>如果您不想使用某项默认的配置，那么请给相应值传入一个 falsy 值，如：legend: false;。</li>
 		<li>配置参数中的 maxValue 是一组数据范围的最大值，默认为这组数据中的最大值。</li>
 	</ul>
-</div>
-<div class="block">
+</section>
+<section>
 	<h2>参数表详细</h2>
 	<p>以下是 Radarcharts 的默认参数配置，您可以依据自己的喜好在实例化的时候传入不同参数 override 它。</p>
 	<pre>
@@ -372,7 +372,7 @@ CONFIG = {
 };
 		<code>
 	</pre>
-</div>
+</section>
 
 <!-- 一分钟简介 -->
 <script type="text/javascript">

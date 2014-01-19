@@ -27,7 +27,7 @@ var site = {
 			titleFragment: ' | 广告杀手-插件'
 		},
 		'scratch-card': {
-			fileName: 'scratch-card',
+			fileName: 'scratchcard',
 			titleFragment: ' | 刮刮卡'
 		}
 	},

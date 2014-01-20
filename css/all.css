@@ -401,11 +401,11 @@ article .indented {
   margin-left: 5em;
 }
 .loading {
+  display: none;
   position: fixed;
   z-index: 9999;
   right: 0;
   top: 0;
-  opacity: 0;
   padding: 0 40px 0 20px;
   line-height: 30px;
   background-color: #eff5f2;
@@ -435,5 +435,28 @@ article .indented {
   }
   100% {
     -webkit-transform: scaleX(1);
+  }
+}
+@media screen and (max-width: 768px) {
+  .intro,
+  .contactme,
+  .bg {
+    display: none;
+  }
+  aside,
+  article {
+    width: 90%;
+    padding: 20px 5%;
+  }
+  aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background-color: #eff5f2;
+  }
+  article {
+    z-index: 3;
+    margin: 0;
+    background-color: #ffffff;
   }
 }

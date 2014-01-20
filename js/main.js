@@ -1,5 +1,7 @@
 var site = {
 	siteName: 'Kiko\'s blog',
+	ua: navigator.userAgent,
+	isPC: !navigator.userAgent.match(/(Android|iPhone|iPad|iPod|Windows Phone|MQQBrowser)/),
 	IESupportedVersion: 8,
 	routerMap: {
 		'timeline': {
@@ -44,7 +46,7 @@ var site = {
 		$(document).ready(function(){
 			self.cacheElement();
 			if(browserSupported){
-				self.bindSidebar();
+				if(self.isPC) self.bindSidebar();
 				window.onhashchange = function(){
 					self.refreshPage();
 				};
@@ -150,8 +152,8 @@ var site = {
 		})
 	},
 	checkBrowser: function(IEVersion){ // type: 'page' or 'project' 
-		var userAgent = navigator.userAgent.toLowerCase().match(/(chrome|firefox|safari|opera|msie)/gi)[0],
-			version = (userAgent == 'msie') ? navigator.userAgent.toLowerCase().match(/msie\s*\d+/gi)[0].match(/\d+/) : 1000;
+		var userAgent = this.ua.toLowerCase().match(/(chrome|firefox|safari|opera|msie)/gi)[0],
+			version = (userAgent == 'msie') ? this.ua.toLowerCase().match(/msie\s*\d+/gi)[0].match(/\d+/) : 1000;
 			IESupportedVersion = IEVersion ? IEVersion : this.IESupportedVersion;
 
 		if(!userAgent){

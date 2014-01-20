@@ -1,0 +1,20 @@
+@media screen and (max-width: 768px){
+	.intro, .contactme, .bg{
+		display: none;
+	}
+	aside, article{
+		width: 90%;
+		padding: 20px 5%;
+	}
+	aside{
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		background-color: @bg-color-dark;
+	}
+	article{
+		z-index: 3;
+		margin: 0;
+		background-color: @bg-color;
+	}
+}

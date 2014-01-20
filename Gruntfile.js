@@ -50,16 +50,16 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        concat: {
-            options: {
-                stripBanners: true,
-                banner: '<%= banner %>\n'
-            },
-            base: {
-                src: ['<%= dirs.css %>*.less', '!<%= dirs.css %>all.less'],
-                dest: '<%= dirs.css %>all.less'
-            }
-        },
+        // concat: {
+        //     options: {
+        //         stripBanners: true,
+        //         banner: '<%= banner %>\n'
+        //     },
+        //     base: {
+        //         src: ['<%= dirs.css %>*.less', '!<%= dirs.css %>all.less'],
+        //         dest: '<%= dirs.css %>all.less'
+        //     }
+        // },
         htmlmin: {  
             options: {                                 
                     removeComments: true,
@@ -80,6 +80,6 @@ module.exports = function(grunt) {
     // grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
-    grunt.registerTask('prd', ['concat', 'less', 'cssmin', 'uglify', 'htmlmin']);
+    grunt.registerTask('prd', ['less', 'cssmin', 'uglify', 'htmlmin']);
     grunt.registerTask('dev', ['less']);
 }; 

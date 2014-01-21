@@ -2,11 +2,38 @@
 	.intro, .contactme, .bg{
 		display: none;
 	}
+
+	header{
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 9;
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
+		background-color: @bg-color-dark;
+		border-bottom: 1px solid @border-color;
+		.box();
+	}
+	header .left, header .right{
+		width: 20%;
+	}
+	header .title{
+		.flex(1);
+	}
+	header .left{
+		text-align: left;
+	}
+	header .right{
+		text-align: right;
+	}
 	aside, article{
 		width: 90%;
 		padding: 20px 5%;
 	}
 	aside{
+		display: none;
 		position: fixed;
 		top: 0;
 		bottom: 0;
@@ -16,5 +43,19 @@
 		z-index: 3;
 		margin: 0;
 		background-color: @bg-color;
+	}
+	pre{
+		padding-left: 35px;
+	}
+
+	.loading{
+		top: 51px;
+	}
+	.c-box{
+		margin: 0 auto;
+	}
+	.btn{
+		width: 100%;
+		padding: 15px 0;
 	}
 }

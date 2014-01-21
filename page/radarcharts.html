@@ -1,5 +1,7 @@
 <script type="text/javascript" src="js/component/radarcharts.min.js"></script>
-
+<script type="text/javascript">
+	var isPC = window.top.site.isPC;
+</script>
 <h1 class="mb-l">Radarcharts JS</h1>
 <p>使用 Canvas 实现的一种雷达展现形式的图表。</p>
 <p>Canvas charts with radar impression.</p>
@@ -8,7 +10,7 @@
 	<h2>一分钟简介</h2>
 	<p>雷达图表是一种以雷达形式展现数据的图表，对某些数据来说，使用雷达图表展示出来会更加直观，更容易看出数据的特点。Radarcharts 采用 HTML5 的 Canvas 技术，是一个参数丰富、灵活好用的图表类。</p>
 	<p>先看一个简单的 Radarcharts 用例，我们来比较一下两位前端工程师的各项能力值：</p>
-	<div style="display: inline-block; background-color: #30393b; box-shadow: inset 0 -100px 300px rgba(0, 0, 0, .6);">
+	<div id="container-engineer-wrapper" style="width: 100%; max-width: 300px; padding: 30px 50px; background-color: #30393b; box-shadow: inset 0 -100px 300px rgba(0, 0, 0, .6);">
 		<div id="container-engineer"></div>
 	</div>
 	<p class="mt-m">通过观察图表，能够清晰地看出，工程师甲的技能几乎满级，但是沟通能力差，很有可能是个怪咖；工程师乙各项技能都要稍稍逊色于工程师甲，但是工程师乙的能力值很均衡，不必担心是个怪咖。</p>
@@ -17,7 +19,7 @@
 <section>
 	<h2>使用方法</h2>
 	<ol class="decorated">
-		<li>在页面内引入 <a target="_blank" href="https://raw.github.com/kikoshoung/radarcharts/master/minified/radarcharts.min.js">radarcharts.min.js</a> 或 <a target="_blank" href="https://raw.github.com/kikoshoung/radarcharts/master/js/radarcharts.js">radarcharts.js</a>。</li>
+		<li>在页面内引入 <a target="_blank" href="https://raw.github.com/kikoshoung/radarcharts/master/js/radarcharts.min.js">radarcharts.min.js</a> 或 <a target="_blank" href="https://raw.github.com/kikoshoung/radarcharts/master/js/radarcharts.js">radarcharts.js</a>。</li>
 		<li>然后，在页面内放置你的 DOM 容器，如：&lt;div id="container-engineer"&gt;&lt;/div&gt;。</li>
 		<li>最后，构造一个 Radarcharts 实例（这里以“前端工程师能力展示”图表的代码为例）：</li>
 	</ol>
@@ -382,27 +384,36 @@ CONFIG = {
 			{name: '工程师乙', data: [80, 78, 82, 81, 80]}
 		];
 
+	if(!isPC) {
+		$('#container-engineer-wrapper').css({
+			padding: '30px 0'
+		});
+	}
 	// 实例化一个图表
 	var engineerChart = new Radarcharts({
 		renderTo: $('#container-engineer')[0],
 		categories: ['JS', 'HTML', 'CSS', '经验', '沟通'],
 		series: engineers,
 		maxValue: 100,
-		size: null,
-		paddingPercentage: 0.25,
+		size: isPC ? [300, 300] : null,
+		paddingPercentage: isPC ? 0.25 : 0.3,
 		style: {
 			color: 'white'
 		},
 		title: {
 			text: '前端工程师能力展示',
-			border: false
+			border: false,
+			padding: isPC ? '10px 10%' : '10px 5%',
+			margin: isPC ? '0 10%' : '0 5%',
+			width: isPC ? '60%' : '80%',
 		},
 		background: {
 			colors: ['transparent'],
 			border: false
 		},
 		legend: {
-			border: false
+			border: false,
+			margin: isPC ? '0 20%' : '0 10%',
 		},
 		axis: {
 			color: 'white'
@@ -426,8 +437,8 @@ CONFIG = {
 		categories: ['丹麦', '瑞士', '奥地利', '冰岛', '芬兰', '不丹', '文莱', '加拿大', '美国', '中国'],
 		series: index,
 		maxValue: 10,
-		size: window.top.site.isPC ? [400, 400] : null,
-		paddingPercentage: window.top.site.isPC ? 0.2 : 0.3,
+		size: isPC ? [400, 400] : null,
+		paddingPercentage: isPC ? 0.2 : 0.3,
 		style: {
 			color: '#4883a3'
 		},
@@ -476,10 +487,13 @@ CONFIG = {
 		categories: ['速度', '力量', '平衡', '盘带', '射门', '防守'],
 		series: messi,
 		maxValue: 100,
-		size: window.top.site.isPC ? [300, 300] : null,
+		size: isPC ? [300, 300] : null,
 		paddingPercentage: 0.2,
 		title: {
-			text: '梅西和普约尔的对比'
+			text: '梅西和普约尔的对比',
+			padding: isPC ? '10px 10%' : '10px 5%',
+			margin: isPC ? '0 10%' : '0 5%',
+			width: isPC ? '60%' : '80%',
 		},
 		background: {
 			colors: ['#404040', '#5f5f5f'],
@@ -533,8 +547,8 @@ CONFIG = {
 		categories: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
 		series: thisYear,
 		maxValue: 120,
-		size: window.top.site.isPC ? [450, 450] : null,
-		paddingPercentage: window.top.site.isPC ? 0.22 : 0.25,
+		size: isPC ? [450, 450] : null,
+		paddingPercentage: isPC ? 0.22 : 0.25,
 		style: {
 			color: '#818181'
 		},
@@ -566,7 +580,7 @@ CONFIG = {
 			format: '<b>{series.name}</b><br/>{point.name}: {point.value} / {options.maxValue}（万件）'
 		},
 		header: {
-			offset: window.top.site.isPC ? '20px' : '5px'
+			offset: isPC ? '20px' : '5px'
 		}
 	});
 	
@@ -592,4 +606,3 @@ CONFIG = {
 <script type="text/javascript">
 	site.codeareaHandler($('body').find('pre'));
 </script>
-

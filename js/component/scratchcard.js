@@ -12,34 +12,40 @@
 		this.initialize();
 	};
 
-	function clone(original){
-        if(typeof original != 'object' || !original || original.nodeType) return original;
+	// clone an object deeply
+	function clone(obj){
+		// If obj is not an Object instance, return it. Except null and DOM object.
+		if(typeof obj != 'object' || obj == null || obj.nodeType) return obj;
 
-        var clonedObject = original.constructor === Array ? [] : {};
+		var clonedObj = obj.constructor === Array ? [] : {};
 
-        for(var i in original){
-        	clonedObject[i] = arguments.callee(original[i])
-        }
+		for(var prop in obj){
+			clonedObj[prop] = arguments.callee(obj[prop]);
+		}
 
-        return clonedObject;
+		return clonedObj;
 	}
 
-	function extend(target, defaults){
-        var extended = clone(defaults);
+	// extend origin object with default options object 
+	function extend(origin, options){
+		var extendedOpt = clone(options);
+			origin = origin || {};
+			options = options || {};
 
-        for(var j in target){
-            if(extended[j] instanceof Object && target[j]){
-                if(extended[j] instanceof Array){
-                        extended[j] = clone(target[j]);
-                } else {
-                        extended[j] = arguments.callee(target[j], extended[j]);
-                }
-            } else {
-                extended[j] = target[j];
-            }
-        }
-        return extended;
-	};
+		for(var prop in origin){
+			if(origin[prop] instanceof Object && !origin[prop].nodeType){
+				if(origin[prop] instanceof Array || origin[prop] instanceof Function){
+					extendedOpt[prop] = clone(origin[prop]);
+				} else {
+					extendedOpt[prop] = arguments.callee(origin[prop], extendedOpt[prop]);
+				}
+			} else {
+				extendedOpt[prop] = origin[prop];
+			}
+		}
+
+		return extendedOpt;
+	}
 
 	function getOffset(elem){
 		var offset = [elem.offsetLeft, elem.offsetTop],

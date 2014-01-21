@@ -36,6 +36,20 @@ li, p, dt, dd{
 	-o-border-radius: @param;
 	border-radius: @param;
 }
+.box(){
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-box;
+	display: -o-box;
+	display: box;
+}
+.flex(@param){
+	-webkit-box-flex: @param;
+	-moz-box-flex: @param;
+	-ms-box-flex: @param;
+	-o-box-flex: @param;
+	box-flex: @param;
+}
 .clearfix{
     zoom: 1;
     &:before, &:after {

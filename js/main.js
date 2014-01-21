@@ -63,6 +63,7 @@ var site = {
 		this.body = $('body');
 		this.container = $('article');
 		this.loading = $('#loading');
+		this.title = $('#title');
 	},
 	bindSidebar: function(){
 		var win = this.win,
@@ -114,6 +115,7 @@ var site = {
 		}
 
 		document.title = pageTitle;
+		this.title.html(pageTitle);
 		switch(fragment){
 			case 'smartspot':
 			case 'ename':

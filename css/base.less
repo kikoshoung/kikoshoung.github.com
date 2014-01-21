@@ -1,5 +1,5 @@
 /* reset */
-html, body, div, h1, h2, h3, h4, h5, h6, p, code, img, ul, ol, iframe, pre, code, figure, dl{
+html, body, div, h1, h2, h3, h4, h5, h6, p, button, code, img, ul, ol, iframe, pre, code, figure, dl{
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -29,13 +29,21 @@ li, p, dt, dd{
 	-o-backface-visibility: @param; 
 	backface-visibility: @param;
 }
-.border-radius(@param){
+.border-radius(@param: 5px){
 	-webkit-border-radius: @param;
 	-moz-border-radius: @param;
 	-ms-border-radius: @param;
 	-o-border-radius: @param;
 	border-radius: @param;
 }
+.box-shadow(@param: 0 1px 2px rgba(0, 0, 0, .1)){
+	-webkit-box-shadow: @param;
+	-moz-box-shadow: @param;
+	-ms-box-shadow: @param;
+    -o-box-shadow: @param;
+    box-shadow: @param;
+}
+
 .box(){
 	display: -webkit-box;
 	display: -moz-box;
@@ -49,6 +57,12 @@ li, p, dt, dd{
 	-ms-box-flex: @param;
 	-o-box-flex: @param;
 	box-flex: @param;
+}
+.one-line-text{
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .clearfix{
     zoom: 1;

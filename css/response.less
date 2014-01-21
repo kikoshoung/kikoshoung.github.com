@@ -1,5 +1,5 @@
 @media screen and (max-width: 768px){
-	.intro, .contactme, .bg{
+	article > h1, .intro, .contactme, .bg{
 		display: none;
 	}
 
@@ -14,13 +14,18 @@
 		line-height: 50px;
 		background-color: @bg-color-dark;
 		border-bottom: 1px solid @border-color;
-		.box();
+		overflow: hidden;
+		.box;
+		.box-shadow;
 	}
 	header .left, header .right{
 		width: 20%;
+		padding: 0 4%;
 	}
 	header .title{
+		text-align: center;
 		.flex(1);
+		.one-line-text;
 	}
 	header .left{
 		text-align: left;
@@ -29,8 +34,8 @@
 		text-align: right;
 	}
 	aside, article{
-		width: 90%;
-		padding: 20px 5%;
+		width: 92%;
+		padding: 30px 4%;
 	}
 	aside{
 		display: none;
@@ -42,20 +47,56 @@
 	article{
 		z-index: 3;
 		margin: 0;
+		padding-top: 80px;
 		background-color: @bg-color;
 	}
 	pre{
 		padding-left: 35px;
 	}
+	button, .btn{
+		width: 100%;
+		padding: 15px 0;
+	}
+	header .btn{
+		width: 70%;
+		height: 20px;
+		padding: 15px 5px;
+		background-color: transparent;
+		vertical-align: middle;
+	}
+	header .btn span{
+		display: block;
+		width: 60%;
+		height: 3px;
+		margin: 5px auto 0;
+		background-color: @text-color;
+	}
+	header .btn span:first-child{
+		margin: 0 auto;
+	}
 
+	.time-line{
+		margin-top: 0;
+	}
+	.time-line .line{
+		left: 27px;
+	}
+	.time-line figure{
+		min-height: 60px;
+	}
+	.time-line figure > img, .time-line .time-node{
+		width: 60px;
+		height: 60px;
+		line-height: 60px;
+	}
+	.time-line figcaption{
+		margin-left: 70px;
+		padding-top: 18px;
+	}
 	.loading{
 		top: 51px;
 	}
 	.c-box{
 		margin: 0 auto;
-	}
-	.btn{
-		width: 100%;
-		padding: 15px 0;
 	}
 }

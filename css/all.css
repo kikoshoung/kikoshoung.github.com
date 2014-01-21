@@ -9,6 +9,7 @@ h4,
 h5,
 h6,
 p,
+button,
 code,
 img,
 ul,
@@ -37,6 +38,12 @@ dd {
 /* display */
 .hide {
   display: none;
+}
+.one-line-text {
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .clearfix {
   zoom: 1;
@@ -243,6 +250,16 @@ pre p span.num {
   left: -40px;
   color: #cccccc;
 }
+button,
+.btn {
+  display: inline-block;
+  padding: 10px;
+  background: green;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
 header {
   display: none;
 }
@@ -304,7 +321,7 @@ aside section h2 {
   position: relative;
   margin-top: 40px;
 }
-.line {
+.time-line .line {
   position: absolute;
   z-index: 3;
   top: 0;
@@ -323,6 +340,9 @@ aside section h2 {
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
+}
+.time-line figure.last {
+  margin-bottom: 0;
 }
 .time-line figure > img,
 .time-line .time-node {
@@ -412,15 +432,6 @@ article .indented {
   line-height: 30px;
   background-color: #eff5f2;
 }
-.btn {
-  display: inline-block;
-  padding: 10px;
-  background: green;
-  color: white;
-  border: none;
-  outline: none;
-  font-size: 14px;
-}
 /* timeline css3 animation */
 @-webkit-keyframes paopao-in {
   0% {
@@ -440,6 +451,7 @@ article .indented {
   }
 }
 @media screen and (max-width: 768px) {
+  article > h1,
   .intro,
   .contactme,
   .bg {
@@ -456,22 +468,34 @@ article .indented {
     line-height: 50px;
     background-color: #eff5f2;
     border-bottom: 1px solid #ccd1cf;
+    overflow: hidden;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-box;
     display: -o-box;
     display: box;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   }
   header .left,
   header .right {
     width: 20%;
+    padding: 0 4%;
   }
   header .title {
+    text-align: center;
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
     -ms-box-flex: 1;
     -o-box-flex: 1;
     box-flex: 1;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
   header .left {
     text-align: left;
@@ -481,8 +505,8 @@ article .indented {
   }
   aside,
   article {
-    width: 90%;
-    padding: 20px 5%;
+    width: 92%;
+    padding: 30px 4%;
   }
   aside {
     display: none;
@@ -494,19 +518,57 @@ article .indented {
   article {
     z-index: 3;
     margin: 0;
+    padding-top: 80px;
     background-color: #ffffff;
   }
   pre {
     padding-left: 35px;
+  }
+  button,
+  .btn {
+    width: 100%;
+    padding: 15px 0;
+  }
+  header .btn {
+    width: 70%;
+    height: 20px;
+    padding: 15px 5px;
+    background-color: transparent;
+    vertical-align: middle;
+  }
+  header .btn span {
+    display: block;
+    width: 60%;
+    height: 3px;
+    margin: 5px auto 0;
+    background-color: #8d8d8d;
+  }
+  header .btn span:first-child {
+    margin: 0 auto;
+  }
+  .time-line {
+    margin-top: 0;
+  }
+  .time-line .line {
+    left: 27px;
+  }
+  .time-line figure {
+    min-height: 60px;
+  }
+  .time-line figure > img,
+  .time-line .time-node {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+  .time-line figcaption {
+    margin-left: 70px;
+    padding-top: 18px;
   }
   .loading {
     top: 51px;
   }
   .c-box {
     margin: 0 auto;
-  }
-  .btn {
-    width: 100%;
-    padding: 15px 0;
   }
 }

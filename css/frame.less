@@ -54,7 +54,7 @@ pre{
 	border: 1px solid @border-color;
 	word-wrap: break-word;
 	color: @text-color-dark;
-	.border-radius(5px);
+	.border-radius;
 	line-height: @line-height-s;
 }
 pre ul.code-row-list{
@@ -82,6 +82,15 @@ pre p span.num{
 	top: 0;
 	left: -40px;
 	color: @text-color-light;
+}
+button, .btn{
+    display: inline-block;
+    padding: 10px;
+    background: green;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: @font-size-m;
 }
 
 header{
@@ -144,7 +153,7 @@ aside section h2{
 	position: relative;
 	margin-top: @gap-l;
 }
-.line{
+.time-line .line{
 	position: absolute;
 	z-index: 3;
 	top: 0;
@@ -159,6 +168,9 @@ aside section h2{
 	min-height: 80px;
 	margin-bottom: 50px;
 	.backface-visibility(hidden);
+}
+.time-line figure.last{
+	margin-bottom: 0;
 }
 .time-line figure > img, .time-line .time-node{
 	float: left;
@@ -245,16 +257,6 @@ article .indented{
 	padding: 0 @gap-l 0 @gap-m;
 	line-height: 30px;
 	background-color: @bg-color-dark;
-}
-
-.btn{
-    display: inline-block;
-    padding: 10px;
-    background: green;
-    color: white;
-    border: none;
-    outline: none;
-    font-size: @font-size-m;
 }
 
 /* timeline css3 animation */

@@ -42,10 +42,12 @@ ol.decorated{
 dl dt{
 	float: left;
 	width: 3em;
+	*width: 3.5em;
 	text-align: right;
 }
 dl dd{
 	margin-left: 3em;
+	*margin-left: 3.5em;
 }
 pre{
 	position: relative;
@@ -122,11 +124,11 @@ aside, article{
 article{
 	padding: 100px 4% 100px 3%;
 }
-nav{
+aside > nav{
 	border-bottom: 1px solid @border-color;
 	padding-bottom: @gap-l;
 }
-nav li {
+aside > nav li {
 	float: left;
 	padding-right: @gap-m; 
 }
@@ -141,13 +143,17 @@ aside section.last{
 aside section h2{
 	margin-bottom: @gap-m;
 }
+aside > nav, aside > section, aside > .fix-block{
+	width: 100%;
+}
 .fix-block{
 	background-color: @bg-color-dark;
 }
 .fix-block.active{
-	width: 100%;
+	width: 28%;
 	position: fixed;
 	top: 0;
+	left: 4%;
 }
 .time-line{
 	position: relative;
@@ -171,6 +177,7 @@ aside section h2{
 }
 .time-line figure.last{
 	margin-bottom: 0;
+	height: 80px;
 }
 .time-line figure > img, .time-line .time-node{
 	float: left;

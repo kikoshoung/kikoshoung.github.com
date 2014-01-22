@@ -8,22 +8,28 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 		<title>Kiko's blog</title>
 		<link rel="shortcut icon" href="img/favicon.ico">
+		<script type="text/javascript">
+			var newTags = ['header', 'footer', 'aside', 'section', 'nav', 'menu', 'article', 'figure', 'figcaption', 'dialog'];
+		for(var i = 0, len = newTags.length; i < len; i++){
+			document.createElement(newTags[i]);
+		}
+		</script>
 		<link rel="stylesheet" type="text/css" href="css/all.css">
 		<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
 	</head>
 	<body>
-		<header>
+		<header id="header">
 			<div class="left">
-				<div class="btn" id="menu">
+				<div class="btn" id="menu-btn">
 					<span></span>
 					<span></span>
 					<span></span>
 				</div>
 			</div>
-			<div class="title" id="title">加载中...</div>
+			<div class="center" id="title">加载中...</div>
 			<div class="right"></div>
 		</header>
-		<aside>
+		<aside class="menu-list" id="menu-list">
 			<nav>
 				<ul class="clearfix">
 					<li><a href="#timeline">时间线</a></li>
@@ -61,10 +67,10 @@
 			</div>
 		</aside>
 		<aside class="bg"></aside>
-		<article>
+		<article id="article">
 			加载中...
 		</article>
-		<div class="loading" id="loading">正在获取内容...</div>
+		<div class="loading" id="loading"><i>Loading...</i></div>
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>

@@ -12,6 +12,10 @@ li, p, dt, dd{
 	word-wrap: break-word;
 }
 
+article, aside, dialog, footer, header, section, nav, figure, figcaption, menu{
+	display: block;
+}
+
 /* font */
 .font(@param){
 	font-size: @param;
@@ -36,14 +40,13 @@ li, p, dt, dd{
 	-o-border-radius: @param;
 	border-radius: @param;
 }
-.box-shadow(@param: 0 1px 2px rgba(0, 0, 0, .1)){
+.box-shadow(@param: 0 0 5px rgba(0, 0, 0, .15)){
 	-webkit-box-shadow: @param;
 	-moz-box-shadow: @param;
 	-ms-box-shadow: @param;
     -o-box-shadow: @param;
     box-shadow: @param;
 }
-
 .box(){
 	display: -webkit-box;
 	display: -moz-box;
@@ -51,12 +54,37 @@ li, p, dt, dd{
 	display: -o-box;
 	display: box;
 }
-.flex(@param){
+.flex(@param: 1){
 	-webkit-box-flex: @param;
 	-moz-box-flex: @param;
 	-ms-box-flex: @param;
 	-o-box-flex: @param;
 	box-flex: @param;
+}
+.transition(@param: all .3s ease 0){
+	-webkit-transition: @param;
+	-moz-transition: @param;
+	-ms-transition: @param;
+	-o-transition: @param;
+	transition: @param;
+}
+.opacity(@param: 100) {
+    opacity: @param / 100;
+    filter: ~"alpha(opacity=@{param})";
+}
+.transform(@param){
+	-webkit-transform: @param;
+	-moz-transform: @param;
+	-ms-transform: @param;
+	-o-transform: @param;
+	transform: @param;
+}
+.transform-origin(@param: 0 0){
+	-webkit-transform-origin: @param;
+	-moz-transform-origin: @param;
+	-ms-transform-origin: @param;
+	-o-transform-origin: @param;
+	transform-origin: @param;
 }
 .one-line-text{
     display: block;

@@ -3,6 +3,9 @@
 		display: none;
 	}
 
+	html, body{
+		overflow-x: hidden;
+	}
 	header{
 		display: block;
 		position: fixed;
@@ -17,14 +20,15 @@
 		overflow: hidden;
 		.box;
 		.box-shadow;
+		.transition;
 	}
 	header .left, header .right{
 		width: 20%;
 		padding: 0 4%;
 	}
-	header .title{
+	header .center{
 		text-align: center;
-		.flex(1);
+		.flex;
 		.one-line-text;
 	}
 	header .left{
@@ -42,13 +46,37 @@
 		position: fixed;
 		top: 0;
 		bottom: 0;
+		height: 100%;
+		padding: 0 4%;
 		background-color: @bg-color-dark;
+		font-size: @font-size-l;
+		overflow-y: scroll;
+	}
+	aside.menu-list{
+		display: block;
+		width: 53%;
+		.opacity(0);
+		.transition;
+	}
+	aside.menu-list.active{
+		.opacity(100);
+	}
+	aside section, aside nav{
+		padding: 20px 0;
+	}
+	aside nav{
+		padding-top: 60px;
 	}
 	article{
 		z-index: 3;
 		margin: 0;
 		padding-top: 80px;
 		background-color: @bg-color;
+		.transition;
+		.box-shadow;
+	}
+	header.active, article.active{
+		left: 60%;
 	}
 	pre{
 		padding-left: 35px;
@@ -60,7 +88,6 @@
 	header .btn{
 		width: 70%;
 		height: 20px;
-		padding: 15px 5px;
 		background-color: transparent;
 		vertical-align: middle;
 	}
@@ -68,13 +95,27 @@
 		display: block;
 		width: 60%;
 		height: 3px;
-		margin: 5px auto 0;
+		margin-top: 5px;
 		background-color: @text-color;
 	}
 	header .btn span:first-child{
-		margin: 0 auto;
+		margin-top: 0;
 	}
-
+	
+	.menu-list ul li{
+		float: none;
+		margin-bottom: 5px;
+		padding: 0;
+		.one-line-text;
+	}
+	.fix-block.active{
+		width: auto;
+		position: static;
+	}
+	.works{
+		padding-bottom: @gap-xl;
+		border-bottom: none;
+	}
 	.time-line{
 		margin-top: 0;
 	}
@@ -83,6 +124,9 @@
 	}
 	.time-line figure{
 		min-height: 60px;
+	}
+	.time-line figure.last{
+		height: 60px;
 	}
 	.time-line figure > img, .time-line .time-node{
 		width: 60px;
@@ -93,10 +137,28 @@
 		margin-left: 70px;
 		padding-top: 18px;
 	}
+	.app-info > img{
+		width: 40px;
+		height: 40px;
+	}
+	.app-info figcaption{
+		margin-left: 52px;
+	}
+
 	.loading{
 		top: 51px;
 	}
 	.c-box{
 		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 480px){
+	iframe{
+		.transform(scale(1));
+		.transform-origin;
+	}
+	iframe.horizontal{
+		.transform(scale(.92) rotate(-90deg));
 	}
 }

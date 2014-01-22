@@ -1,8 +1,10 @@
 var site = {
 	siteName: 'Kiko\'s blog',
 	ua: navigator.userAgent,
-	isPC: !navigator.userAgent.match(/(Android|iPhone|iPad|iPod|Windows Phone|MQQBrowser)/),
+	// isPC: !navigator.userAgent.match(/(Android|iPhone|iPad|iPod|Windows Phone|MQQBrowser)/),
+	isPC: ('ontouchstart' in window) ? false : true,
 	IESupportedVersion: 8,
+	events: {},
 	routerMap: {
 		'timeline': {
 			fileName: 'timeline',
@@ -43,47 +45,95 @@ var site = {
 	init: function(hash){
 		var self = this;
 			browserSupported = this.checkBrowser(this.IESupportedVersion);
-		$(document).ready(function(){
-			self.cacheElement();
-			if(browserSupported){
-				if(self.isPC) self.bindSidebar();
-				window.onhashchange = function(){
-					self.refreshPage();
-				};
-				if(location.hash == '') location.hash = hash;
-				else window.onhashchange();
-				// self.preventLinkDefault();
-			} else {
-				self.showNotSupportedPage();
-			}
-		})
+
+		self.html5shiv();
+		self.setEvents();
+		self.cacheElement();
+		if(browserSupported){
+			self.bindEvents();
+			window.onhashchange = function(){
+				self.refreshPage();
+			};
+			if(location.hash == '') location.hash = hash;
+			else window.onhashchange();
+			// self.preventLinkDefault();
+		} else {
+			self.showNotSupportedPage();
+		}
+	},
+	html5shiv: function(){
+		var newTags = ['header', 'footer', 'aside', 'section', 'nav', 'menu', 'article', 'figure', 'figcaption', 'dialog'];
+
+		for(var i = 0, len = newTags.length; i < len; i++){
+			document.createElement(newTags[i]);
+		}
+	},
+	setEvents: function(){
+		var isPC = this.isPC;
+
+		this.events = {
+			mousedown: isPC ? 'mousedown' : 'touchstart',
+            mousemove: isPC ? 'mousemove' : 'touchmove',
+            mouseup: isPC ? 'mouseup' : 'touchend',
+            click: isPC ? 'click' : 'touchstart'
+		}
 	},
 	cacheElement: function(){
 		this.win = $(window);
 		this.body = $('body');
-		this.container = $('article');
+		this.article = $('#article');
 		this.loading = $('#loading');
+		this.header = $('#header');
 		this.title = $('#title');
+		this.menuBtn = $('#menu-btn');
+		this.menuList = $('#menu-list');
+	},
+	bindEvents: function(){
+		var isPC = this.isPC;
+
+		if(isPC) this.bindSidebar();
+		this.bindMenu();
 	},
 	bindSidebar: function(){
 		var win = this.win,
 			bar = $('#fix-block'),
-			offset = bar.offset(),
-			width = bar.outerWidth();
+			offset = bar.offset();
 
 		win.on('scroll', function(e){
-			width = bar.outerWidth();
 			if(win.scrollTop() >= offset.top){
-				bar.addClass('active').width(width);
+				bar.addClass('active');
 			} else {
-				bar.removeClass('active').width('auto');
+				bar.removeClass('active');
 			}
 		});
 		win.on('resize', function(e){
 			offset = bar.offset();
-			width = bar.outerWidth();
-			bar.removeClass('active').width('auto');
+			bar.removeClass('active');
 		});
+	},
+	bindMenu: function(){
+		var menuBtn = this.menuBtn,
+			article = this.article,
+			header = this.header,
+			self = this;
+
+		menuBtn.on(this.events['click'], function(){
+			if(article.hasClass('active')){
+				self.hideMenuList();
+			} else {
+				self.showMenuList();
+			}
+		});
+	},
+	showMenuList: function(){
+		this.header.addClass('active');
+		this.article.addClass('active');
+		this.menuList.addClass('active').scrollTop(0);
+	},
+	hideMenuList: function(){
+		this.header.removeClass('active');
+		this.article.removeClass('active');
+		this.menuList.removeClass('active');
 	},
 	preventLinkDefault: function(){
 		this.body.delegate('a', 'click', function(e){
@@ -100,7 +150,7 @@ var site = {
 		var hash = location.hash,
 			routerMap = this.routerMap,
 			IESupportedVersion = this.IESupportedVersion,
-			container = this.container,
+			article = this.article,
 			self = this,
 			fragment, pageTitle, isSupported;
 
@@ -127,16 +177,17 @@ var site = {
 		isSupported = this.checkBrowser(IESupportedVersion);
 		if(isSupported){
 			this.showLoading();
-			container.html('加载中...').load('/page/'+ fragment +'.html', function(){
+			article.html('加载中...').load('/page/'+ fragment +'.html', function(){
 				self.hideLoading();
+				self.hideMenuList();
 			});
 		} else {
-			var container = this.container,
+			var article = this.article,
 				isIEInclude = (IESupportedVersion == 100) ? false : true,
 				suguestedList = this.getSugguestedList(isIEInclude);
-			container.html('<h1>该项目需要使用对HTML5特性支持较好的浏览器才能查看</h1>\
+			article.html('<h1>该项目需要使用对HTML5特性支持较好的浏览器才能查看</h1>\
 								<p class="mt-m mb-s">建议使用以下浏览器查看该项目：</p>');
-			container.append(suguestedList);
+			article.append(suguestedList);
 		}
 	},
 	showLoading: function(){

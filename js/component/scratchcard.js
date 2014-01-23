@@ -12,40 +12,34 @@
 		this.initialize();
 	};
 
-	// clone an object deeply
-	function clone(obj){
-		// If obj is not an Object instance, return it. Except null and DOM object.
-		if(typeof obj != 'object' || obj == null || obj.nodeType) return obj;
+	function clone(original){
+        if(typeof original != 'object' || !original || original.nodeType) return original;
 
-		var clonedObj = obj.constructor === Array ? [] : {};
+        var clonedObject = original.constructor === Array ? [] : {};
 
-		for(var prop in obj){
-			clonedObj[prop] = arguments.callee(obj[prop]);
-		}
+        for(var i in original){
+        	clonedObject[i] = arguments.callee(original[i])
+        }
 
-		return clonedObj;
+        return clonedObject;
 	}
 
-	// extend origin object with default options object 
-	function extend(origin, options){
-		var extendedOpt = clone(options);
-			origin = origin || {};
-			options = options || {};
+	function extend(target, defaults){
+        var extended = clone(defaults);
 
-		for(var prop in origin){
-			if(origin[prop] instanceof Object && !origin[prop].nodeType){
-				if(origin[prop] instanceof Array || origin[prop] instanceof Function){
-					extendedOpt[prop] = clone(origin[prop]);
-				} else {
-					extendedOpt[prop] = arguments.callee(origin[prop], extendedOpt[prop]);
-				}
-			} else {
-				extendedOpt[prop] = origin[prop];
-			}
-		}
-
-		return extendedOpt;
-	}
+        for(var j in target){
+            if(extended[j] instanceof Object && target[j]){
+                if(extended[j] instanceof Array){
+                        extended[j] = clone(target[j]);
+                } else {
+                        extended[j] = arguments.callee(target[j], extended[j]);
+                }
+            } else {
+                extended[j] = target[j];
+            }
+        }
+        return extended;
+	};
 
 	function getOffset(elem){
 		var offset = [elem.offsetLeft, elem.offsetTop],
@@ -267,7 +261,7 @@
 				throw new Error(options.notSupportText);
 			}
 
-			this.canvasOffset = getOffset(canvas);
+			// this.canvasOffset = getOffset(canvas);
 
 			ctx.globalCompositeOperation = "source-over";
 
@@ -320,7 +314,9 @@
 
 		mousedownHandler: function(e){
 			var ctx = this.ctx,
-				canvasOffset = this.canvasOffset,
+				canvas = this.canvas,
+				// In case canvas' position changed
+				canvasOffset = this.canvasOffset || (this.canvasOffset = getOffset(canvas)),
 				pageCoordinate = this.getCoordinate(e);
 
 			this.scratchActivated = true;

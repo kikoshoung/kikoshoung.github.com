@@ -197,10 +197,6 @@ aside > nav, aside > section, aside > .fix-block{
 }
 
 
-.profile{
-	position: relative;
-	margin-top: @gap-l;
-}
 article section{
 	margin-top: @gap-l;
 }
@@ -220,25 +216,18 @@ article .indented{
 	margin: @gap-m 0;
 	margin-left: @gap-l;
 }
-.profile .avatar{
-	position: absolute;
-	top: 0;
-	right: 0;
+figure.profile img{
 	width: 140px;
 	height: 170px;
+	float: right;
 	background-color: @bg-color-dark;
 }
-.profile .info-list li{
-	margin: 0;
-}
-.profile .info-list .title{
-	display: inline-block;
-	width: 4em;
+figure.profile figcaption{
+	margin-right: 160px;
 }
 .text-seperator{
 	margin: 0 5px;
 }
-
 .app-info {
 	min-height: 72px;
 }

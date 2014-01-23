@@ -387,10 +387,6 @@ aside > .fix-block {
 .time-line figure:hover .time-node {
   -webkit-animation: paopao-in 0.2s linear;
 }
-.profile {
-  position: relative;
-  margin-top: 40px;
-}
 article section {
   margin-top: 40px;
 }
@@ -410,20 +406,14 @@ article .indented {
   margin: 20px 0;
   margin-left: 40px;
 }
-.profile .avatar {
-  position: absolute;
-  top: 0;
-  right: 0;
+figure.profile img {
   width: 140px;
   height: 170px;
+  float: right;
   background-color: #eff5f2;
 }
-.profile .info-list li {
-  margin: 0;
-}
-.profile .info-list .title {
-  display: inline-block;
-  width: 4em;
+figure.profile figcaption {
+  margin-right: 160px;
 }
 .text-seperator {
   margin: 0 5px;
@@ -471,7 +461,7 @@ article .indented {
     -webkit-transform: scaleX(1);
   }
 }
-@media screen and (max-width: 768px) and (min-width: 480px) {
+@media screen and (max-width: 768px) {
   article > h1,
   .intro,
   .contactme,
@@ -601,7 +591,6 @@ article .indented {
   }
   header .btn {
     width: 70%;
-    max-width: 60px;
     height: 20px;
     background-color: transparent;
     vertical-align: middle;
@@ -676,11 +665,11 @@ article .indented {
     -ms-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);
-    -webkit-transform-origin: 0 0;
-    -moz-transform-origin: 0 0;
-    -ms-transform-origin: 0 0;
-    -o-transform-origin: 0 0;
-    transform-origin: 0 0;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
   }
   iframe.horizontal {
     -webkit-transform: scale(0.92) rotate(-90deg);

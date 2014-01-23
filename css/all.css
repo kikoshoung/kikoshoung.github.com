@@ -591,6 +591,7 @@ figure.profile figcaption {
   }
   header .btn {
     width: 70%;
+    max-width: 60px;
     height: 20px;
     background-color: transparent;
     vertical-align: middle;

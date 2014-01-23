@@ -15,7 +15,7 @@ var site = {
 			titleFragment: ' | 简历'
 		},
 		'smart-spot': {
-			fileName: 'smart-spot',
+			fileName: 'smartspot',
 			titleFragment: ' | Smart找茬'
 		},
 		'e-name': {
@@ -170,7 +170,8 @@ var site = {
 			case 'smartspot':
 			case 'ename':
 			case 'radarcharts':
-				IESupportedVersion = 9;	
+			case 'scratchcard':
+				IESupportedVersion = 100;	
 				break;
 		}
 

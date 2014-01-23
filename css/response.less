@@ -86,13 +86,6 @@
     article .indented {
         margin-left: @gap-m;
     }
-    figure.profile img {
-        width: 80px;
-        height: 97px;
-    }
-    figure.profile figcaption {
-        margin-right: 100px;
-    }
     header.active, article.active {
         left: 60%;
     }
@@ -172,6 +165,14 @@
 @media screen and (max-width: 480px) {
     @ifram-rotate-left: .5 * 320px;
     @ifram-rotate-top: .92 * @ifram-rotate-left;
+
+    figure.profile img {
+        width: 80px;
+        height: 97px;
+    }
+    figure.profile figcaption {
+        margin-right: 100px;
+    }
     .iframe-wrapper {
         min-height: 480px;
     }

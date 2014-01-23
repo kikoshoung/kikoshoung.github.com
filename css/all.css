@@ -399,6 +399,9 @@ article h4 {
 article section > p {
   margin-bottom: 20px;
 }
+article section.article-intro > p {
+  margin-bottom: 0;
+}
 article .small {
   font-size: 12px;
 }
@@ -589,13 +592,6 @@ figure.profile figcaption {
   article .indented {
     margin-left: 20px;
   }
-  figure.profile img {
-    width: 80px;
-    height: 97px;
-  }
-  figure.profile figcaption {
-    margin-right: 100px;
-  }
   header.active,
   article.active {
     left: 60%;
@@ -679,6 +675,13 @@ figure.profile figcaption {
   }
 }
 @media screen and (max-width: 480px) {
+  figure.profile img {
+    width: 80px;
+    height: 97px;
+  }
+  figure.profile figcaption {
+    margin-right: 100px;
+  }
   .iframe-wrapper {
     min-height: 480px;
   }

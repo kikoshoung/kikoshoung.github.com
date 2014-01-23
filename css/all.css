@@ -475,6 +475,13 @@ figure.profile figcaption {
   body {
     overflow-x: hidden;
   }
+  body {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+    display: -o-box;
+    display: box;
+  }
   header {
     display: block;
     position: fixed;
@@ -541,10 +548,15 @@ figure.profile figcaption {
     background-color: #eff5f2;
     font-size: 16px;
     overflow-y: scroll;
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.15);
   }
   aside.menu-list {
     display: block;
-    width: 53%;
+    width: 52.5%;
     opacity: 0;
     filter: alpha(opacity=0);
     -webkit-transition: all 0.3s ease 0;
@@ -577,11 +589,6 @@ figure.profile figcaption {
     -ms-transition: all 0.3s ease 0;
     -o-transition: all 0.3s ease 0;
     transition: all 0.3s ease 0;
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-    -ms-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-    -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   }
   article section {
     margin-top: 20px;

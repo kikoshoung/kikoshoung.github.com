@@ -471,7 +471,7 @@ article .indented {
     -webkit-transform: scaleX(1);
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) and (min-width: 480px) {
   article > h1,
   .intro,
   .contactme,
@@ -601,6 +601,7 @@ article .indented {
   }
   header .btn {
     width: 70%;
+    max-width: 60px;
     height: 20px;
     background-color: transparent;
     vertical-align: middle;

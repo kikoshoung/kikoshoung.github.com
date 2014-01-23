@@ -1,190 +1,186 @@
-@media screen and (max-width: 768px){
-	.intro, .contactme, .bg, .loading{
-		display: none;
-	}
-
-	html, body{
-		overflow-x: hidden;
-	}
-	header{
-		display: block;
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 9;
-		width: 100%;
-		height: 50px;
-		line-height: 50px;
-		background-color: @bg-color-dark;
-		border-bottom: 1px solid @border-color;
-		overflow: hidden;
-		.box;
-		.box-shadow;
-		.transition;
-	}
-	header .left, header .right{
-		width: 20%;
-		padding: 0 4%;
-	}
-	header .center{
-		text-align: center;
-		.flex;
-		.one-line-text;
-	}
-	header .left{
-		text-align: left;
-	}
-	header .right{
-		text-align: right;
-	}
-	aside, article{
-		width: 92%;
-		padding: 30px 4%;
-	}
-	aside{
-		display: none;
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		height: 100%;
-		padding: 0 4%;
-		background-color: @bg-color-dark;
-		font-size: @font-size-l;
-		overflow-y: scroll;
-	}
-	aside.menu-list{
-		display: block;
-		width: 53%;
-		.opacity(0);
-		.transition;
-	}
-	aside.menu-list.active{
-		.opacity(100);
-	}
-	aside section, aside nav{
-		padding: 20px 0;
-	}
-	aside nav{
-		padding-top: 60px;
-	}
-	aside h2{
-		font-size: @font-size-xl;
-	}
-	article{
-		z-index: 3;
-		margin: 0;
-		padding-top: 80px;
-		background-color: @bg-color;
-		.transition;
-		.box-shadow;
-	}
-	article section{
-		margin-top: @gap-m;
-	}
-	article h2{
-		margin-bottom: @gap-s;
-	}
-	article .indented{
-		margin-left: @gap-m;
-	}
-	figure.profile img{
-		width: 80px;
-		height: 97px;
-	}
-	figure.profile figcaption{
-		margin-right: 100px;
-	}
-	header.active, article.active{
-		left: 60%;
-	}
-	pre{
-		padding-left: 35px;
-	}
-	button, .btn{
-		width: 100%;
-		padding: 15px 0;
-	}
-	header .btn{
-		width: 70%;
-		max-width: 60px;
-		height: 20px;
-		background-color: transparent;
-		vertical-align: middle;
-	}
-	header .btn span{
-		display: block;
-		width: 60%;
-		height: 3px;
-		margin-top: 5px;
-		background-color: @text-color;
-	}
-	header .btn span:first-child{
-		margin-top: 0;
-	}
-	
-	.menu-list ul li{
-		float: none;
-		margin-bottom: 5px;
-		padding: 0;
-		.one-line-text;
-	}
-	.fix-block.active{
-		width: auto;
-		position: static;
-	}
-	.works{
-		padding-bottom: @gap-xl;
-		border-bottom: none;
-	}
-	.time-line{
-		margin-top: 20px;
-	}
-	.time-line .line{
-		left: 27px;
-	}
-	.time-line figure{
-		min-height: 60px;
-	}
-	.time-line figure.last{
-		height: 60px;
-	}
-	.time-line figure > img, .time-line .time-node{
-		width: 60px;
-		height: 60px;
-		line-height: 60px;
-	}
-	.time-line figcaption{
-		margin-left: 70px;
-		padding-top: 18px;
-	}
-	.app-info > img{
-		width: 40px;
-		height: 40px;
-	}
-	.app-info figcaption{
-		margin-left: 52px;
-	}
-
-	.loading{
-		top: 51px;
-	}
-	.c-box{
-		margin: 0 auto;
-	}
+@media screen and (max-width: 768px) {
+    .intro, .contactme, .bg, .loading {
+        display: none;
+    }
+    html, body {
+        overflow-x: hidden;
+    }
+    header {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        background-color: @bg-color-dark;
+        border-bottom: 1px solid @border-color;
+        overflow: hidden;
+        .box;
+        .box-shadow;
+        .transition;
+    }
+    header .left, header .right {
+        width: 20%;
+        padding: 0 4%;
+    }
+    header .center {
+        text-align: center;
+        .flex;
+        .one-line-text;
+    }
+    header .left {
+        text-align: left;
+    }
+    header .right {
+        text-align: right;
+    }
+    aside, article {
+        width: 92%;
+        padding: 30px 4%;
+    }
+    aside {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        padding: 0 4%;
+        background-color: @bg-color-dark;
+        font-size: @font-size-l;
+        overflow-y: scroll;
+    }
+    aside.menu-list {
+        display: block;
+        width: 53%;
+        .opacity(0);
+        .transition;
+    }
+    aside.menu-list.active {
+        .opacity(100);
+    }
+    aside section, aside nav {
+        padding: 20px 0;
+    }
+    aside nav {
+        padding-top: 60px;
+    }
+    aside h2 {
+        font-size: @font-size-xl;
+    }
+    article {
+        z-index: 3;
+        margin: 0;
+        padding-top: 80px;
+        background-color: @bg-color;
+        .transition;
+        .box-shadow;
+    }
+    article section {
+        margin-top: @gap-m;
+    }
+    article h2 {
+        margin-bottom: @gap-s;
+    }
+    article .indented {
+        margin-left: @gap-m;
+    }
+    figure.profile img {
+        width: 80px;
+        height: 97px;
+    }
+    figure.profile figcaption {
+        margin-right: 100px;
+    }
+    header.active, article.active {
+        left: 60%;
+    }
+    pre {
+        padding-left: 35px;
+    }
+    button, .btn {
+        width: 100%;
+        padding: 15px 0;
+    }
+    header .btn {
+        width: 70%;
+        max-width: 60px;
+        height: 20px;
+        background-color: transparent;
+        vertical-align: middle;
+    }
+    header .btn span {
+        display: block;
+        width: 60%;
+        height: 3px;
+        margin-top: 5px;
+        background-color: @text-color;
+    }
+    header .btn span:first-child {
+        margin-top: 0;
+    }
+    .menu-list ul li {
+        float: none;
+        margin-bottom: 5px;
+        padding: 0;
+        .one-line-text;
+    }
+    .fix-block.active {
+        width: auto;
+        position: static;
+    }
+    .works {
+        padding-bottom: @gap-xl;
+        border-bottom: none;
+    }
+    .time-line {
+        margin-top: 20px;
+    }
+    .time-line .line {
+        left: 27px;
+    }
+    .time-line figure {
+        min-height: 60px;
+    }
+    .time-line figure.last {
+        height: 60px;
+    }
+    .time-line figure > img, .time-line .time-node {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+    }
+    .time-line figcaption {
+        margin-left: 70px;
+        padding-top: 18px;
+    }
+    .app-info > img {
+        width: 40px;
+        height: 40px;
+    }
+    .app-info figcaption {
+        margin-left: 52px;
+    }
+    .loading {
+        top: 51px;
+    }
+    .c-box {
+        margin: 0 auto;
+    }
 }
-
-@media screen and (max-width: 480px){
-	@ifram-rotate-left: .5 * 320px;
-	@ifram-rotate-top: .92 * @ifram-rotate-left;
-	.iframe-wrapper{
-		min-height: 480px;
-	}
-	iframe.vertical{
-		.transform(scale(.92));
-		.transform-origin(0 0);
-	}
-	iframe.horizontal{
-		.transform(scale(.92) rotate(90deg));
-		.transform-origin(@ifram-rotate-left @ifram-rotate-top);
-	}
+@media screen and (max-width: 480px) {
+    @ifram-rotate-left: .5 * 320px;
+    @ifram-rotate-top: .92 * @ifram-rotate-left;
+    .iframe-wrapper {
+        min-height: 480px;
+    }
+    iframe.vertical {
+        .transform(scale(.92));
+        .transform-origin(0 0);
+    }
+    iframe.horizontal {
+        .transform(scale(.92) rotate(90deg));
+        .transform-origin(@ifram-rotate-left @ifram-rotate-top);
+    }
 }

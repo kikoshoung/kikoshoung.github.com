@@ -170,8 +170,10 @@ var site = {
 			case 'smartspot':
 			case 'ename':
 			case 'radarcharts':
-			case 'scratchcard':
 				IESupportedVersion = 100;	
+				break;
+			case 'scratchcard':
+				IESupportedVersion = 9;	
 				break;
 		}
 

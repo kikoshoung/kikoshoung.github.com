@@ -1,32 +1,4 @@
-<script type="text/javascript" src="js/component/radarcharts.min.js"></script>
-<script type="text/javascript">
-	var isPC = window.top.site.isPC;
-</script>
-
-<h1>Radarcharts JS</h1>
-<section class="tight">
-	<p>使用 Canvas 实现的一种雷达展现形式的图表。</p>
-	<p>Canvas charts with radar impression.</p>
-	<p class="mt-m"><a target="_blank" href="https://github.com/kikoshoung/radarcharts">Fork me on github</a></p>
-</section>
-<section>
-	<h2>一分钟简介</h2>
-	<p>雷达图表是一种以雷达形式展现数据的图表，对某些数据来说，使用雷达图表展示出来会更加直观，更容易看出数据的特点。Radarcharts 采用 HTML5 的 Canvas 技术，是一个参数丰富、灵活好用的图表类。</p>
-	<p>先看一个简单的 Radarcharts 用例，我们来比较一下两位前端工程师的各项能力值：</p>
-	<div id="container-engineer-wrapper" style="width: 100%; max-width: 300px; padding: 30px 50px; background-color: #30393b; box-shadow: inset 0 -100px 300px rgba(0, 0, 0, .6);">
-		<div id="container-engineer"></div>
-	</div>
-	<p class="mt-m">通过观察图表，能够清晰地看出，工程师甲的技能几乎满级，但是沟通能力差，很有可能是个怪咖；工程师乙各项技能都要稍稍逊色于工程师甲，但是工程师乙的能力值很均衡，不必担心是个怪咖。</p>
-	<p>下面还给出了另外3个用例，教大家如何使用 Radarcharts JS 做出各式各样的图表。</p>
-</section>
-<section>
-	<h2>使用方法</h2>
-	<ol class="decorated">
-		<li>在页面内引入 <a target="_blank" href="https://raw.github.com/kikoshoung/radarcharts/master/js/radarcharts.min.js">radarcharts.min.js</a> 或 <a target="_blank" href="https://raw.github.com/kikoshoung/radarcharts/master/js/radarcharts.js">radarcharts.js</a>。</li>
-		<li>然后，在页面内放置你的 DOM 容器，如：&lt;div id="container-engineer"&gt;&lt;/div&gt;。</li>
-		<li>最后，构造一个 Radarcharts 实例（这里以“前端工程师能力展示”图表的代码为例）：</li>
-	</ol>
-	<pre>
+<script type="text/javascript" src="js/component/radarcharts.min.js"></script><script type="text/javascript">var isPC = window.top.site.isPC;</script><h1>Radarcharts JS</h1><section class="tight"><p>使用 Canvas 实现的一种雷达展现形式的图表。</p><p>Canvas charts with radar impression.</p><p class="mt-m"><a target="_blank" href="https://github.com/kikoshoung/radarcharts">Fork me on github</a></p></section><section><h2>一分钟简介</h2><p>雷达图表是一种以雷达形式展现数据的图表，对某些数据来说，使用雷达图表展示出来会更加直观，更容易看出数据的特点。Radarcharts 采用 HTML5 的 Canvas 技术，是一个参数丰富、灵活好用的图表类。</p><p>先看一个简单的 Radarcharts 用例，我们来比较一下两位前端工程师的各项能力值：</p><div id="container-engineer-wrapper" style="width: 100%; max-width: 300px; padding: 30px 50px; background-color: #30393b; box-shadow: inset 0 -100px 300px rgba(0, 0, 0, .6)"><div id="container-engineer"></div></div><p class="mt-m">通过观察图表，能够清晰地看出，工程师甲的技能几乎满级，但是沟通能力差，很有可能是个怪咖；工程师乙各项技能都要稍稍逊色于工程师甲，但是工程师乙的能力值很均衡，不必担心是个怪咖。</p><p>下面还给出了另外3个用例，教大家如何使用 Radarcharts JS 做出各式各样的图表。</p></section><section><h2>使用方法</h2><ol class="decorated"><li>在页面内引入 <a target="_blank" href="https://raw.github.com/kikoshoung/radarcharts/master/js/radarcharts.min.js">radarcharts.min.js</a> 或 <a target="_blank" href="https://raw.github.com/kikoshoung/radarcharts/master/js/radarcharts.js">radarcharts.js</a>。</li><li>然后，在页面内放置你的 DOM 容器，如：&lt;div id="container-engineer"&gt;&lt;/div&gt;。</li><li>最后，构造一个 Radarcharts 实例（这里以“前端工程师能力展示”图表的代码为例）：</li></ol><pre>
 		<code>
 // 设定两位工程师的数据
 var engineers = [
@@ -64,15 +36,7 @@ var engineerChart = new Radarcharts({
 	}
 });
 		</code>
-	</pre>
-</section>
-<section>
-	<h2>关于自定义</h2>
-	<p>一个灵活的组件必须能满足各种场景需求，Radarcharts为了满足大家的各种需求，设置了丰富的配置参数，我们来看依次来看下面的3个例子。<br/>（参数表详细请见本页末尾）</p>
-
-	<h4>基础篇：各国幸福指数</h4>
-	<div id="container-happiness" class="mt-m mb-m"></div>
-	<pre>
+	</pre></section><section><h2>关于自定义</h2><p>一个灵活的组件必须能满足各种场景需求，Radarcharts为了满足大家的各种需求，设置了丰富的配置参数，我们来看依次来看下面的3个例子。<br>（参数表详细请见本页末尾）</p><h4>基础篇：各国幸福指数</h4><div id="container-happiness" class="mt-m mb-m"></div><pre>
 		<code>
 // 设定各国的幸福指数数据
 var index = [
@@ -118,13 +82,7 @@ var indexChart = new Radarcharts({
 	legend: false
 });
 		</code>
-	</pre>
-</section>
-<section>
-	<h4>进阶篇：实况足球</h4>
-	<div id="container-pes" class="mt-m mb-m"></div>
-	<p>通过切换球员（<a class="pes-player" id="messi">梅西</a> 和 <a class="pes-player" id="puyol">普约尔</a>）来观察图表变换，能够清晰的看出他们一个防守好，一个进攻好。<br/>即使这是一组新人的数据，教练也可以轻松合理地安排他们踢什么样的位置。</p>
-	<pre>
+	</pre></section><section><h4>进阶篇：实况足球</h4><div id="container-pes" class="mt-m mb-m"></div><p>通过切换球员（<a class="pes-player" id="messi">梅西</a> 和 <a class="pes-player" id="puyol">普约尔</a>）来观察图表变换，能够清晰的看出他们一个防守好，一个进攻好。<br>即使这是一组新人的数据，教练也可以轻松合理地安排他们踢什么样的位置。</p><pre>
 		<code>
 // 设定梅西和普约尔的数据
 var messi = [
@@ -177,13 +135,7 @@ $('.pes-player').bind('click', function(){
 	}
 });
 		</code>
-	</pre>
-</section>
-<section>
-	<h4>高级篇：商业数据展示</h4>
-	<div id="container-business" class="mt-m mb-m"></div>
-	<p>通过切换年份（<a class="year" id="this">今年</a> 和 <a class="year" id="last">去年</a>）来观察图表变换，能够清晰的看出该公司今年较去年的销售量有了很大的增涨，业绩发展得非常不错。<br/>另外还可以清晰地看到一个改变，那就是10月份的销售量很反常，裤子的销售量超过了衣服，该公司应该分析一下10月份的各项因素。</p>
-	<pre>
+	</pre></section><section><h4>高级篇：商业数据展示</h4><div id="container-business" class="mt-m mb-m"></div><p>通过切换年份（<a class="year" id="this">今年</a> 和 <a class="year" id="last">去年</a>）来观察图表变换，能够清晰的看出该公司今年较去年的销售量有了很大的增涨，业绩发展得非常不错。<br>另外还可以清晰地看到一个改变，那就是10月份的销售量很反常，裤子的销售量超过了衣服，该公司应该分析一下10月份的各项因素。</p><pre>
 		<code>
 // 设定去年和今年的销售量数据
 var thisYear = [
@@ -232,7 +184,7 @@ var businessChart = new Radarcharts({
 		color: '#ced1d2'
 	},
 	tooltip: {
-		format: '<b>{series.name}</b><br/>{point.name}: {point.value} / {options.maxValue}（万件）'
+		format: '<b>{series.name}</b><br>{point.name}: {point.value} / {options.maxValue}（万件）'
 	},
 	header: {
 		offset: '20px'
@@ -256,22 +208,7 @@ $('.year').bind('click', function(){
 	}
 });
 		</code>
-	</pre>
-</section>
-<section>
-	<h2>Tips</h2>
-	<ul class="decorated">
-		<li>在 chart.redraw(series, [options]) 方法中，第二个参数为可选，其中包含一个 refresh 值（迄今为止，仅提供 refresh 一个选项），默认为 false，这个值可以让使用者在调用 redraw 方法的时候采用“刷新”或“过渡”的方式来重绘图表。“刷新”即重绘图形的时候会从坐标原点开始画第一帧，“过渡”即重绘图形的时候从上一个状态开始画第一帧。</li>
-		<li>在配置参数 marker 中，可以添加 onClick(series, seriesIndex, dataIndex) 方法来监听一个 marker 的点击处理函数，其中 series 为用户在初始 Radarcharts 的时候传入的 series 值；seriesIndex 为 当前被点击的 marker 在 series 中的数据组 index；dataIndex 为 当前被点击的 marker 在 series[seriesIdex].data 中的 index。</li>
-		<li>jQuery 用户可以这样使用 Radarcharts 来初始一个图表：$('#container').Radarcharts(options)<br/>这样使用的话，options 中就不用再传入 renderTo 了。</li>
-		<li>如果您不想使用某项默认的配置，那么请给相应值传入一个 falsy 值，如：legend: false;。</li>
-		<li>配置参数中的 maxValue 是一组数据范围的最大值，默认为这组数据中的最大值。</li>
-	</ul>
-</section>
-<section>
-	<h2>参数表详细</h2>
-	<p>以下是 Radarcharts 的默认参数配置，您可以依据自己的喜好在实例化的时候传入不同参数 override 它。</p>
-	<pre>
+	</pre></section><section><h2>Tips</h2><ul class="decorated"><li>在 chart.redraw(series, [options]) 方法中，第二个参数为可选，其中包含一个 refresh 值（迄今为止，仅提供 refresh 一个选项），默认为 false，这个值可以让使用者在调用 redraw 方法的时候采用“刷新”或“过渡”的方式来重绘图表。“刷新”即重绘图形的时候会从坐标原点开始画第一帧，“过渡”即重绘图形的时候从上一个状态开始画第一帧。</li><li>在配置参数 marker 中，可以添加 onClick(series, seriesIndex, dataIndex) 方法来监听一个 marker 的点击处理函数，其中 series 为用户在初始 Radarcharts 的时候传入的 series 值；seriesIndex 为 当前被点击的 marker 在 series 中的数据组 index；dataIndex 为 当前被点击的 marker 在 series[seriesIdex].data 中的 index。</li><li>jQuery 用户可以这样使用 Radarcharts 来初始一个图表：$('#container').Radarcharts(options)<br>这样使用的话，options 中就不用再传入 renderTo 了。</li><li>如果您不想使用某项默认的配置，那么请给相应值传入一个 falsy 值，如：legend: false;。</li><li>配置参数中的 maxValue 是一组数据范围的最大值，默认为这组数据中的最大值。</li></ul></section><section><h2>参数表详细</h2><p>以下是 Radarcharts 的默认参数配置，您可以依据自己的喜好在实例化的时候传入不同参数 override 它。</p><pre>
 		<code>
 CONFIG = {
 	// chart size, [width, height], '100%' | 300 | '300px'
@@ -372,16 +309,11 @@ CONFIG = {
 		color: 'inherit',
 
 		// html string with replacement
-		format: '<b>{series.name}</b><br/>{point.name}: {point.value} / {options.maxValue}'
+		format: '<b>{series.name}</b><br>{point.name}: {point.value} / {options.maxValue}'
 	}
 };
 		</code>
-	</pre>
-</section>
-
-<!-- 一分钟简介 -->
-<script type="text/javascript">
-	// 设定两位工程师的数据
+	</pre></section><script type="text/javascript">// 设定两位工程师的数据
 	var engineers = [
 			{name: '工程师甲', data: [95, 90, 90, 90, 60]},
 			{name: '工程师乙', data: [80, 78, 82, 81, 80]}
@@ -424,12 +356,7 @@ CONFIG = {
 		tooltip: {
 			color: '#666'
 		}
-	});
-</script>
-
-<!-- 幸福指数 -->
-<script type="text/javascript">
-	// 设定各国的幸福指数数据
+	});</script><script type="text/javascript">// 设定各国的幸福指数数据
 	var index = [
 			{name: '幸福指数', data: [9.3, 9.2, 9.0, 8.9, 8.7, 8.6, 8.5, 8.3, 7.8, 5]}
 		];
@@ -471,12 +398,7 @@ CONFIG = {
 			format: '<b>{point.name}</b>: {point.value} / {options.maxValue}'
 		},
 		legend: false
-	});
-</script>
-
-<!-- 实况足球 -->
-<script type="text/javascript">
-	// 设定梅西和普约尔的数据
+	});</script><script type="text/javascript">// 设定梅西和普约尔的数据
 	var messi = [
 			{name: '梅西', data: [95, 70, 95, 95, 90, 70]}
 		],
@@ -528,12 +450,7 @@ CONFIG = {
 			player = id;
 			pesChart.redraw(series);
 		}
-	});
-</script>
-
-<!-- 销售量 -->
-<script type="text/javascript">
-	// 设定去年和今年的销售量数据
+	});</script><script type="text/javascript">// 设定去年和今年的销售量数据
 	var thisYear = [
 			{name: '衣服', data: [102, 72, 96, 95, 105, 113, 102, 99, 96, 95, 90, 113]},
 			{name: '裤子', data: [80, 45, 68, 72, 80, 106, 79, 72, 67, 110, 61, 89]}
@@ -602,10 +519,4 @@ CONFIG = {
 			year = id;
 			businessChart.redraw(series);
 		}
-	});
-</script>
-
-
-<script type="text/javascript">
-	site.codeareaHandler($('body').find('pre'));
-</script>
+	});</script><script type="text/javascript">site.codeareaHandler($('body').find('pre'));</script>

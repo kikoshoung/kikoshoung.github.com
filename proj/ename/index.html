@@ -1,71 +1,4 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-		<link href="css/base.css" rel="stylesheet" type="text/css">
-		<link href="css/template.css" rel="stylesheet" type="text/css">
-		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-		<script type="text/javascript" src="js/cordova-1.7.0rc1.js"></script>
-		<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
-		<script type="text/javascript" src="js/transition.js"></script>
-		<script type="text/javascript" src="js/underscore.js"></script>
-		<script type="text/javascript" src="js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
-		<script type="text/javascript" src="js/lib/pinyin.js"></script>
-		<script type="text/javascript" src="js/search.js"></script>
-		<script type="text/javascript" src="js/lib/male_all.js"></script>
-        <script type="text/javascript" src="js/lib/female_all.js"></script>
-		<title>EName</title>
-	</head>
-	<body>
-		<div class="content">
-			<div class="head-block-wrapper">
-				<div class="head-block">
-					<div class="clearfix">
-						<input id="name-input" type="text" placeholder="请输入关键字" class="fl mr-m" style="width: 100px;">
-						<div class="btn-group fl mr-m">
-							<a class="btn dropdown-toggle" data-toggle="dropdown">
-								<span class="selected-val">男名</span>
-								<span class="caret"></span>
-							</a>
-							<ul id="gender-menu" class="dropdown-menu">
-								<li><a class="dropdown-element">男名</a></li>
-								<li><a class="dropdown-element">女名</a></li>
-							</ul>
-						</div>
-						<div class="btn-group fl">
-							<a class="btn dropdown-toggle" data-toggle="dropdown">
-								<span class="selected-val">按发音</span>
-								<span class="caret"></span>
-							</a>
-							<ul id="sortBy-menu" class="dropdown-menu">
-								<li><a class="dropdown-element">按发音</a></li>
-								<li><a class="dropdown-element">按释义</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="pt-m">
-						<a target="_blank" class="weibo-share fl" href='http://v.t.sina.com.cn/share/share.php?title=还在当互唤中文名的屌丝白领么？还在当英语课上被大家叫拼音名的土鳖张三么？不要这么OUT啦！赶快下载《起个洋名儿》给自己起个洋名儿吧！限时免费，特有纯正发音教读，早到早得哦~！&pic=http://tp2.sinaimg.cn/3221628593/180/5653053676/0&ralateUid=3221628593&url=http://weibo.com/u/3221628593#phonegap=external'></a>
-						<a id="search-button" type="button" class="btn btn-primary">搜索</a>
-						<a class="btn btn-success" id="toCustomList">自行浏览</a>
-					</div>
-				</div>
-			</div>
-			<div class="suggest-list align-l">
-				<div class="ml-l mr-l mt-l">
-					<p>温馨提示：</p>
-					<ol>
-						<li>如果您的名字为”张三“，您可以输入“张三”、“张”、“三”、“zhang”、“san”等形式的关键字后再<span class="text-orange">按发音</span>进行搜索；</li>
-						<li>如果您想起个代表“快乐”的名字，您也可以输入“快乐”后再<span class="text-orange">按释义</span>进行搜索。</li>
-					</ol>
-					<p class="hide">还在当互唤中文名的白领么？还在当英语课上被大家叫拼音名的张三么？不要这么out啦！赶快下载《起个洋名儿》给自己起个洋名儿吧！限免应用，特有纯正发音教读，早到早得哦~！</p>
-				</div>
-			</div>
- 		</div>
-		<div class="ads">非Google TTS API，发音功能使用起来可能比较慢。</div>
-		<script type="text/javascript">
-			function onDeviceReady(){
+<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta http-equiv="content-type" content="text/html; charset=UTF-8"><link href="css/base.css" rel="stylesheet" type="text/css"><link href="css/template.css" rel="stylesheet" type="text/css"><link href="css/bootstrap.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="js/cordova-1.7.0rc1.js"></script><script type="text/javascript" src="js/jquery-1.7.min.js"></script><script type="text/javascript" src="js/transition.js"></script><script type="text/javascript" src="js/underscore.js"></script><script type="text/javascript" src="js/bootstrap.js"></script><script type="text/javascript" src="js/main.js"></script><script type="text/javascript" src="js/lib/pinyin.js"></script><script type="text/javascript" src="js/search.js"></script><script type="text/javascript" src="js/lib/male_all.js"></script><script type="text/javascript" src="js/lib/female_all.js"></script><title>EName</title></head><body><div class="content"><div class="head-block-wrapper"><div class="head-block"><div class="clearfix"><input id="name-input" type="text" placeholder="请输入关键字" class="fl mr-m" style="width: 100px"><div class="btn-group fl mr-m"><a class="btn dropdown-toggle" data-toggle="dropdown"><span class="selected-val">男名</span><span class="caret"></span></a><ul id="gender-menu" class="dropdown-menu"><li><a class="dropdown-element">男名</a></li><li><a class="dropdown-element">女名</a></li></ul></div><div class="btn-group fl"><a class="btn dropdown-toggle" data-toggle="dropdown"><span class="selected-val">按发音</span><span class="caret"></span></a><ul id="sortBy-menu" class="dropdown-menu"><li><a class="dropdown-element">按发音</a></li><li><a class="dropdown-element">按释义</a></li></ul></div></div><div class="pt-m"><a target="_blank" class="weibo-share fl" href="http://v.t.sina.com.cn/share/share.php?title=还在当互唤中文名的屌丝白领么？还在当英语课上被大家叫拼音名的土鳖张三么？不要这么OUT啦！赶快下载《起个洋名儿》给自己起个洋名儿吧！限时免费，特有纯正发音教读，早到早得哦~！&pic=http://tp2.sinaimg.cn/3221628593/180/5653053676/0&ralateUid=3221628593&url=http://weibo.com/u/3221628593#phonegap=external"></a><a id="search-button" type="button" class="btn btn-primary">搜索</a><a class="btn btn-success" id="toCustomList">自行浏览</a></div></div></div><div class="suggest-list align-l"><div class="ml-l mr-l mt-l"><p>温馨提示：</p><ol><li>如果您的名字为”张三“，您可以输入“张三”、“张”、“三”、“zhang”、“san”等形式的关键字后再<span class="text-orange">按发音</span>进行搜索；</li><li>如果您想起个代表“快乐”的名字，您也可以输入“快乐”后再<span class="text-orange">按释义</span>进行搜索。</li></ol><p class="hide">还在当互唤中文名的白领么？还在当英语课上被大家叫拼音名的张三么？不要这么out啦！赶快下载《起个洋名儿》给自己起个洋名儿吧！限免应用，特有纯正发音教读，早到早得哦~！</p></div></div></div><div class="ads">非Google TTS API，发音功能使用起来可能比较慢。</div><script type="text/javascript">function onDeviceReady(){
 				$(".head-block-wrapper").width(window.width);
 				$("body").append(app.speaker);
 				$('.dropdown-toggle').dropdown();
@@ -138,9 +71,4 @@
 				document.addEventListener("deviceready", onDeviceReady, false);
 			} else {
 				onDeviceReady();
-			}
-		</script>
-
-		<script type="text/javascript" src="js/string2json.js"></script>
-	</body>
-</html>
+			}</script><script type="text/javascript" src="js/string2json.js"></script></body></html>

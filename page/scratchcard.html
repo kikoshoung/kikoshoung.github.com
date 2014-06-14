@@ -1,27 +1,4 @@
-<script type="text/javascript" src="js/component/scratchcard.min.js"></script>
-
-<h1>刮刮卡小封装</h1>
-<section class="tight">
-    <p>使用 Canvas 实现的刮刮卡小封装。</p>
-    <p>A scratch card library based on canvas.</p>
-    <p class="mt-m"><a target="_blank" href="https://github.com/kikoshoung/scratchcard">Fork me on github</a></p> 
-</section>
-<section>
-    <div class="c-box mb-m" style="width: 240px;">
-        <div style="width: 240px; height: 180px;">
-            <div id="container-scratchcard" style="line-height: 180px; text-align: center; background: #E0E0E0;">正在生成刮刮卡...</div>
-        </div>
-        <button class="mt-m" id="btn-again">再来一张试试</button>
-    </div>
-</section>
-<section>
-    <h2>使用方法</h2>
-    <ol class="decorated">
-        <li>在页面内引入 <a target="_blank" href="https://raw.github.com/kikoshoung/scratchcard/master/js/scratchcard.min.js">scratchcard.min.js</a> 或 <a target="_blank" href="https://raw.github.com/kikoshoung/scratchcard/master/js/scratchcard.js">scratchcard.js</a>。</li>
-        <li>然后，在页面内放置你的 DOM 容器，如：&lt;div id="container-scratchcard"&gt;&lt;/div&gt;。</li>
-        <li>最后，构造一个 ScratchCard 实例：</li>
-    </ol>
-    <pre>
+<script type="text/javascript" src="js/component/scratchcard.min.js"></script><h1>刮刮卡小封装</h1><section class="tight"><p>使用 Canvas 实现的刮刮卡小封装。</p><p>A scratch card library based on canvas.</p><p class="mt-m"><a target="_blank" href="https://github.com/kikoshoung/scratchcard">Fork me on github</a></p></section><section><div class="c-box mb-m" style="width: 240px"><div style="width: 240px; height: 180px"><div id="container-scratchcard" style="line-height: 180px; text-align: center; background: #E0E0E0">正在生成刮刮卡...</div></div><button class="mt-m" id="btn-again">再来一张试试</button></div></section><section><h2>使用方法</h2><ol class="decorated"><li>在页面内引入 <a target="_blank" href="https://raw.github.com/kikoshoung/scratchcard/master/js/scratchcard.min.js">scratchcard.min.js</a> 或 <a target="_blank" href="https://raw.github.com/kikoshoung/scratchcard/master/js/scratchcard.js">scratchcard.js</a>。</li><li>然后，在页面内放置你的 DOM 容器，如：&lt;div id="container-scratchcard"&gt;&lt;/div&gt;。</li><li>最后，构造一个 ScratchCard 实例：</li></ol><pre>
         <code>
 // 一些铺垫设置
 var resImg = ['img/face-smile.png', 'img/face-sad.png'],
@@ -47,24 +24,7 @@ scratchCard = new ScratchCard({
     }
 });
         </code>
-    </pre>
-</section>
-<section>
-    <h2>Tips</h2>
-    <ul class="decorated">
-        <li>options 中的 validArea 是我们设定的一个刮奖有效区域，该区域可根据你得图片结构来设定。</li>
-        <li>options 中的 percentage 是在有效区域内计算得到的一个已经刮去像素的百分比。</li>
-        <li>options 中的 onScratch 属性应该是一个函数，该函数接受内部传来的 progress 参数，即刮刮卡的刮去百分比。</li>
-        <li>options 中的 onComplete 属性也应该是一个函数，该函数会在刮到我们设定的一个百分比（percentage）时调用。</li>
-        <li>如需移除一个 ScratchCard 实例，建议使用提供的 destroy 方法（如 scratchCard.destroy() ），该方法不仅会移除 container 中的 DOM 元素，还会移除在这些 DOM 元素上绑定的事件处理程序。</li>
-        <li>jQuery 用户可以这样使用 ScratchCard 来初始一个图表：$('#container').ScratchCard(options)<br/>这样使用的话，options 中就不用再传入 container 了。</li>
-    </ul>
-</section>
-
-<section>
-    <h2>参数表详细</h2>
-    <p>以下是 ScratchCard 的默认参数配置，您可以依据自己的喜好在实例化的时候传入不同参数 override 它。</p>
-    <pre>
+    </pre></section><section><h2>Tips</h2><ul class="decorated"><li>options 中的 validArea 是我们设定的一个刮奖有效区域，该区域可根据你得图片结构来设定。</li><li>options 中的 percentage 是在有效区域内计算得到的一个已经刮去像素的百分比。</li><li>options 中的 onScratch 属性应该是一个函数，该函数接受内部传来的 progress 参数，即刮刮卡的刮去百分比。</li><li>options 中的 onComplete 属性也应该是一个函数，该函数会在刮到我们设定的一个百分比（percentage）时调用。</li><li>如需移除一个 ScratchCard 实例，建议使用提供的 destroy 方法（如 scratchCard.destroy() ），该方法不仅会移除 container 中的 DOM 元素，还会移除在这些 DOM 元素上绑定的事件处理程序。</li><li>jQuery 用户可以这样使用 ScratchCard 来初始一个图表：$('#container').ScratchCard(options)<br>这样使用的话，options 中就不用再传入 container 了。</li></ul></section><section><h2>参数表详细</h2><p>以下是 ScratchCard 的默认参数配置，您可以依据自己的喜好在实例化的时候传入不同参数 override 它。</p><pre>
         <code>
 defaults: {
     // A wrapper element for scratch card, must be an original dom object
@@ -78,7 +38,7 @@ defaults: {
 
     // Valid scratch area, [{left}, {top}, {width}, {hight}]
     // Defaults to [0, 0, {cardWidth}, {cardHeight}]
-    // validArea: [0, 0, {cardWidth}, {cardWidth}],
+    validArea: [0, 0, {cardWidth}, {cardWidth}],
 
     // Percentage of valid scratched pixels, based on valid area
     percentage: 0.6,
@@ -104,11 +64,7 @@ defaults: {
     onComplete: null,
 }
         </code>
-    </pre>
-</section>
-
-<script type="text/javascript">
-    var resImg = ['img/face-smile.png', 'img/face-sad.png'],
+    </pre></section><script type="text/javascript">var resImg = ['img/face-smile.png', 'img/face-sad.png'],
         container = $('#container-scratchcard'),
         btnAgain = $('#btn-again'),
         isPC = ('ontouchstart' in window) ? false : true,
@@ -149,9 +105,4 @@ defaults: {
     //     e.preventDefault();
     // });
 
-    addScratchCard();
-</script>
-
-<script type="text/javascript">
-    site.codeareaHandler($('body').find('pre'));
-</script>
+    addScratchCard();</script><script type="text/javascript">site.codeareaHandler($('body').find('pre'));</script>

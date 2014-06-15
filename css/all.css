@@ -33,6 +33,7 @@ p,
 dt,
 dd {
   word-wrap: break-word;
+  overflow: auto;
 }
 article,
 aside,
@@ -229,7 +230,6 @@ pre {
   padding: 20px 10px 20px 50px;
   background-color: #eff5f2;
   border: 1px solid #ccd1cf;
-  word-wrap: break-word;
   color: #068c86;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;

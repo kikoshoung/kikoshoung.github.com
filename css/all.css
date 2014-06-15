@@ -450,18 +450,38 @@ figure.profile figcaption {
 @-webkit-keyframes paopao-in {
   0% {
     -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    transform: scaleX(1);
   }
   30% {
     -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transform: scaleX(0);
   }
   50% {
     -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
   }
   70% {
     -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transform: scaleX(0);
   }
   100% {
     -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    transform: scaleX(1);
   }
 }
 @media screen and (max-width: 768px) {
@@ -494,6 +514,11 @@ figure.profile figcaption {
     background-color: #eff5f2;
     border-bottom: 1px solid #ccd1cf;
     overflow: hidden;
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    -ms-transform: translate(0);
+    -o-transform: translate(0);
+    transform: translate(0);
     display: -webkit-box;
     display: -moz-box;
     display: -ms-box;
@@ -586,6 +611,11 @@ figure.profile figcaption {
     margin: 0;
     padding-top: 80px;
     background-color: #ffffff;
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    -ms-transform: translate(0);
+    -o-transform: translate(0);
+    transform: translate(0);
     -webkit-transition: all 0.3s ease 0;
     -moz-transition: all 0.3s ease 0;
     -ms-transition: all 0.3s ease 0;
@@ -603,7 +633,11 @@ figure.profile figcaption {
   }
   header.active,
   article.active {
-    left: 60%;
+    -webkit-transform: translate(60%);
+    -moz-transform: translate(60%);
+    -ms-transform: translate(60%);
+    -o-transform: translate(60%);
+    transform: translate(60%);
   }
   pre {
     padding-left: 35px;

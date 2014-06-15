@@ -20,6 +20,7 @@
         background-color: @bg-color-dark;
         border-bottom: 1px solid @border-color;
         overflow: hidden;
+        .translate(0, 0);
         .box;
         .box-shadow;
         .transition;
@@ -80,6 +81,7 @@
         margin: 0;
         padding-top: 80px;
         background-color: @bg-color;
+        .translate(0, 0);
         .transition;
     }
     article section {
@@ -92,7 +94,7 @@
         margin-left: @gap-m;
     }
     header.active, article.active {
-        left: 60%;
+        .translate(60%, 0);
     }
     pre {
         padding-left: 35px;

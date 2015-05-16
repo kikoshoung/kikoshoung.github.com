@@ -33,6 +33,10 @@ var site = {
 		'scratch-card': {
 			fileName: 'scratchcard',
 			titleFragment: ' | 刮刮卡'
+		},
+		'im-demo': {
+			fileName: 'im-demo',
+			titleFragment: ' | IM Demo'
 		}
 	},
 	suguestedBrowsers: [

@@ -1,0 +1,45 @@
+<h1>贪吃蛇</h1>
+<section class="tight">
+    <p>基于 Canvas 的传统贪吃蛇游戏。</p>
+    <p>The traditional greed snake game based on Canvas.</p>
+    <p class="mt-m"><a target="_blank" href="https://github.com/kikoshoung/greedsnake">查看源代码</a></p>
+
+</section>
+<section>
+    <h2>Demo 展示</h2>
+    <p>Score: <span id="score">0</span></p>
+    <canvas class="canvas" id="canvas" width="300" height="300" style="border: 1px solid #ccd1cf;">Your browser does not support canvas, please use Chrome or Firefox</canvas>
+    <p>PS: Use direction key to play.</p>
+    <p>
+        <button id="start">Start</button>
+        <button id="pause">Pause</button>
+        <button id="restart">Restart</button>
+    </p>
+</section>
+
+<script type="text/javascript" src="js/component/greedsnake.min.js"></script>
+<script type="text/javascript">
+    var $score = $('#score'),
+        $start = $('#start'),
+        $pause = $('#pause'),
+        $restart = $('#restart');
+
+    var greedSnake = new Greedsnake({
+        canvas: document.getElementById('canvas'),
+        onscore: function(score){
+            $score.html(score);
+        }
+    });
+
+    $start.on('click', function(){
+        greedSnake.start();
+    });
+    $pause.on('click', function(){
+        greedSnake.togglePause();
+    });
+    $restart.on('click', function(){
+        greedSnake.restart();
+    });
+</script>
+
+

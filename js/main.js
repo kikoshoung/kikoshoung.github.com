@@ -34,9 +34,13 @@ var site = {
 			fileName: 'scratchcard',
 			titleFragment: ' | 刮刮卡'
 		},
+		'greedsnake': {
+			fileName: 'greedsnake',
+			titleFragment: ' | 贪吃蛇'
+		},
 		'im-demo': {
 			fileName: 'im-demo',
-			titleFragment: ' | IM Demo'
+			titleFragment: ' | Websocket 聊天室'
 		}
 	},
 	suguestedBrowsers: [

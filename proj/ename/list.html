@@ -115,9 +115,9 @@
 				if(networkConnected){
 					app.speakerTrigger = $(this);
 					var name = app.speakerTrigger.attr("data-name").toLowerCase();
-					var pronouciation_src = "http://translate.google.cn/translate_tts?ie=utf-8&q="+ name +"&tl=en&total=1&idx=0&textlen="+ name.length +"&prev=input&timestamp="+ new Date().getTime();
+
 					$(".suggest-list .icon-speaker").removeClass("active");
-					app.speaker.attr("src", "http://tts-api.com/tts.mp3?q="+ name);
+					app.speaker.attr("src", "https://text-to-speech-demo.mybluemix.net/api/synthesize?text=" + name + "&voice=en-US_AllisonVoice");
 					app.spinner.insertAfter(app.speakerTrigger).show();
 				} else {
 					alert("若想使用教读功能，请先将设备连接至网络。")

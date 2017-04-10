@@ -162,7 +162,7 @@ var site = {
 			self = this,
 			fragment, pageTitle, isSupported;
 
-		hash = hash.substr(1, hash.length);
+		hash = (hash.match(/#(.[^?]*)\?*/) || ['', ''])[1];
 
 		if(!routerMap[hash]) {
 			fragment = '404';

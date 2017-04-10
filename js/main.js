@@ -52,7 +52,7 @@ var site = {
 	],
 	init: function(hash){
 		var self = this;
-			browserSupported = this.checkBrowser(this.IESupportedVersion);
+		var	browserSupported = this.checkBrowser(this.IESupportedVersion);
 
 		self.html5shiv();
 		self.setEvents();
@@ -216,7 +216,7 @@ var site = {
 		})
 	},
 	checkBrowser: function(IEVersion){ // type: 'page' or 'project' 
-		var userAgent = this.ua.toLowerCase().match(/(chrome|firefox|safari|opera|msie)/gi)[0],
+		var userAgent = (this.ua.toLowerCase().match(/(chrome|firefox|safari|opera|msie)/gi) || [''])[0],
 			version = (userAgent == 'msie') ? this.ua.toLowerCase().match(/msie\s*\d+/gi)[0].match(/\d+/) : 1000;
 			IESupportedVersion = IEVersion ? IEVersion : this.IESupportedVersion;
 

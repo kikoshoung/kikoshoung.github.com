@@ -268,6 +268,8 @@ button,
 .btn {
   display: inline-block;
   padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   background: green;
   color: white;
   border: none;

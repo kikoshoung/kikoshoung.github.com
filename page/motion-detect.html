@@ -1,0 +1,25 @@
+<h1>体感交互 - 连贯动作识别</h1>
+<section class="tight">
+    <p>基于 TensorFlow.js 的动态动作识别方案。</p>
+    <p>目前暂不方便公开代码，仅简单介绍下部分可以公开的方案，如下：</p>
+</section>
+<section>
+    <h2>普通方案：基于单帧的静态动作识别</h2>
+    <img width="80%" src="../img/motion-detect.1.png">
+    <p>优点：模型训练简单，批量导入固定手势或体态图片数据进行训练就行，识别精度高</p>
+    <p>缺点：由于是识别的单帧图像，非常容易引起误识别</p>
+   
+    <h2 class="mt-l">优化方案：基于连续帧的动态动作识别</h2>
+    <img width="80%" src="../img/motion-detect.2.png">
+    <p>优点：可使用动态的动作交互，更加友好，并可以防止误识别</p>
+    <p>缺点：基于连续帧的识别模型，其训练成本较大且泛化能力不理想，导致识别精度较低</p>
+
+    <h2 class="mt-l">进阶方案：手势或体态数据辅助</h2>
+    <p>暂不方便公开方案，仅分享效果</p>
+    <video width="80%" controls>
+        <source src="../video/motion-detect.webm" type="video/webm" />
+        <p>你的浏览器暂不支持当前视频的播放</p>
+    </video>
+    <p>优点：兼顾动态动作识别的交互友好性和高精度识别</p>
+    <p>缺点：无</p>
+</section>

@@ -1,0 +1,29 @@
+<h1>3D 可视化 - 球面点线面贴合方案</h1>
+<section class="tight">
+    <p>基于 Babylon 的球面贴合元素构建器。</p>
+    <p>目前暂不方便公开代码，仅简单介绍下部分可以公开的方案。</p>
+    <p>关于此方案的更多讨论，可参见 <a href="https://forum.babylonjs.com/t/circle-ring-around-mouse-pointer/12586/18?u=kikoshoung" target="_blank">Babylon 社区</a>。</p>
+</section>
+<section>
+    <p>对于 3D 地球场景，很多时候我们需要点线面元素来示意地点、路径、区域，但目前业界要么放弃这块的功能，要么使用 hack 的方式实现，但存在这一些不完美的问题：
+    <p><img width="80%" src="../img/issue.1.png"></p>
+    <p><img width="80%" src="../img/issue.2.png"></p>
+    <p><img width="80%" src="../img/issue.3.png"></p>
+
+    <h2 class="mt-l">增强后的线</h2>
+    <video width="80%" controls>
+        <source src="../video/3d-line.1.webm" type="video/webm" />
+        <p>你的浏览器暂不支持当前视频的播放</p>
+    </video>
+   
+    <p>为了更好看出与球体表面的贴合性，这里把球体三角面的 segment 数值降低，如下：</p>
+    <video width="80%" controls>
+        <source src="../video/3d-line.2.webm" type="video/webm" />
+        <p>你的浏览器暂不支持当前视频的播放</p>
+    </video>
+    <h2 class="mt-l">增强后的面</h2>
+    <video width="80%" controls>
+        <source src="../video/3d-geojson.webm" type="video/webm" />
+        <p>你的浏览器暂不支持当前视频的播放</p>
+    </video>
+</section>

@@ -41,6 +41,18 @@ var site = {
 		'im-demo': {
 			fileName: 'im-demo',
 			titleFragment: ' | Websocket 聊天室'
+		},
+		'motion-detect': {
+			fileName: 'motion-detect',
+			titleFragment: ' | 体感交互 - 连贯动作识别'
+		},
+		'3d-picking': {
+			fileName: '3d-picking',
+			titleFragment: ' | 3D 可视化 - 拾取性能优化方案'
+		},
+		'3d-mesh-builder': {
+			fileName: '3d-mesh-builder',
+			titleFragment: ' | 3D 可视化 - 球面点线面贴合方案'
 		}
 	},
 	suguestedBrowsers: [

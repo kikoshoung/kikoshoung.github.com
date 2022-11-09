@@ -412,8 +412,6 @@ article .indented {
   margin-left: 40px;
 }
 figure.profile img {
-  width: 140px;
-  height: 170px;
   float: right;
   background-color: #eff5f2;
 }
@@ -721,8 +719,8 @@ figure.profile figcaption {
 }
 @media screen and (max-width: 480px) {
   figure.profile img {
-    width: 80px;
-    height: 97px;
+    width: 75px;
+    height: 76px;
   }
   figure.profile figcaption {
     margin-right: 100px;
